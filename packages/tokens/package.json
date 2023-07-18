@@ -1,0 +1,35 @@
+{
+  "name": "@solid-x/tokens",
+  "version": "0.0.1",
+  "description": "Design tokens for materialize components",
+  "homepage": "https://github.com/solid-ui/solid-x#readme",
+  "bugs": {
+    "url": "https://github.com/solid-ui/solid-x/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solid-ui/solid-x",
+    "directory": "packages/tokens"
+  },
+  "license": "MIT",
+  "author": "Raghavan Renganathan",
+  "module": "dist/index.js",
+  "types": "dist/types",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn build:code",
+    "build:code": "tsc --build tsconfig.build.json",
+    "clean": "rimraf dist"
+  },
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "@vanilla-extract/css": "^1.12.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@vanilla-extract/css": "*"
+  }
+}

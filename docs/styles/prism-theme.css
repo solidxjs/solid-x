@@ -1,0 +1,140 @@
+/**
+ * Coldark Theme for Prism.js
+ * Theme variation: Cold
+ * Tested with HTML, CSS, JS, JSON, PHP, YAML, Bash script
+ * @author Armand Philippot <contact@armandphilippot.com>
+ * @homepage https://github.com/ArmandPhilippot/coldark-prism
+ * @license MIT
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--shiki-color-text);
+  background: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--shiki-color-background);
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token::selection,
+.token::-moz-selection {
+  color: inherit;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--shiki-token-comment);
+}
+
+.token.punctuation {
+  color: var(--shiki-token-punctuation);
+}
+
+.token.delimiter.important,
+.token.selector .parent,
+.token.tag,
+.token.tag {
+  color: var(--shiki-token-string-expression);
+}
+
+.token.boolean,
+.token.boolean.important,
+.token.number,
+.token.constant {
+  color: var(--shiki-token-constant);  
+}
+
+.token.attr-name,
+.token.selector .token.attribute {
+  color: var(--shiki-token-function);
+}
+
+.token.key,
+.token.property,
+.token.property-access,
+.token.variable,
+.token.parameter {
+  color: var(--shiki-color-text);
+}
+
+.token.attr-value,
+.token.inserted,
+.token.color,
+.token.selector .token.value,
+.token.string,
+.token.string .token.url-link,
+.token.regex-delimiter,
+.token.regex-source {
+  color: var(--shiki-token-string-expression);
+}
+
+.token.function,
+.token.class-name,
+.token.selector .token.class,
+.token.selector .token.id {
+  color: var(--shiki-token-function);
+}
+
+.token.atrule .token.rule,
+.token.combinator,
+.token.keyword,
+.token.operator,
+.token.pseudo-class,
+.token.pseudo-element,
+.token.selector,
+.token.unit,
+.token.regex-flags {
+  color: var(--shiki-token-keyword);
+}
+
+.token.regex
+
+.token.important,
+.token.keyword-this,
+.token.this,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.delimiter.important {
+  font-weight: inherit;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
