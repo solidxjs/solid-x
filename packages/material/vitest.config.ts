@@ -10,6 +10,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
+    reporters: ['default', 'html'],
+    outputFile: './reports/index.html',
     setupFiles: [
       './setupVitest.js',
     ],

@@ -9,8 +9,10 @@ export default defineConfig({
     // we will be using the rollup plugin here as it generates the files in the way
     // want in a component library.
     vanillaExtractPlugin({
+      identifiers: 'debug',
       cwd: resolve(__dirname, 'src')
     }),
+    // themePlugin(),
     dts({
       tsconfigPath: resolve(__dirname, 'tsconfig.build.json')
     }),
@@ -18,7 +20,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: 'src/index.ts',
       fileName: (_, entryName) => `${entryName}.js`,
       formats: ['es']
     },
