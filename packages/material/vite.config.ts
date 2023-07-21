@@ -1,8 +1,12 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
-import solidPlugin from 'vite-plugin-solid';
+import { glob } from 'glob';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
+import solidPlugin from 'vite-plugin-solid';
+
+const vanillaExtractAssetReg = /.css.ts.vanilla/;
 
 export default defineConfig({
   plugins: [
@@ -10,26 +14,53 @@ export default defineConfig({
     // want in a component library.
     vanillaExtractPlugin({
       identifiers: 'debug',
-      cwd: resolve(__dirname, 'src')
+      cwd: path.resolve(__dirname, 'src')
     }),
-    // themePlugin(),
     dts({
-      tsconfigPath: resolve(__dirname, 'tsconfig.build.json')
+      tsconfigPath: path.resolve(__dirname, 'tsconfig.build.json')
     }),
     solidPlugin({ ssr: false })
   ],
   build: {
     lib: {
-      entry: 'src/index.ts',
-      fileName: (_, entryName) => `${entryName}.js`,
+      entry: Object.fromEntries([
+        ...glob.sync('src/{**/,/}index.ts{,x}').map(file => [
+          // This remove `src/` as well as the file extension from each
+          // file, so e.g. src/Badge/index.ts becomes Badge/foo
+          path.relative(
+            'src',
+            file.slice(0, file.length - path.extname(file).length)
+          ),
+          // This expands the relative paths to absolute paths, so e.g.
+          // src/nested/foo becomes /project/src/nested/foo.js
+          fileURLToPath(new URL(file, import.meta.url))
+        ]),
+        ...glob.sync('src/theme/**/*.ts').map(file => [
+          // This remove `src/` as well as the file extension from each
+          // file, so e.g. src/nested/foo.js becomes nested/foo
+          path.relative(
+            'src',
+            file.slice(0, file.length - path.extname(file).length)
+          ),
+          // This expands the relative paths to absolute paths, so e.g.
+          // src/nested/foo becomes /project/src/nested/foo.js
+          fileURLToPath(new URL(file, import.meta.url))
+        ])
+      ]),
       formats: ['es']
     },
     minify: false,
     rollupOptions: {
       external: ['solid-js', 'solid-js/web'],
       output: {
-        preserveModules: true,
-        preserveModulesRoot: 'src',
+        assetFileNames({ name = '' }) {
+          if (vanillaExtractAssetReg.test(name)) {
+            return name.replace(vanillaExtractAssetReg, '');
+          }
+          return name;
+        },
+        chunkFileNames: '[name]-[hash].js',
+        entryFileNames: '[name].js',
         sourcemap: true
       }
     }

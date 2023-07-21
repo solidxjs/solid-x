@@ -47,7 +47,6 @@
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
     "@solid-x/tokens": "workspace:^",
-    "@solid-x/vite-plugin-theme": "workspace:^",
     "@solidjs/testing-library": "^0.8.4",
     "@storybook/addon-essentials": "^7.1.0",
     "@storybook/addon-interactions": "^7.1.0",
@@ -62,6 +61,7 @@
     "@vanilla-extract/vite-plugin": "^3.8.2",
     "@vitest/coverage-v8": "^0.33.0",
     "@vitest/ui": "^0.33.0",
+    "glob": "^10.3.3",
     "jsdom": "^22.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
