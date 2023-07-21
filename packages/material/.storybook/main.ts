@@ -1,6 +1,7 @@
 import type { StorybookConfig } from 'storybook-solidjs-vite';
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  staticDirs: ['./public', '../built/sb-static'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

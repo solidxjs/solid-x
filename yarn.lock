@@ -2540,7 +2540,9 @@ __metadata:
     "@storybook/addon-interactions": ^7.1.0
     "@storybook/addon-links": ^7.1.0
     "@storybook/blocks": ^7.1.0
+    "@storybook/manager-api": ^7.1.0
     "@storybook/testing-library": ^0.2.0
+    "@storybook/theming": ^7.1.0
     "@testing-library/jest-dom": ^5.16.5
     "@types/testing-library__jest-dom": ^5.14.8
     "@vanilla-extract/css": ^1.12.0
@@ -3363,7 +3365,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:7.1.0":
+"@storybook/manager-api@npm:7.1.0, @storybook/manager-api@npm:^7.1.0":
   version: 7.1.0
   resolution: "@storybook/manager-api@npm:7.1.0"
   dependencies:
@@ -3527,7 +3529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:7.1.0":
+"@storybook/theming@npm:7.1.0, @storybook/theming@npm:^7.1.0":
   version: 7.1.0
   resolution: "@storybook/theming@npm:7.1.0"
   dependencies:
