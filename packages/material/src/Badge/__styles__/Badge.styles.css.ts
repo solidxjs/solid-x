@@ -1,9 +1,14 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { sys } from '../../theme/theme.vars.css';
+import { VariantMap } from '../../utils/types';
 
 const { color, shape, typescale } = sys;
 
-const labelSmall = style({
+/********************
+ * Component Styles *
+ ********************/
+// TODO: Use Label instead
+const label = style({
   fontFamily: typescale.label.sm.font,
   lineHeight: typescale.label.sm.lineHeight,
   fontSize: typescale.label.sm.size,
@@ -11,7 +16,7 @@ const labelSmall = style({
   letterSpacing: typescale.label.sm.tracking
 });
 
-export const containerStyles = style({
+const base = style({
   alignItems: 'center',
   backgroundColor: color.error.base,
   borderRadius: shape.corner.full,
@@ -21,16 +26,23 @@ export const containerStyles = style({
   justifyContent: 'center'
 });
 
-export const textStyles = style([labelSmall]);
+export const text = style([label]);
 
-export const variantStyles = {
-  dot: style({
+/**********************
+ * Component Variants *
+ **********************/
+export type Variants = 'dot' | 'standard';
+
+const variantMap: VariantMap<Variants> = {
+  dot: {
     height: '6px',
     width: '6px'
-  }),
-  standard: style({
+  },
+  standard: {
     height: '16px',
     minWidth: '16px',
     padding: '0 4px'
-  })
-} as const;
+  }
+};
+
+export const variants = styleVariants(variantMap, (variantStyles) => [base, variantStyles]);

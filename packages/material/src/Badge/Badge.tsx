@@ -1,6 +1,5 @@
 import { Component } from 'solid-js';
-import { classNames } from '../utils/classNames';
-import { containerStyles, textStyles, variantStyles } from './__styles__/Badge.style.css';
+import * as styles from './__styles__/Badge.styles.css';
 
 type BadgeProps = {
   /**
@@ -13,12 +12,12 @@ type BadgeProps = {
    * The variant of the badge.
    * @default 'standard'
    */
-  variant?: 'dot' | 'standard';
+  variant?: styles.Variants;
 };
 
-const Badge: Component<BadgeProps> = ({ children, variant = 'standard' }) => (
-  <span class={classNames([containerStyles, variantStyles[variant]])} role="presentation">
-    {variant === 'standard' && <span class={textStyles}>{children}</span>}
+export const Badge: Component<BadgeProps> = ({ children, variant = 'standard' }) => (
+  <span class={styles.variants[variant]} role="presentation">
+    {variant === 'standard' && <span class={styles.text}>{children}</span>}
   </span>
 );
 
