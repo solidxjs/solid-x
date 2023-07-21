@@ -1,4 +1,4 @@
-const typography = {
+const typescale = {
   body: {
     sm: {
       font: null,
@@ -116,4 +116,4 @@ const typography = {
   }
 };
 
-export default typography;
+export default typescale;

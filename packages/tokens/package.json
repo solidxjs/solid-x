@@ -14,7 +14,7 @@
   "license": "MIT",
   "author": "Raghavan Renganathan",
   "module": "dist/index.js",
-  "types": "dist/types",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -25,11 +25,7 @@
   },
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
-    "@vanilla-extract/css": "^1.12.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
-  },
-  "peerDependencies": {
-    "@vanilla-extract/css": "*"
   }
 }
