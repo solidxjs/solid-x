@@ -1,22 +1,22 @@
 import { create } from '@storybook/theming';
-import { refTokens } from '@solid-x/tokens';
+import { refDefaults } from '@solid-x/tokens';
 
 const light = create({
   base: 'light',
   brandTitle: 'solid-x',
   brandImage: './logo.png',
-  appBg: refTokens.palette.neutral[98],
-  colorPrimary: refTokens.palette.primary[40],
-  colorSecondary: refTokens.palette.secondary[40]
+  appBg: refDefaults.palette.neutral[98],
+  colorPrimary: refDefaults.palette.primary[40],
+  colorSecondary: refDefaults.palette.secondary[40]
 });
 
 const dark = create({
   base: 'dark',
   brandTitle: 'solid-x',
   brandImage: './logo-dark.png',
-  appBg: refTokens.palette.neutral[6],
-  colorPrimary: refTokens.palette.primary[80],
-  colorSecondary: refTokens.palette.secondary[80]
+  appBg: refDefaults.palette.neutral[6],
+  colorPrimary: refDefaults.palette.primary[80],
+  colorSecondary: refDefaults.palette.secondary[80]
 });
 
 const themes = { dark, light };

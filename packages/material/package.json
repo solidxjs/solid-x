@@ -16,7 +16,7 @@
   "scripts": {
     "build": "yarn clean && vite build",
     "build:dev": "storybook build",
-    "clean": "rimraf dist",
+    "clean": "rimraf built dist",
     "dev": "storybook dev -p 6006",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",

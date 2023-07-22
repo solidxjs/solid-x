@@ -1,16 +1,17 @@
-import { refTokens, sysTokens } from '@solid-x/tokens';
+import { refDefaults, sysDefaults } from '@solid-x/tokens';
 import { createGlobalTheme } from '@vanilla-extract/css';
 import { THEME_CLASS } from './theme';
 import { ref as refContract, sys as sysContract } from './theme.vars.css';
 
-createGlobalTheme(':root', refContract.palette, refTokens.palette);
-createGlobalTheme(':root', refContract.typeface, refTokens.typeface);
+createGlobalTheme(':root', refContract.palette, refDefaults.palette);
+createGlobalTheme(':root', refContract.typeface, refDefaults.typeface);
 
-createGlobalTheme(':root', sysContract.color, sysTokens.color(refContract, sysContract));
-createGlobalTheme(':root', sysContract.elevation, sysTokens.elevation());
-createGlobalTheme(':root', sysContract.motion, sysTokens.motion());
-createGlobalTheme(':root', sysContract.shape, sysTokens.shape());
-createGlobalTheme(':root', sysContract.typescale, sysTokens.typescale(refContract));
+createGlobalTheme(':root', sysContract.color, sysDefaults.color(refContract, sysContract));
+createGlobalTheme(':root', sysContract.elevation, sysDefaults.elevation());
+createGlobalTheme(':root', sysContract.motion, sysDefaults.motion());
+createGlobalTheme(':root', sysContract.shape, sysDefaults.shape());
+createGlobalTheme(':root', sysContract.state, sysDefaults.state());
+createGlobalTheme(':root', sysContract.typescale, sysDefaults.typescale(refContract));
 
 /**
  * Dark theme support
@@ -18,5 +19,5 @@ createGlobalTheme(':root', sysContract.typescale, sysTokens.typescale(refContrac
 createGlobalTheme(
   `.${THEME_CLASS.DARK_THEME}`,
   sysContract.color,
-  sysTokens.colorDark(refContract, sysContract)
+  sysDefaults.colorDark(refContract, sysContract)
 );
