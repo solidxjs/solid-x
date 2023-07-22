@@ -1,7 +1,7 @@
 import { refDefaults, sysDefaults } from '@solid-x/tokens';
 import { createGlobalTheme } from '@vanilla-extract/css';
 import { THEME_CLASS } from './theme';
-import { ref as refContract, sys as sysContract } from './theme.vars.css';
+import { ref as refContract, sys as sysContract } from './theme.tokens.css';
 
 createGlobalTheme(':root', refContract.palette, refDefaults.palette);
 createGlobalTheme(':root', refContract.typeface, refDefaults.typeface);

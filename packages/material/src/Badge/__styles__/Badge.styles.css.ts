@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { sys } from '../../theme/theme.vars.css';
+import { sys } from '../../theme/theme.tokens.css';
 import { VariantMap } from '../../utils/types';
 
 const { color, shape, typescale } = sys;

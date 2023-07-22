@@ -1,4 +1,4 @@
-import { RefTokens, SysTokens, ref, sys } from './theme.vars.css';
+import { RefTokens, SysTokens, ref, sys } from './theme.tokens.css';
 
 export const THEME_CLASS = {
   DARK_THEME: 'sx-dark'

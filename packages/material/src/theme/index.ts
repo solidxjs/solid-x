@@ -1,2 +1,2 @@
-export * from './theme.vars.css';
+export * from './theme.tokens.css';
 export { Material } from './theme';
