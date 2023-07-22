@@ -5,15 +5,28 @@ import { ComponentProps } from 'solid-js';
 const meta: Meta<typeof Button> = {
   title: 'Controls/Button',
   component: Button,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    ariaExpanded: { control: 'text' },
+    ariaHasPopup: { control: 'text' },
+    ariaLabel: { control: 'text' },
+    children: { control: 'text' },
+    disabled: { control: 'boolean' },
+    href: { control: 'text' },
+    onAction: { action: 'onAction' },
+    target: { control: 'text' },
+    type: { control: 'select', options: ['submit', 'reset'] },
+    variant: { control: 'select', options: ['elevated', 'filled', 'outlined', 'text', 'tonal'] }
+  }
 };
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) => (
-  <Button {...args} />
-);
+const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) => {
+  console.log(args.disabled);
+  return <Button {...args} />;
+};
 
 export const ElevatedButton: Story = {
   render: Template,

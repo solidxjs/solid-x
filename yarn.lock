@@ -2547,6 +2547,7 @@ __metadata:
     "@types/testing-library__jest-dom": ^5.14.8
     "@vanilla-extract/css": ^1.12.0
     "@vanilla-extract/dynamic": ^2.0.3
+    "@vanilla-extract/recipes": ^0.4.0
     "@vanilla-extract/rollup-plugin": ^1.2.2
     "@vanilla-extract/vite-plugin": ^3.8.2
     "@vitest/coverage-v8": ^0.33.0
@@ -4338,6 +4339,15 @@ __metadata:
   version: 1.0.3
   resolution: "@vanilla-extract/private@npm:1.0.3"
   checksum: 866a71ba6804edeb0735684e7723ba78f5cf0bb40d4fb538fe6bf7d73928099e341312337b2a510ac0ce96ff8a4b39eb7f7a5fad0c842532353dd20e7278f29b
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/recipes@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@vanilla-extract/recipes@npm:0.4.0"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: 043974c1e55a8aec2d3941f4ef997e68bf73cc3bf461bc071c5c7a7842927c8cb510d0d1942a2e15323db2154b656fcd4ef9616c99a9e470147e2d04f8fd1120
   languageName: node
   linkType: hard
 

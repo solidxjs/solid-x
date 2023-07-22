@@ -1,5 +1,7 @@
 import { Component, JSX, JSXElement } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
+import * as styles from './__styles__/Button.styles.css';
+import './__theme__/theme.default.css';
 
 type ButtonProps = {
   /**
@@ -59,12 +61,6 @@ type ButtonProps = {
   type?: 'submit' | 'reset';
 
   /**
-   * Specifies the visual variant of the button.
-   * @default 'outlined'
-   */
-  variant?: 'elevated' | 'filled' | 'outlined' | 'tonal' | 'text';
-
-  /**
    * Specifies the callback to call when an action is performed on the button. This
    * is either a pointer interaction like a click or keyboard interaction like pressing
    * Enter or Space.
@@ -72,9 +68,9 @@ type ButtonProps = {
    * @param event The event object of the event that triggered the onAction
    */
   onAction?: (event: Event) => void;
-};
+} & styles.ButtonVariants;
 
-const Button: Component<ButtonProps> = ({
+export const Button: Component<ButtonProps> = ({
   children,
   disabled = false,
   href,
@@ -82,7 +78,7 @@ const Button: Component<ButtonProps> = ({
   // iconPosition = 'leading',
   target,
   type,
-  // variant = 'outlined',
+  variant,
   onAction
 }) => {
   // Link buttons may not be disabled
@@ -93,11 +89,12 @@ const Button: Component<ButtonProps> = ({
   return (
     <Dynamic
       component={rootComponent}
+      class={styles.button({ variant })}
       disabled={isDisabled}
       href={href}
+      onClick={onClickHandler}
       target={target}
-      type={type}
-      onClick={onClickHandler}>
+      type={type}>
       {children}
     </Dynamic>
   );

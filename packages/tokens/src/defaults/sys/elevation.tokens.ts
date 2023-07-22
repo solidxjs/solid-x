@@ -4,12 +4,12 @@
  * @returns The sys elevation tokens
  */
 const elevation = () => ({
-  level0: '0px',
-  level1: '1px',
-  level2: '3px',
-  level3: '6px',
-  level4: '8px',
-  level5: '12px'
+  level0: 'none',
+  level1: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.15)',
+  level2: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
+  level3: '0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3)',
+  level4: '0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3)',
+  level5: '0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3)'
 });
 
 export default elevation;
