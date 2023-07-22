@@ -1,32 +1,27 @@
-/**
- * Generates sys shape tokens.
- *
- * @returns The sys shape tokens
- */
-const shape = () => ({
+const shape = {
   corner: {
-    none: '0px',
+    none: null,
     xs: {
-      full: '4px',
-      top: '4px, 4px, 0px, 0px'
+      full: null,
+      top: null
     },
     sm: {
-      full: '8px'
+      full: null
     },
     md: {
-      full: '12px'
+      full: null
     },
     lg: {
-      end: '0px 16px 16px 0px',
-      full: '16px',
-      top: '16px 16px 0px 0px'
+      end: null,
+      full: null,
+      top: null
     },
     xl: {
-      full: '28px',
-      top: '28px 28px 0px 0px'
+      full: null,
+      top: null
     },
-    full: '9999px'
+    full: null
   }
-});
+};
 
 export default shape;

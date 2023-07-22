@@ -1,87 +1,79 @@
-/**
- * Generates sys color tokens from the contract.
- *
- * @param ref The theme contract of the ref vars
- * @param sys The theme contract of the sys vars
- * @returns The sys color tokens
- */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const color = (ref: any, sys: any) => ({
+const color = {
   primary: {
-    base: ref.palette.primary[40],
-    container: ref.palette.primary[90],
-    inverse: ref.palette.primary[80]
+    base: null,
+    container: null,
+    inverse: null
   },
   onPrimary: {
-    base: ref.palette.primary[100],
-    container: ref.palette.primary[10]
+    base: null,
+    container: null
   },
   secondary: {
-    base: ref.palette.secondary[40],
-    container: ref.palette.secondary[90]
+    base: null,
+    container: null
   },
   onSecondary: {
-    base: ref.palette.secondary[100],
-    container: ref.palette.secondary[10]
+    base: null,
+    container: null
   },
   tertiary: {
-    base: ref.palette.tertiary[40],
-    container: ref.palette.tertiary[90]
+    base: null,
+    container: null
   },
   onTertiary: {
-    base: ref.palette.tertiary[100],
-    container: ref.palette.tertiary[10]
+    base: null,
+    container: null
   },
   error: {
-    base: ref.palette.error[40],
-    container: ref.palette.error[90]
+    base: null,
+    container: null
   },
   onError: {
-    base: ref.palette.error[100],
-    container: ref.palette.error[10]
+    base: null,
+    container: null
   },
   surface: {
-    base: ref.palette.neutral[98],
-    dim: ref.palette.neutral[87],
-    bright: ref.palette.neutral[98],
-    inverse: ref.palette.neutral[20],
-    tint: sys.color.primary.base
+    base: null,
+    dim: null,
+    bright: null,
+    inverse: null,
+    tint: null
   },
   onSurface: {
-    base: ref.palette.neutral[10],
-    inverse: ref.palette.neutral[95]
+    base: null,
+    inverse: null
   },
   surfaceContainer: {
-    lowest: ref.palette.neutral[100],
-    low: ref.palette.neutral[96],
-    base: ref.palette.neutral[94],
-    high: ref.palette.neutral[92],
-    highest: ref.palette.neutral[90]
+    lowest: null,
+    low: null,
+    base: null,
+    high: null,
+    highest: null
   },
   surfaceVariant: {
-    base: ref.palette.neutral[90]
+    base: null
   },
   onSurfaceVariant: {
-    base: ref.palette.neutral[30]
+    base: null
   },
   background: {
-    base: ref.palette.neutral[98]
+    base: null
   },
   onBackground: {
-    base: ref.palette.neutral[10]
+    base: null
   },
   outline: {
-    base: ref.palette.neutralVariant[50]
+    base: null
   },
   outlineVariant: {
-    base: ref.palette.neutralVariant[80]
+    base: null
   },
   shadow: {
-    base: ref.palette.neutral[0]
+    base: null
   },
   scrim: {
-    base: ref.palette.neutral[0]
+    base: null
   }
-});
+};
 
 export default color;

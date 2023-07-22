@@ -1,15 +1,10 @@
-/**
- * Generates sys elevation tokens.
- *
- * @returns The sys elevation tokens
- */
-const elevation = () => ({
-  '0': '0',
-  '1': '1',
-  '2': '3',
-  '3': '6',
-  '4': '8',
-  '5': '12'
-});
+const elevation = {
+  level0: null,
+  level1: null,
+  level2: null,
+  level3: null,
+  level4: null,
+  level5: null
+};
 
 export default elevation;

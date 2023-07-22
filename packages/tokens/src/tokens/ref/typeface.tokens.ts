@@ -1,10 +1,10 @@
 const typeface = {
-  brand: 'Roboto',
-  plain: 'Roboto',
+  brand: null,
+  plain: null,
   weight: {
-    bold: '700',
-    medium: '500',
-    regular: '400'
+    bold: null,
+    medium: null,
+    regular: null
   }
 };
 
