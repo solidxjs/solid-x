@@ -2571,6 +2571,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@solid-x/monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@solid-x/monorepo@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.59.6
+    "@typescript-eslint/parser": ^5.59.6
+    eslint: ^8.41.0
+    eslint-config-prettier: ^8.8.0
+    husky: ">=6"
+    lint-staged: ">=10"
+    prettier: 2.8.8
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
+
 "@solid-x/tokens@workspace:^, @solid-x/tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@solid-x/tokens@workspace:packages/tokens"
@@ -13016,21 +13031,6 @@ __metadata:
   checksum: bd75ed56ad86f70476fc57e44a046dc9937eaf1a1a5f45a2a70a85ef444796ffe39f46400a0d59b617e3e10ff60ab3e6a11592a665aeb75a06ecebf87c1b4bff
   languageName: node
   linkType: hard
-
-"solid-x-monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "solid-x-monorepo@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.59.6
-    "@typescript-eslint/parser": ^5.59.6
-    eslint: ^8.41.0
-    eslint-config-prettier: ^8.8.0
-    husky: ">=6"
-    lint-staged: ">=10"
-    prettier: 2.8.8
-    typescript: ^5.1.6
-  languageName: unknown
-  linkType: soft
 
 "sort-keys@npm:^5.0.0":
   version: 5.0.0

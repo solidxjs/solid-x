@@ -1,6 +1,6 @@
 {
   "name": "@solid-x/tokens",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Design tokens for materialize components",
   "homepage": "https://github.com/solid-ui/solid-x#readme",
   "bugs": {
