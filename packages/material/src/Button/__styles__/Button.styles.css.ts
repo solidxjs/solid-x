@@ -27,22 +27,11 @@ const outlineWidth = createVar();
 const base = style([
   baseTheme,
   {
-    alignItems: 'center',
-    appearance: 'none',
-    background: 'transparent',
     blockSize: '40px',
-    border: 'none',
     borderRadius: '20px',
-    boxSizing: 'border-box',
-    cursor: 'pointer',
-    display: 'inline-flex',
     gap: '8px',
-    justifyContent: 'center',
     minInlineSize: '64px',
-    outline: 'none',
     paddingInline: '24px',
-    position: 'relative',
-    textDecoration: 'none',
 
     // Overridable properties
     boxShadow: containerElevation,
@@ -56,13 +45,6 @@ const base = style([
 
     // use ::before for container
     '::before': {
-      borderRadius: 'inherit',
-      borderStyle: 'solid',
-      content: '',
-      inset: 0,
-      position: 'absolute',
-      zIndex: -1,
-
       // Overridable properties
       background: containerColor,
       borderColor: outlineColor,
@@ -72,20 +54,9 @@ const base = style([
 
     // use ::after for state layer
     '::after': {
-      borderRadius: 'inherit',
-      content: '',
-      inset: 0,
-      position: 'absolute',
-      zIndex: -1,
-
       // Overridable properties
       background: stateLayerColor,
       opacity: stateLayerOpacity
-    },
-
-    ':disabled': {
-      cursor: 'default',
-      pointerEvents: 'none'
     }
   }
 ]);

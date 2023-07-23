@@ -1,7 +1,7 @@
 import { Component, JSX, JSXElement } from 'solid-js';
-import { ButtonBase } from '../ButtonBase';
-import * as styles from './__styles__/Button.styles.css';
-import './__theme__/theme.default.css';
+import { Dynamic } from 'solid-js/web';
+import * as styles from './__styles__/ButtonBase.styles.css';
+import { joinTruthy } from '../utils/array';
 
 type ButtonProps = {
   /**
@@ -20,9 +20,14 @@ type ButtonProps = {
   ariaLabel?: JSX.AriaAttributes['aria-label'];
 
   /**
-   * The text to be shown in the button.
+   * The content to be shown in the button.
    */
-  children?: string;
+  children?: JSXElement;
+
+  /**
+   * Style class to be set on the root element.
+   */
+  class?: string;
 
   /**
    * Whether or not the button is disabled.
@@ -34,18 +39,6 @@ type ButtonProps = {
    * The URL that the link button points to.
    */
   href?: string;
-
-  /**
-   * The icon to be displayed in the button.
-   */
-  icon?: JSXElement;
-
-  /**
-   * Whether to render the icon at the inline start or inline end
-   * of the label
-   * @default 'leading'
-   */
-  iconPosition?: 'leading' | 'trailing';
 
   /**
    * Where to display the linked `href` URL for a link button. For example
@@ -68,30 +61,35 @@ type ButtonProps = {
    * @param event The event object of the event that triggered the onAction
    */
   onAction?: (event: Event) => void;
-} & styles.ButtonVariants;
+};
 
-export const Button: Component<ButtonProps> = ({
+export const ButtonBase: Component<ButtonProps> = ({
   children,
+  class: propClass,
   disabled = false,
   href,
-  // icon,
-  // iconPosition = 'leading',
   target,
   type,
-  variant,
   onAction
 }) => {
+  // Link buttons may not be disabled
+  const isDisabled = disabled && !href;
+  const rootComponent = href ? 'a' : 'button';
+  const onClickHandler = (event: Event) => onAction?.(event);
+  const rootClass = joinTruthy([styles.base, propClass]);
+
   return (
-    <ButtonBase
-      class={styles.button({ variant })}
-      disabled={disabled}
+    <Dynamic
+      component={rootComponent}
+      class={rootClass}
+      disabled={isDisabled}
       href={href}
-      onAction={onAction}
+      onClick={onClickHandler}
       target={target}
       type={type}>
       {children}
-    </ButtonBase>
+    </Dynamic>
   );
 };
 
-export default Button;
+export default ButtonBase;
