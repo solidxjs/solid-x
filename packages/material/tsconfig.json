@@ -2,10 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "types": [
+      "vite/client",
+      "vitest"
+    ]
   },
-  "extends": "../../tsconfig.json",
-  "types": [
-    "vitest"
-  ]
+  "extends": "../../tsconfig.json"
 }
