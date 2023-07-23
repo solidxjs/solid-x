@@ -60,6 +60,8 @@ type ButtonProps = {
    */
   type?: 'submit' | 'reset';
 
+  variant?: 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
+
   /**
    * Specifies the callback to call when an action is performed on the button. This
    * is either a pointer interaction like a click or keyboard interaction like pressing
@@ -68,28 +70,42 @@ type ButtonProps = {
    * @param event The event object of the event that triggered the onAction
    */
   onAction?: (event: Event) => void;
-} & styles.ButtonVariants;
+};
 
 export const Button: Component<ButtonProps> = ({
+  ariaExpanded,
+  ariaHasPopup,
+  ariaLabel,
   children,
   disabled = false,
   href,
-  // icon,
-  // iconPosition = 'leading',
+  icon,
+  iconPosition = 'leading',
   target,
   type,
   variant,
   onAction
 }) => {
+  const buttonIcon = icon && <span class={styles.icon}>{icon}</span>;
+  const rootClass = styles.button({
+    icon: icon != null ? iconPosition : 'none',
+    variant
+  });
+
   return (
     <ButtonBase
-      class={styles.button({ variant })}
+      ariaExpanded={ariaExpanded}
+      ariaHasPopup={ariaHasPopup}
+      ariaLabel={ariaLabel}
+      class={rootClass}
       disabled={disabled}
       href={href}
       onAction={onAction}
       target={target}
       type={type}>
+      {iconPosition === 'leading' && buttonIcon}
       {children}
+      {iconPosition === 'trailing' && buttonIcon}
     </ButtonBase>
   );
 };

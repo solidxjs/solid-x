@@ -1,7 +1,7 @@
 import { createVar, style } from '@vanilla-extract/css';
-import { RecipeVariants, recipe } from '@vanilla-extract/recipes';
-import { tokens } from '../__theme__/theme.tokens.css';
+import { recipe } from '@vanilla-extract/recipes';
 import { baseTheme } from '../__theme__/theme.default.css';
+import { tokens } from '../__theme__/theme.tokens.css';
 
 /****************
  * Private Vars *
@@ -31,7 +31,6 @@ const base = style([
     borderRadius: '20px',
     gap: '8px',
     minInlineSize: '64px',
-    paddingInline: '24px',
 
     // Overridable properties
     boxShadow: containerElevation,
@@ -61,10 +60,14 @@ const base = style([
   }
 ]);
 
+const icon = style({
+  display: 'inline-flex'
+});
+
 /**********************
  * Component Variants *
  **********************/
-type Variant = 'elevated' | 'filled' | 'outlined' | 'text' | 'tonal';
+type Variant = 'elevated' | 'filled' | 'outlined' | 'text' | 'filledTonal';
 const getStylesForVariant = (variant: Variant) =>
   ({
     vars: {
@@ -128,27 +131,41 @@ const getStylesForVariant = (variant: Variant) =>
   } as const);
 
 const variants = {
+  icon: {
+    leading: {
+      paddingInlineStart: '16px',
+      paddingInlineEnd: '24px'
+    },
+    none: {
+      paddingInline: '24px'
+    },
+    trailing: {
+      paddingInlineStart: '24px',
+      paddingInlineEnd: '16px'
+    }
+  },
   variant: {
     elevated: getStylesForVariant('elevated'),
     filled: getStylesForVariant('filled'),
+    filledTonal: getStylesForVariant('filledTonal'),
     outlined: getStylesForVariant('outlined'),
-    text: getStylesForVariant('text'),
-    tonal: getStylesForVariant('tonal')
+    text: getStylesForVariant('text')
   }
 };
 
 /********************
  * Component Recipe *
  ********************/
-export const button = recipe({
+const button = recipe({
   base,
   variants,
   defaultVariants: {
+    icon: 'none',
     variant: 'outlined'
   }
 });
 
 /***************************
- * Component Variant types *
+ * Exports *
  ***************************/
-export type ButtonVariants = RecipeVariants<typeof button>;
+export { button, icon };

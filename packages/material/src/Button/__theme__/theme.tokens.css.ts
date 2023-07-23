@@ -89,7 +89,7 @@ const buttonTokens = {
 export const tokens = createThemeContract({
   elevated: deepCloneSerializableObject(buttonTokens),
   filled: deepCloneSerializableObject(buttonTokens),
+  filledTonal: deepCloneSerializableObject(buttonTokens),
   outlined: deepCloneSerializableObject(buttonTokens),
-  text: deepCloneSerializableObject(buttonTokens),
-  tonal: deepCloneSerializableObject(buttonTokens)
+  text: deepCloneSerializableObject(buttonTokens)
 });
