@@ -9,7 +9,7 @@ const buttonTokens = {
     outlineWidth: null,
     shadowColor: null
   },
-  labelText: {
+  label: {
     color: null,
     font: null,
     lineHeight: null,
@@ -27,7 +27,7 @@ const buttonTokens = {
       opacity: null,
       outlineColor: null
     },
-    labelText: {
+    label: {
       color: null,
       opacity: null
     },
@@ -45,7 +45,7 @@ const buttonTokens = {
       color: null,
       opacity: null
     },
-    labelText: {
+    label: {
       color: null
     },
     icon: {
@@ -61,7 +61,7 @@ const buttonTokens = {
       color: null,
       opacity: null
     },
-    labelText: {
+    label: {
       color: null
     },
     icon: {
@@ -77,7 +77,7 @@ const buttonTokens = {
       color: null,
       opacity: null
     },
-    labelText: {
+    label: {
       color: null
     },
     icon: {

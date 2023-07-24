@@ -11,7 +11,7 @@ export const baseTheme = createTheme(tokens, {
       outlineWidth: '0px',
       shadowColor: sys.color.shadow.base
     },
-    labelText: {
+    label: {
       color: sys.color.primary.base,
       font: sys.typescale.label.lg.font,
       lineHeight: sys.typescale.label.lg.lineHeight,
@@ -29,7 +29,7 @@ export const baseTheme = createTheme(tokens, {
         opacity: '0.12',
         outlineColor: 'transparent'
       },
-      labelText: {
+      label: {
         color: sys.color.onSurface.base,
         opacity: '0.38'
       },
@@ -47,7 +47,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.focus.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -63,7 +63,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.hover.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -79,7 +79,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.pressed.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -95,7 +95,7 @@ export const baseTheme = createTheme(tokens, {
       outlineWidth: '0px',
       shadowColor: sys.color.shadow.base
     },
-    labelText: {
+    label: {
       color: sys.color.onPrimary.base,
       font: sys.typescale.label.lg.font,
       lineHeight: sys.typescale.label.lg.lineHeight,
@@ -113,7 +113,7 @@ export const baseTheme = createTheme(tokens, {
         opacity: '0.12',
         outlineColor: 'transparent'
       },
-      labelText: {
+      label: {
         color: sys.color.onSurface.base,
         opacity: '0.38'
       },
@@ -131,7 +131,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.focus.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onPrimary.base
       },
       icon: {
@@ -147,7 +147,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.hover.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onPrimary.base
       },
       icon: {
@@ -163,7 +163,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.pressed.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onPrimary.base
       },
       icon: {
@@ -179,7 +179,7 @@ export const baseTheme = createTheme(tokens, {
       outlineWidth: '0px',
       shadowColor: sys.color.shadow.base
     },
-    labelText: {
+    label: {
       color: sys.color.onSecondary.container,
       font: sys.typescale.label.lg.font,
       lineHeight: sys.typescale.label.lg.lineHeight,
@@ -197,7 +197,7 @@ export const baseTheme = createTheme(tokens, {
         opacity: '0.12',
         outlineColor: 'transparent'
       },
-      labelText: {
+      label: {
         color: sys.color.onSurface.base,
         opacity: '0.38'
       },
@@ -215,7 +215,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onSecondary.container,
         opacity: sys.state.focus.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onSecondary.container
       },
       icon: {
@@ -231,7 +231,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onSecondary.container,
         opacity: sys.state.hover.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onSecondary.container
       },
       icon: {
@@ -247,7 +247,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onSecondary.container,
         opacity: sys.state.pressed.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.onSecondary.container
       },
       icon: {
@@ -263,7 +263,7 @@ export const baseTheme = createTheme(tokens, {
       outlineWidth: '1px',
       shadowColor: 'transparent'
     },
-    labelText: {
+    label: {
       color: sys.color.primary.base,
       font: sys.typescale.label.lg.font,
       lineHeight: sys.typescale.label.lg.lineHeight,
@@ -281,7 +281,7 @@ export const baseTheme = createTheme(tokens, {
         opacity: '0.12',
         outlineColor: sys.color.onSurface.base
       },
-      labelText: {
+      label: {
         color: sys.color.onSurface.base,
         opacity: '0.38'
       },
@@ -299,7 +299,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.focus.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -315,7 +315,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.hover.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -331,7 +331,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.pressed.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -347,7 +347,7 @@ export const baseTheme = createTheme(tokens, {
       outlineWidth: '0px',
       shadowColor: 'transparent'
     },
-    labelText: {
+    label: {
       color: sys.color.primary.base,
       font: sys.typescale.label.lg.font,
       lineHeight: sys.typescale.label.lg.lineHeight,
@@ -365,7 +365,7 @@ export const baseTheme = createTheme(tokens, {
         opacity: '0',
         outlineColor: 'transparent'
       },
-      labelText: {
+      label: {
         color: sys.color.onSurface.base,
         opacity: '0.38'
       },
@@ -383,7 +383,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.focus.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -399,7 +399,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.hover.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
@@ -415,7 +415,7 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
         opacity: sys.state.pressed.stateLayerOpacity
       },
-      labelText: {
+      label: {
         color: sys.color.primary.base
       },
       icon: {
