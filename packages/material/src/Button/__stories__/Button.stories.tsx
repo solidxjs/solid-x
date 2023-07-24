@@ -27,10 +27,9 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) => {
-  console.log(args.disabled);
-  return <Button {...args} />;
-};
+const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) => (
+  <Button {...args} />
+);
 
 export const ElevatedButton: Story = {
   render: Template,

@@ -3,7 +3,7 @@ import { Dynamic } from 'solid-js/web';
 import * as styles from './__styles__/ButtonBase.styles.css';
 import { joinTruthy } from '../utils/array';
 
-type ButtonProps = {
+type ButtonBaseProps = {
   /**
    * The value for setting aria-expanded attribute.
    */
@@ -63,7 +63,7 @@ type ButtonProps = {
   onAction?: (event: Event) => void;
 };
 
-export const ButtonBase: Component<ButtonProps> = ({
+export const ButtonBase: Component<ButtonBaseProps> = ({
   children,
   class: propClass,
   disabled = false,

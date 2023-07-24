@@ -21,6 +21,12 @@ const labelTextWeight = createVar();
 const outlineColor = createVar();
 const outlineWidth = createVar();
 
+/***************************
+ * Component Variant types *
+ ***************************/
+type StyleVariant = 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
+type IconVariant = 'leading' | 'trailing';
+
 /********************
  * Component Styles *
  ********************/
@@ -90,7 +96,7 @@ const getStylesForVariant = (variant: Variant) =>
 
     ':focus-visible': {
       vars: {
-        [containerElevation]: tokens[variant].focus.stateLayer.elevation,
+        [containerElevation]: tokens[variant].focus.container.elevation,
         [labelTextColor]: tokens[variant].focus.labelText.color,
         [outlineColor]: tokens[variant].focus.container.outlineColor,
         [stateLayerColor]: tokens[variant].focus.stateLayer.color,
@@ -100,7 +106,7 @@ const getStylesForVariant = (variant: Variant) =>
 
     ':hover': {
       vars: {
-        [containerElevation]: tokens[variant].hovered.stateLayer.elevation,
+        [containerElevation]: tokens[variant].hovered.container.elevation,
         [labelTextColor]: tokens[variant].hovered.labelText.color,
         [outlineColor]: tokens[variant].hovered.container.outlineColor,
         [stateLayerColor]: tokens[variant].hovered.stateLayer.color,
@@ -110,7 +116,7 @@ const getStylesForVariant = (variant: Variant) =>
 
     ':active': {
       vars: {
-        [containerElevation]: tokens[variant].pressed.stateLayer.elevation,
+        [containerElevation]: tokens[variant].pressed.container.elevation,
         [labelTextColor]: tokens[variant].pressed.labelText.color,
         [outlineColor]: tokens[variant].pressed.container.outlineColor,
         [stateLayerColor]: tokens[variant].pressed.stateLayer.color,
@@ -165,7 +171,8 @@ const button = recipe({
   }
 });
 
-/***************************
+/***********
  * Exports *
- ***************************/
+ ***********/
 export { button, icon };
+export type { IconVariant, StyleVariant };

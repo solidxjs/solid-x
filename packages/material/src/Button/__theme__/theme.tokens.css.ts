@@ -38,11 +38,11 @@ const buttonTokens = {
   },
   focus: {
     container: {
+      elevation: null,
       outlineColor: null
     },
     stateLayer: {
       color: null,
-      elevation: null,
       opacity: null
     },
     labelText: {
@@ -54,11 +54,11 @@ const buttonTokens = {
   },
   hovered: {
     container: {
+      elevation: null,
       outlineColor: null
     },
     stateLayer: {
       color: null,
-      elevation: null,
       opacity: null
     },
     labelText: {
@@ -70,11 +70,11 @@ const buttonTokens = {
   },
   pressed: {
     container: {
+      elevation: null,
       outlineColor: null
     },
     stateLayer: {
       color: null,
-      elevation: null,
       opacity: null
     },
     labelText: {

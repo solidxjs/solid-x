@@ -40,11 +40,11 @@ export const baseTheme = createTheme(tokens, {
     },
     focus: {
       container: {
+        elevation: sys.elevation.level1,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level1,
         opacity: sys.state.focus.stateLayerOpacity
       },
       labelText: {
@@ -56,11 +56,11 @@ export const baseTheme = createTheme(tokens, {
     },
     hovered: {
       container: {
+        elevation: sys.elevation.level2,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level2,
         opacity: sys.state.hover.stateLayerOpacity
       },
       labelText: {
@@ -72,11 +72,11 @@ export const baseTheme = createTheme(tokens, {
     },
     pressed: {
       container: {
+        elevation: sys.elevation.level1,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level1,
         opacity: sys.state.pressed.stateLayerOpacity
       },
       labelText: {
@@ -124,11 +124,11 @@ export const baseTheme = createTheme(tokens, {
     },
     focus: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.focus.stateLayerOpacity
       },
       labelText: {
@@ -140,11 +140,11 @@ export const baseTheme = createTheme(tokens, {
     },
     hovered: {
       container: {
+        elevation: sys.elevation.level1,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level1,
         opacity: sys.state.hover.stateLayerOpacity
       },
       labelText: {
@@ -156,11 +156,11 @@ export const baseTheme = createTheme(tokens, {
     },
     pressed: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.pressed.stateLayerOpacity
       },
       labelText: {
@@ -208,11 +208,11 @@ export const baseTheme = createTheme(tokens, {
     },
     focus: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        elevation: sys.elevation.level0,
         opacity: sys.state.focus.stateLayerOpacity
       },
       labelText: {
@@ -224,11 +224,11 @@ export const baseTheme = createTheme(tokens, {
     },
     hovered: {
       container: {
+        elevation: sys.elevation.level1,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        elevation: sys.elevation.level1,
         opacity: sys.state.hover.stateLayerOpacity
       },
       labelText: {
@@ -240,11 +240,11 @@ export const baseTheme = createTheme(tokens, {
     },
     pressed: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        elevation: sys.elevation.level0,
         opacity: sys.state.pressed.stateLayerOpacity
       },
       labelText: {
@@ -292,11 +292,11 @@ export const baseTheme = createTheme(tokens, {
     },
     focus: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: sys.color.primary.base
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.focus.stateLayerOpacity
       },
       labelText: {
@@ -308,11 +308,11 @@ export const baseTheme = createTheme(tokens, {
     },
     hovered: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: sys.color.outline.base
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.hover.stateLayerOpacity
       },
       labelText: {
@@ -324,11 +324,11 @@ export const baseTheme = createTheme(tokens, {
     },
     pressed: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: sys.color.outline.base
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.pressed.stateLayerOpacity
       },
       labelText: {
@@ -376,11 +376,11 @@ export const baseTheme = createTheme(tokens, {
     },
     focus: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.focus.stateLayerOpacity
       },
       labelText: {
@@ -392,11 +392,11 @@ export const baseTheme = createTheme(tokens, {
     },
     hovered: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.hover.stateLayerOpacity
       },
       labelText: {
@@ -408,11 +408,11 @@ export const baseTheme = createTheme(tokens, {
     },
     pressed: {
       container: {
+        elevation: sys.elevation.level0,
         outlineColor: 'transparent'
       },
       stateLayer: {
         color: sys.color.primary.base,
-        elevation: sys.elevation.level0,
         opacity: sys.state.pressed.stateLayerOpacity
       },
       labelText: {

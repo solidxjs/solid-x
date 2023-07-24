@@ -45,7 +45,7 @@ type ButtonProps = {
    * of the label
    * @default 'leading'
    */
-  iconPosition?: 'leading' | 'trailing';
+  iconPosition?: styles.IconVariant;
 
   /**
    * Where to display the linked `href` URL for a link button. For example
@@ -60,7 +60,11 @@ type ButtonProps = {
    */
   type?: 'submit' | 'reset';
 
-  variant?: 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
+  /**
+   * Specifies the visual variant of the button to use.
+   * @default 'outlined'
+   */
+  variant?: styles.StyleVariant;
 
   /**
    * Specifies the callback to call when an action is performed on the button. This
@@ -83,7 +87,7 @@ export const Button: Component<ButtonProps> = ({
   iconPosition = 'leading',
   target,
   type,
-  variant,
+  variant = 'outlined',
   onAction
 }) => {
   const buttonIcon = icon && <span class={styles.icon}>{icon}</span>;
