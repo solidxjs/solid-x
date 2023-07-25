@@ -1,5 +1,6 @@
-import { Component, JSX, JSXElement } from 'solid-js';
+import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
+import { mergeDefaults } from '../utils/object';
 import * as styles from './__styles__/Button.styles.css';
 import './__theme__/theme.default.css';
 
@@ -76,40 +77,33 @@ type ButtonProps = {
   onAction?: (event: Event) => void;
 };
 
-export const Button: Component<ButtonProps> = ({
-  ariaExpanded,
-  ariaHasPopup,
-  ariaLabel,
-  children,
-  disabled = false,
-  href,
-  icon,
-  iconPosition = 'leading',
-  target,
-  type,
-  variant = 'outlined',
-  onAction
-}) => {
-  const buttonIcon = icon && <span class={styles.icon}>{icon}</span>;
-  const rootClass = styles.button({
-    icon: icon != null ? iconPosition : 'none',
-    variant
+export const Button: Component<ButtonProps> = (_props) => {
+  const props = mergeDefaults(_props, {
+    disabled: false,
+    iconPosition: 'leading',
+    variant: 'outlined'
   });
+  const [localProps, passThroughProps] = splitProps(props, [
+    'children',
+    'icon',
+    'iconPosition',
+    'variant'
+  ]);
+  const buttonIcon = createMemo(
+    () => localProps.icon && <span class={styles.icon}>{localProps.icon}</span>
+  );
+  const rootClass = createMemo(() =>
+    styles.button({
+      icon: localProps.icon != null ? localProps.iconPosition : 'none',
+      variant: localProps.variant
+    })
+  );
 
   return (
-    <ButtonBase
-      ariaExpanded={ariaExpanded}
-      ariaHasPopup={ariaHasPopup}
-      ariaLabel={ariaLabel}
-      class={rootClass}
-      disabled={disabled}
-      href={href}
-      onAction={onAction}
-      target={target}
-      type={type}>
-      {iconPosition === 'leading' && buttonIcon}
-      {children}
-      {iconPosition === 'trailing' && buttonIcon}
+    <ButtonBase class={rootClass()} {...passThroughProps}>
+      {localProps.iconPosition === 'leading' && buttonIcon()}
+      {localProps.children}
+      {localProps.iconPosition === 'trailing' && buttonIcon()}
     </ButtonBase>
   );
 };

@@ -2,6 +2,7 @@ import { Component, JSX, JSXElement } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import * as styles from './__styles__/ButtonBase.styles.css';
 import { joinTruthy } from '../utils/array';
+import { mergeDefaults } from '../utils/object';
 
 type ButtonBaseProps = {
   /**
@@ -63,31 +64,24 @@ type ButtonBaseProps = {
   onAction?: (event: Event) => void;
 };
 
-export const ButtonBase: Component<ButtonBaseProps> = ({
-  children,
-  class: propClass,
-  disabled = false,
-  href,
-  target,
-  type,
-  onAction
-}) => {
-  // Link buttons may not be disabled
-  const isDisabled = disabled && !href;
-  const rootComponent = href ? 'a' : 'button';
-  const onClickHandler = (event: Event) => onAction?.(event);
-  const rootClass = joinTruthy([styles.base, propClass]);
+export const ButtonBase: Component<ButtonBaseProps> = (_props) => {
+  const props = mergeDefaults(_props, {
+    disabled: false
+  });
 
   return (
     <Dynamic
-      component={rootComponent}
-      class={rootClass}
-      disabled={isDisabled}
-      href={href}
-      onClick={onClickHandler}
-      target={target}
-      type={type}>
-      {children}
+      component={props.href ? 'a' : 'button'}
+      class={joinTruthy([styles.base, props.class])}
+      // Link buttons may not be disabled
+      disabled={props.disabled && !props.href}
+      href={props.href ? props.href : undefined}
+      onClick={(event: Event) => props.onAction?.(event)}
+      // Target is only applicable for Link buttons
+      target={props.href ? props.target : undefined}
+      // Link buttons do not have type
+      type={!props.href ? props.type : undefined}>
+      {props.children}
     </Dynamic>
   );
 };

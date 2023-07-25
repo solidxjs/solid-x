@@ -1,7 +1,8 @@
-import { Component, JSX, JSXElement } from 'solid-js';
+import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
 import * as styles from './__styles__/FAB.styles.css';
 import './__theme__/theme.default.css';
+import { mergeDefaults } from '../utils/object';
 
 type FABProps = {
   /**
@@ -66,41 +67,44 @@ type FABProps = {
   onAction?: (event: Event) => void;
 };
 
-export const FAB: Component<FABProps> = ({
-  ariaExpanded,
-  ariaHasPopup,
-  ariaLabel,
-  children,
-  elevation = 'default',
-  icon,
-  iconPosition = 'leading',
-  size,
-  variant,
-  onAction
-}) => {
-  const buttonIcon = icon && (
-    <span aria-hidden={ariaLabel || children ? 'true' : 'false'} class={styles.icon}>
-      {icon}
-    </span>
-  );
-  const rootClass = styles.fab({
-    elevation,
-    icon: iconPosition,
-    size,
-    type: children ? 'extended' : 'regular',
-    variant
+export const FAB: Component<FABProps> = (_props) => {
+  const props = mergeDefaults(_props, {
+    elevation: 'default',
+    iconPosition: 'leading'
   });
+  const [localProps, passThroughProps] = splitProps(props, [
+    'children',
+    'elevation',
+    'icon',
+    'iconPosition',
+    'size',
+    'variant'
+  ]);
+  const buttonIcon = createMemo(
+    () =>
+      localProps.icon && (
+        <span
+          aria-hidden={passThroughProps.ariaLabel || localProps.children ? 'true' : 'false'}
+          class={styles.icon}>
+          {localProps.icon}
+        </span>
+      )
+  );
+  const rootClass = createMemo(() =>
+    styles.fab({
+      elevation: localProps.elevation,
+      icon: localProps.iconPosition,
+      size: localProps.size,
+      type: localProps.children ? 'extended' : 'regular',
+      variant: localProps.variant
+    })
+  );
 
   return (
-    <ButtonBase
-      ariaExpanded={ariaExpanded}
-      ariaHasPopup={ariaHasPopup}
-      ariaLabel={ariaLabel}
-      class={rootClass}
-      onAction={onAction}>
-      {iconPosition === 'leading' && buttonIcon}
-      {children}
-      {iconPosition === 'trailing' && buttonIcon}
+    <ButtonBase {...passThroughProps} class={rootClass()}>
+      {localProps.iconPosition === 'leading' && buttonIcon()}
+      {localProps.children}
+      {localProps.iconPosition === 'trailing' && buttonIcon()}
     </ButtonBase>
   );
 };

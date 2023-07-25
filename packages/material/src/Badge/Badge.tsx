@@ -1,5 +1,6 @@
 import { Component } from 'solid-js';
 import * as styles from './__styles__/Badge.styles.css';
+import { mergeDefaults } from '../utils/object';
 
 type BadgeProps = {
   /**
@@ -15,10 +16,13 @@ type BadgeProps = {
   variant?: styles.StyleVariant;
 };
 
-export const Badge: Component<BadgeProps> = ({ children, variant = 'large' }) => (
-  <span class={styles.badge({ variant })} role="presentation">
-    {variant === 'large' && <span class={styles.text}>{children}</span>}
-  </span>
-);
+export const Badge: Component<BadgeProps> = (_props) => {
+  const props = mergeDefaults(_props, { variant: 'large' });
+  return (
+    <span class={styles.badge({ variant: props.variant })} role="presentation">
+      {props.variant === 'large' && <span class={styles.text}>{props.children}</span>}
+    </span>
+  );
+};
 
 export default Badge;
