@@ -4,6 +4,7 @@ import { ComponentProps } from 'solid-js';
 
 const meta: Meta<typeof Badge> = {
   title: 'Status/Badge',
+  tags: ['autodocs'],
   component: Badge
 };
 export default meta;
@@ -14,15 +15,15 @@ const Template: StoryFn<typeof Badge> = (args: ComponentProps<typeof Badge>) => 
 
 export const Dot: Story = {
   render: Template,
-  args: { children: '3', variant: 'dot' }
+  args: { children: '3', variant: 'small' }
 };
 
 export const StandardOneCharacter: Story = {
   render: Template,
-  args: { children: '3', variant: 'standard' }
+  args: { children: '3', variant: 'large' }
 };
 
 export const StandardMultipleCharacters: Story = {
   render: Template,
-  args: { children: '999+', variant: 'standard' }
+  args: { children: '999+', variant: 'large' }
 };

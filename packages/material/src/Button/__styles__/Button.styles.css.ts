@@ -24,8 +24,8 @@ const outlineWidth = createVar();
 /***************************
  * Component Variant types *
  ***************************/
-type StyleVariant = 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
 type IconVariant = 'leading' | 'trailing';
+type StyleVariant = 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
 
 /********************
  * Component Styles *
@@ -50,6 +50,8 @@ const base = style([
 
     // use ::before for container
     '::before': {
+      borderStyle: 'solid',
+
       // Overridable properties
       background: containerColor,
       borderColor: outlineColor,
@@ -73,8 +75,7 @@ const icon = style({
 /**********************
  * Component Variants *
  **********************/
-type Variant = 'elevated' | 'filled' | 'outlined' | 'text' | 'filledTonal';
-const getStylesForVariant = (variant: Variant) =>
+const getStylesForVariant = (variant: StyleVariant) =>
   ({
     vars: {
       [containerColor]: tokens[variant].container.color,
@@ -87,6 +88,8 @@ const getStylesForVariant = (variant: Variant) =>
       [labelSize]: tokens[variant].label.size,
       [labelTracking]: tokens[variant].label.tracking,
       [labelWeight]: tokens[variant].label.weight,
+      [stateLayerColor]: 'transparent',
+      [stateLayerOpacity]: '0',
       [outlineColor]: tokens[variant].container.outlineColor,
       [outlineWidth]: tokens[variant].container.outlineWidth
     },

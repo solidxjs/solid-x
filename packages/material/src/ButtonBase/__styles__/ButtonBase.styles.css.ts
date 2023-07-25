@@ -23,7 +23,6 @@ const base = style({
   // use ::before for container
   '::before': {
     borderRadius: 'inherit',
-    borderStyle: 'solid',
     content: '',
     inset: 0,
     position: 'absolute',
