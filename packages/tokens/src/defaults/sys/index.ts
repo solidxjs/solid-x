@@ -13,7 +13,7 @@ const sys = {
   motion,
   shape,
   state,
-  typescale
+  typescale,
 };
 
 export default sys;

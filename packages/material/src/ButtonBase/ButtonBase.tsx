@@ -66,7 +66,7 @@ type ButtonBaseProps = {
 
 export const ButtonBase: Component<ButtonBaseProps> = (_props) => {
   const props = mergeDefaults(_props, {
-    disabled: false
+    disabled: false,
   });
 
   return (

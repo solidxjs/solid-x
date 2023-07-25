@@ -6,6 +6,6 @@ addons.setConfig({
   showToolbar: true,
   showPanel: true,
   storySort: {
-    method: 'alphabetical'
-  }
+    method: 'alphabetical',
+  },
 });

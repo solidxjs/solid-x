@@ -3,7 +3,7 @@ import { default as typeface } from './typeface.tokens';
 
 const ref = {
   palette,
-  typeface
+  typeface,
 };
 
 export default ref;

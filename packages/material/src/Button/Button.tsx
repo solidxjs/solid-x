@@ -81,22 +81,22 @@ export const Button: Component<ButtonProps> = (_props) => {
   const props = mergeDefaults(_props, {
     disabled: false,
     iconPosition: 'leading',
-    variant: 'outlined'
+    variant: 'outlined',
   });
   const [localProps, passThroughProps] = splitProps(props, [
     'children',
     'icon',
     'iconPosition',
-    'variant'
+    'variant',
   ]);
   const buttonIcon = createMemo(
-    () => localProps.icon && <span class={styles.icon}>{localProps.icon}</span>
+    () => localProps.icon && <span class={styles.icon}>{localProps.icon}</span>,
   );
   const rootClass = createMemo(() =>
     styles.button({
       icon: localProps.icon != null ? localProps.iconPosition : 'none',
-      variant: localProps.variant
-    })
+      variant: localProps.variant,
+    }),
   );
 
   return (

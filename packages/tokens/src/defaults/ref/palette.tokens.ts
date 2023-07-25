@@ -12,7 +12,7 @@ const palette = {
     '90': '#eaddff',
     '95': '#f6edff',
     '99': '#fffbfe',
-    '100': '#fff'
+    '100': '#fff',
   },
   secondary: {
     '0': '#000',
@@ -27,7 +27,7 @@ const palette = {
     '90': '#e8def8',
     '95': '#f6edff',
     '99': '#fffbfe',
-    '100': '#fff'
+    '100': '#fff',
   },
   tertiary: {
     '0': '#000',
@@ -42,7 +42,7 @@ const palette = {
     '90': '#ffd8e4',
     '95': '#ffecf1',
     '99': '#fffbfa',
-    '100': '#fff'
+    '100': '#fff',
   },
   neutral: {
     '0': '#000',
@@ -68,7 +68,7 @@ const palette = {
     '96': '#f7f2fa',
     '98': '#fef7ff',
     '99': '#fffbff',
-    '100': '#fff'
+    '100': '#fff',
   },
   neutralVariant: {
     '0': '#000',
@@ -83,7 +83,7 @@ const palette = {
     '90': '#e7e0ec',
     '95': '#f5eefa',
     '99': '#fffbfe',
-    '100': '#fff'
+    '100': '#fff',
   },
   error: {
     '0': '#000',
@@ -98,8 +98,8 @@ const palette = {
     '90': '#f9dedc',
     '95': '#fceeee',
     '99': '#fffbf9',
-    '100': '#fff'
-  }
+    '100': '#fff',
+  },
 };
 
 export default palette;

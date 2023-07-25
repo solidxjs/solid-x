@@ -1,6 +1,5 @@
 import { useCallback, useInsertionEffect, useRef } from 'react';
 
-
 /**
  * A polyfill for react's experimental_useEffectEvent
  * See https://react.dev/reference/react/experimental_useEffectEvent
@@ -11,7 +10,7 @@ import { useCallback, useInsertionEffect, useRef } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function useEffectEvent<T extends Function>(callback: T): T {
   const fnRef = useRef<T>(callback);
-  
+
   useInsertionEffect(() => {
     fnRef.current = callback;
   }, [callback]);

@@ -50,20 +50,20 @@ const base = style([
     '::before': {
       // Overridable properties
       background: containerColor,
-      opacity: containerOpacity
+      opacity: containerOpacity,
     },
 
     // use ::after for state layer
     '::after': {
       // Overridable properties
       background: stateLayerColor,
-      opacity: stateLayerOpacity
-    }
-  }
+      opacity: stateLayerOpacity,
+    },
+  },
 ]);
 
 const icon = style({
-  display: 'inline-flex'
+  display: 'inline-flex',
 });
 
 /**********************
@@ -83,7 +83,7 @@ const getStylesForVariant = (variant: StyleVariant) =>
       [labelTracking]: tokens[variant].label.tracking,
       [labelWeight]: tokens[variant].label.weight,
       [stateLayerColor]: 'transparent',
-      [stateLayerOpacity]: '0'
+      [stateLayerOpacity]: '0',
     },
 
     // Pseudo elements need to be defined in the following order
@@ -93,80 +93,80 @@ const getStylesForVariant = (variant: StyleVariant) =>
       vars: {
         [containerElevation]: tokens[variant].focus.container.elevation,
         [stateLayerColor]: tokens[variant].focus.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].focus.stateLayer.opacity
-      }
+        [stateLayerOpacity]: tokens[variant].focus.stateLayer.opacity,
+      },
     },
 
     ':hover': {
       vars: {
         [containerElevation]: tokens[variant].hovered.container.elevation,
         [stateLayerColor]: tokens[variant].hovered.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].hovered.stateLayer.opacity
-      }
+        [stateLayerOpacity]: tokens[variant].hovered.stateLayer.opacity,
+      },
     },
 
     ':active': {
       vars: {
         [containerElevation]: tokens[variant].pressed.container.elevation,
         [stateLayerColor]: tokens[variant].pressed.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].pressed.stateLayer.opacity
-      }
-    }
+        [stateLayerOpacity]: tokens[variant].pressed.stateLayer.opacity,
+      },
+    },
   } as ComplexStyleRule);
 
 const variants = {
   elevation: {
     default: {},
-    lowered: {}
+    lowered: {},
   },
   icon: {
     leading: {},
-    trailing: {}
+    trailing: {},
   },
   size: {
     small: {},
     medium: {},
-    large: {}
+    large: {},
   },
   type: {
     extended: {
       gap: '12px',
-      minInlineSize: '80px'
+      minInlineSize: '80px',
     },
-    regular: {}
+    regular: {},
   },
   variant: {
     surface: getStylesForVariant('surface'),
     primary: getStylesForVariant('primary'),
     secondary: getStylesForVariant('secondary'),
-    tertiary: getStylesForVariant('tertiary')
-  }
+    tertiary: getStylesForVariant('tertiary'),
+  },
 };
 
 const getStylesForLowerElevation = (variant: StyleVariant) =>
   ({
     vars: {
       [containerColor]: tokens[variant].container.colorLowered,
-      [containerElevation]: tokens[variant].container.elevationLowered
+      [containerElevation]: tokens[variant].container.elevationLowered,
     },
 
     ':focus-visible': {
       vars: {
-        [containerElevation]: tokens[variant].focus.container.elevationLowered
-      }
+        [containerElevation]: tokens[variant].focus.container.elevationLowered,
+      },
     },
 
     ':hover': {
       vars: {
-        [containerElevation]: tokens[variant].hovered.container.elevationLowered
-      }
+        [containerElevation]: tokens[variant].hovered.container.elevationLowered,
+      },
     },
 
     ':active': {
       vars: {
-        [containerElevation]: tokens[variant].pressed.container.elevationLowered
-      }
-    }
+        [containerElevation]: tokens[variant].pressed.container.elevationLowered,
+      },
+    },
   } as ComplexStyleRule);
 
 const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> = [
@@ -176,30 +176,30 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
   {
     variants: {
       elevation: 'lowered',
-      variant: 'surface'
+      variant: 'surface',
     },
-    style: getStylesForLowerElevation('surface')
+    style: getStylesForLowerElevation('surface'),
   },
   {
     variants: {
       elevation: 'lowered',
-      variant: 'primary'
+      variant: 'primary',
     },
-    style: getStylesForLowerElevation('primary')
+    style: getStylesForLowerElevation('primary'),
   },
   {
     variants: {
       elevation: 'lowered',
-      variant: 'secondary'
+      variant: 'secondary',
     },
-    style: getStylesForLowerElevation('secondary')
+    style: getStylesForLowerElevation('secondary'),
   },
   {
     variants: {
       elevation: 'lowered',
-      variant: 'tertiary'
+      variant: 'tertiary',
     },
-    style: getStylesForLowerElevation('tertiary')
+    style: getStylesForLowerElevation('tertiary'),
   },
   /******************************
    * Icon and Type combinations *
@@ -207,22 +207,22 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
   {
     variants: {
       icon: 'leading',
-      type: 'extended'
+      type: 'extended',
     },
     style: {
       paddingInlineStart: '16px',
-      paddingInlineEnd: '20px'
-    }
+      paddingInlineEnd: '20px',
+    },
   },
   {
     variants: {
       icon: 'trailing',
-      type: 'extended'
+      type: 'extended',
     },
     style: {
       paddingInlineStart: '20px',
-      paddingInlineEnd: '16px'
-    }
+      paddingInlineEnd: '16px',
+    },
   },
   /******************************
    * Size and Type combinations *
@@ -230,36 +230,36 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
   {
     variants: {
       size: 'small',
-      type: 'regular'
+      type: 'regular',
     },
     style: {
       borderRadius: '12px',
       blockSize: '40px',
-      inlineSize: '40px'
-    }
+      inlineSize: '40px',
+    },
   },
   {
     variants: {
       size: 'medium',
-      type: 'regular'
+      type: 'regular',
     },
     style: {
       borderRadius: '16px',
       blockSize: '56px',
-      inlineSize: '56px'
-    }
+      inlineSize: '56px',
+    },
   },
   {
     variants: {
       size: 'large',
-      type: 'regular'
+      type: 'regular',
     },
     style: {
       borderRadius: '28px',
       blockSize: '96px',
-      inlineSize: '96px'
-    }
-  }
+      inlineSize: '96px',
+    },
+  },
 ];
 
 /********************
@@ -274,8 +274,8 @@ const fab = recipe({
     icon: 'leading',
     size: 'medium',
     type: 'regular',
-    variant: 'surface'
-  }
+    variant: 'surface',
+  },
 });
 
 /***********

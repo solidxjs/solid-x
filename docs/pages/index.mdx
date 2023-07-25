@@ -1,6 +1,7 @@
 ---
 title: Solid X - Material You component library using Solid JS
 ---
+
 import Link from 'next/link';
 import styles from './index.module.css';
 
@@ -21,14 +22,17 @@ export function HeaderSection() {
   return (
     <div className="h-max max-w-7xl text-center">
       <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[4rem] font-bold max-w-[16ch] mx-auto leading-tight">
-        Create beautiful Solid JS apps <span className="text-[var(--sx-primary-color)]">with Solid X</span>
+        Create beautiful Solid JS apps{' '}
+        <span className="text-[var(--sx-primary-color)]">with Solid X</span>
       </h1>
       <p className="text-stone-400 max-w-[50ch] mx-auto my-2 leading-relaxed">
-        Solid X provides a comprehensive suite of UI components to help you build web applications faster.
-        Get started with the Material You UI, which our components ship with by default, or bring your own
-        design-system to our production-ready component library.
+        Solid X provides a comprehensive suite of UI components to help you build web applications
+        faster. Get started with the Material You UI, which our components ship with by default, or
+        bring your own design-system to our production-ready component library.
       </p>
-      <Link className={styles.cta} href="/docs">Get started <span>→</span></Link>      
+      <Link className={styles.cta} href="/docs">
+        Get started <span>→</span>
+      </Link>
     </div>
   );
 }
@@ -42,8 +46,6 @@ export function DemoSection() {
 }
 
 <MainArticle>
-  <HeaderSection>
-  </HeaderSection>  
-  <DemoSection>
-  </DemoSection>
+  <HeaderSection></HeaderSection>
+  <DemoSection></DemoSection>
 </MainArticle>

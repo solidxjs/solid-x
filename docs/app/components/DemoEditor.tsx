@@ -22,8 +22,7 @@ export const DemoEditor = ({ code, language, onCodeChange }: Props) => {
         font-medium
         text-sm
         text-[var(--shiki-color-text)]
-      "
-    >
+      ">
       <style jsx global>{`
         .demo-editor-textarea:focus-visible,
         .demo-editor-textarea.focus-visible {
@@ -39,7 +38,7 @@ export const DemoEditor = ({ code, language, onCodeChange }: Props) => {
           fontFeatureSettings: '"rlig" 1,"calt" 1,"ss01" 1',
           fontSize: '0.925em',
           fontWeight: '500',
-          WebkitFontSmoothing: 'auto'
+          WebkitFontSmoothing: 'auto',
         }}
         textareaClassName="demo-editor-textarea"
       />

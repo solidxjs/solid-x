@@ -2,78 +2,78 @@ const color = {
   primary: {
     base: null,
     container: null,
-    inverse: null
+    inverse: null,
   },
   onPrimary: {
     base: null,
-    container: null
+    container: null,
   },
   secondary: {
     base: null,
-    container: null
+    container: null,
   },
   onSecondary: {
     base: null,
-    container: null
+    container: null,
   },
   tertiary: {
     base: null,
-    container: null
+    container: null,
   },
   onTertiary: {
     base: null,
-    container: null
+    container: null,
   },
   error: {
     base: null,
-    container: null
+    container: null,
   },
   onError: {
     base: null,
-    container: null
+    container: null,
   },
   surface: {
     base: null,
     dim: null,
     bright: null,
     inverse: null,
-    tint: null
+    tint: null,
   },
   onSurface: {
     base: null,
-    inverse: null
+    inverse: null,
   },
   surfaceContainer: {
     lowest: null,
     low: null,
     base: null,
     high: null,
-    highest: null
+    highest: null,
   },
   surfaceVariant: {
-    base: null
+    base: null,
   },
   onSurfaceVariant: {
-    base: null
+    base: null,
   },
   background: {
-    base: null
+    base: null,
   },
   onBackground: {
-    base: null
+    base: null,
   },
   outline: {
-    base: null
+    base: null,
   },
   outlineVariant: {
-    base: null
+    base: null,
   },
   shadow: {
-    base: null
+    base: null,
   },
   scrim: {
-    base: null
-  }
+    base: null,
+  },
 };
 
 export default color;

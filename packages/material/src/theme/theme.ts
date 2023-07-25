@@ -1,7 +1,7 @@
 import { RefTokens, SysTokens, ref, sys } from './theme.tokens.css';
 
 export const THEME_CLASS = {
-  DARK_THEME: 'sx-dark'
+  DARK_THEME: 'sx-dark',
 } as const;
 
 export type Theme = {
@@ -22,5 +22,5 @@ export type Theme = {
 export const Material: Theme = {
   name: 'Material',
   ref,
-  sys
+  sys,
 };

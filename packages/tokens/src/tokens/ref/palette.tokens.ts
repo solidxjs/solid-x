@@ -12,7 +12,7 @@ const palette = {
     '90': null,
     '95': null,
     '99': null,
-    '100': null
+    '100': null,
   },
   secondary: {
     '0': null,
@@ -27,7 +27,7 @@ const palette = {
     '90': null,
     '95': null,
     '99': null,
-    '100': null
+    '100': null,
   },
   tertiary: {
     '0': null,
@@ -42,7 +42,7 @@ const palette = {
     '90': null,
     '95': null,
     '99': null,
-    '100': null
+    '100': null,
   },
   neutral: {
     '0': null,
@@ -68,7 +68,7 @@ const palette = {
     '96': null,
     '98': null,
     '99': null,
-    '100': null
+    '100': null,
   },
   neutralVariant: {
     '0': null,
@@ -83,7 +83,7 @@ const palette = {
     '90': null,
     '95': null,
     '99': null,
-    '100': null
+    '100': null,
   },
   error: {
     '0': null,
@@ -98,8 +98,8 @@ const palette = {
     '90': null,
     '95': null,
     '99': null,
-    '100': null
-  }
+    '100': null,
+  },
 };
 
 export default palette;

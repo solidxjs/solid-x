@@ -6,13 +6,13 @@ export const baseTheme = createTheme(tokens, {
   small: {
     color: sys.color.error.base,
     shape: sys.shape.corner.full,
-    size: '6px'
+    size: '6px',
   },
   large: {
     container: {
       color: sys.color.error.base,
       shape: sys.shape.corner.full,
-      size: '16px'
+      size: '16px',
     },
     label: {
       color: sys.color.onError.base,
@@ -20,7 +20,7 @@ export const baseTheme = createTheme(tokens, {
       lineHeight: sys.typescale.label.sm.lineHeight,
       size: sys.typescale.label.sm.size,
       tracking: sys.typescale.label.sm.tracking,
-      weight: sys.typescale.label.sm.weight
-    }
-  }
+      weight: sys.typescale.label.sm.weight,
+    },
+  },
 });

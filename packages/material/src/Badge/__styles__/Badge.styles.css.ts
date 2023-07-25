@@ -18,7 +18,7 @@ const text = style({
   lineHeight: tokens.large.label.lineHeight,
   fontSize: tokens.large.label.size,
   fontWeight: tokens.large.label.weight,
-  letterSpacing: tokens.large.label.tracking
+  letterSpacing: tokens.large.label.tracking,
 });
 
 const base = style([
@@ -27,8 +27,8 @@ const base = style([
     alignItems: 'center',
     boxSizing: 'border-box',
     display: 'inline-flex',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 ]);
 
 /**********************
@@ -40,16 +40,16 @@ const variants = {
       backgroundColor: tokens.small.color,
       borderRadius: tokens.small.shape,
       height: tokens.small.size,
-      width: tokens.small.size
+      width: tokens.small.size,
     },
     large: {
       backgroundColor: tokens.large.container.color,
       borderRadius: tokens.large.container.shape,
       height: tokens.large.container.size,
       minWidth: tokens.large.container.size,
-      paddingInline: '4px'
-    }
-  }
+      paddingInline: '4px',
+    },
+  },
 };
 
 /********************
@@ -59,8 +59,8 @@ const badge = recipe({
   base,
   variants,
   defaultVariants: {
-    variant: 'large'
-  }
+    variant: 'large',
+  },
 });
 
 /***********

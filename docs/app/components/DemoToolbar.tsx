@@ -15,21 +15,21 @@ export const DemoToolbar = ({
   isPreviewDisabled,
   onCodePreviewToggleClick,
   onCopySourceCodeClick,
-  onResetDemoClick
+  onResetDemoClick,
 }: Props) => (
-  <div className="flex bg-[var(--sx-demo-container-background)] p-2 justify-end gap-1">      
-    {
-      !isPreviewDisabled && (
-        <ToolbarButton title={isPreview ? 'Show full code' : 'Hide full code'} onClick={onCodePreviewToggleClick}>
-          <CodeIcon />
-        </ToolbarButton>
-      )
-    }
+  <div className="flex bg-[var(--sx-demo-container-background)] p-2 justify-end gap-1">
+    {!isPreviewDisabled && (
+      <ToolbarButton
+        title={isPreview ? 'Show full code' : 'Hide full code'}
+        onClick={onCodePreviewToggleClick}>
+        <CodeIcon />
+      </ToolbarButton>
+    )}
 
     <ToolbarButton title="Copy the source code" onClick={onCopySourceCodeClick}>
       <CopyIcon />
     </ToolbarButton>
-    
+
     <ToolbarButton title="Reset the demo" onClick={onResetDemoClick}>
       <ResetIcon />
     </ToolbarButton>

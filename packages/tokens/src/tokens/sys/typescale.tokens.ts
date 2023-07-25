@@ -5,22 +5,22 @@ const typescale = {
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     md: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     lg: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
+      weight: null,
+    },
   },
   display: {
     sm: {
@@ -28,22 +28,22 @@ const typescale = {
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     md: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     lg: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
+      weight: null,
+    },
   },
   headline: {
     sm: {
@@ -51,22 +51,22 @@ const typescale = {
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     md: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     lg: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
+      weight: null,
+    },
   },
   label: {
     sm: {
@@ -74,22 +74,22 @@ const typescale = {
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     md: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     lg: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
+      weight: null,
+    },
   },
   title: {
     sm: {
@@ -97,23 +97,23 @@ const typescale = {
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     md: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
+      weight: null,
     },
     lg: {
       font: null,
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
-  }
+      weight: null,
+    },
+  },
 };
 
 export default typescale;

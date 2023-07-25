@@ -5,11 +5,7 @@ type Props = {
   title?: string;
   onClick?: () => void;
 };
-export const ToolbarButton = ({
-  children,
-  title,
-  onClick
-}: Props) => {
+export const ToolbarButton = ({ children, title, onClick }: Props) => {
   return (
     <button
       className="

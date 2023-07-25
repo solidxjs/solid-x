@@ -56,20 +56,20 @@ const base = style([
       background: containerColor,
       borderColor: outlineColor,
       borderWidth: outlineWidth,
-      opacity: containerOpacity
+      opacity: containerOpacity,
     },
 
     // use ::after for state layer
     '::after': {
       // Overridable properties
       background: stateLayerColor,
-      opacity: stateLayerOpacity
-    }
-  }
+      opacity: stateLayerOpacity,
+    },
+  },
 ]);
 
 const icon = style({
-  display: 'inline-flex'
+  display: 'inline-flex',
 });
 
 /**********************
@@ -91,7 +91,7 @@ const getStylesForVariant = (variant: StyleVariant) =>
       [stateLayerColor]: 'transparent',
       [stateLayerOpacity]: '0',
       [outlineColor]: tokens[variant].container.outlineColor,
-      [outlineWidth]: tokens[variant].container.outlineWidth
+      [outlineWidth]: tokens[variant].container.outlineWidth,
     },
 
     // Pseudo elements need to be defined in the following order
@@ -103,8 +103,8 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [labelColor]: tokens[variant].focus.label.color,
         [outlineColor]: tokens[variant].focus.container.outlineColor,
         [stateLayerColor]: tokens[variant].focus.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].focus.stateLayer.opacity
-      }
+        [stateLayerOpacity]: tokens[variant].focus.stateLayer.opacity,
+      },
     },
 
     ':hover': {
@@ -113,8 +113,8 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [labelColor]: tokens[variant].hovered.label.color,
         [outlineColor]: tokens[variant].hovered.container.outlineColor,
         [stateLayerColor]: tokens[variant].hovered.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].hovered.stateLayer.opacity
-      }
+        [stateLayerOpacity]: tokens[variant].hovered.stateLayer.opacity,
+      },
     },
 
     ':active': {
@@ -123,8 +123,8 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [labelColor]: tokens[variant].pressed.label.color,
         [outlineColor]: tokens[variant].pressed.container.outlineColor,
         [stateLayerColor]: tokens[variant].pressed.stateLayer.color,
-        [stateLayerOpacity]: tokens[variant].pressed.stateLayer.opacity
-      }
+        [stateLayerOpacity]: tokens[variant].pressed.stateLayer.opacity,
+      },
     },
 
     ':disabled': {
@@ -134,32 +134,32 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [containerOpacity]: tokens[variant].disabled.container.opacity,
         [labelColor]: tokens[variant].disabled.label.color,
         [labelOpacity]: tokens[variant].disabled.label.opacity,
-        [outlineColor]: tokens[variant].disabled.container.outlineColor
-      }
-    }
+        [outlineColor]: tokens[variant].disabled.container.outlineColor,
+      },
+    },
   } as const);
 
 const variants = {
   icon: {
     leading: {
       paddingInlineStart: '16px',
-      paddingInlineEnd: '24px'
+      paddingInlineEnd: '24px',
     },
     none: {
-      paddingInline: '24px'
+      paddingInline: '24px',
     },
     trailing: {
       paddingInlineStart: '24px',
-      paddingInlineEnd: '16px'
-    }
+      paddingInlineEnd: '16px',
+    },
   },
   variant: {
     elevated: getStylesForVariant('elevated'),
     filled: getStylesForVariant('filled'),
     filledTonal: getStylesForVariant('filledTonal'),
     outlined: getStylesForVariant('outlined'),
-    text: getStylesForVariant('text')
-  }
+    text: getStylesForVariant('text'),
+  },
 };
 
 /********************
@@ -170,8 +170,8 @@ const button = recipe({
   variants,
   defaultVariants: {
     icon: 'none',
-    variant: 'outlined'
-  }
+    variant: 'outlined',
+  },
 });
 
 /***********

@@ -6,11 +6,12 @@
  * @homepage https://github.com/ArmandPhilippot/coldark-prism
  * @license MIT
  */
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: var(--shiki-color-text);
   background: none;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -27,19 +28,19 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: var(--shiki-color-background);
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
@@ -72,7 +73,7 @@ pre[class*="language-"] {
 .token.boolean.important,
 .token.number,
 .token.constant {
-  color: var(--shiki-token-constant);  
+  color: var(--shiki-token-constant);
 }
 
 .token.attr-name,
@@ -118,9 +119,7 @@ pre[class*="language-"] {
   color: var(--shiki-token-keyword);
 }
 
-.token.regex
-
-.token.important,
+.token.regex .token.important,
 .token.keyword-this,
 .token.this,
 .token.bold {

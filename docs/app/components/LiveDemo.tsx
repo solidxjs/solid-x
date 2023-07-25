@@ -27,12 +27,12 @@ type Props = {
    * The language of the demo code.
    */
   language: 'jsx' | 'tsx';
-  
+
   /**
    * Width of the demo.
    */
   width?: string;
-  
+
   /**
    * Height of the demo.
    */
@@ -45,17 +45,17 @@ export const LiveDemo = ({
   previewMeta,
   scope,
   sourceCode = '',
-  width
+  width,
 }: Props) => {
   const [demoKey, setDemoKey] = useReducer((key) => key + 1, 0);
-  const [ isPreview, setIsPreview ] = useState(true);
+  const [isPreview, setIsPreview] = useState(true);
   const previewCode = usePreviewCode(sourceCode, previewMeta);
-  const [ editorCode, setEditorCode ] = useState(previewCode);
-  const [ error, setError ] = useDebouncedState<string | null>(null, 300);
+  const [editorCode, setEditorCode] = useState(previewCode);
+  const [error, setError] = useDebouncedState<string | null>(null, 300);
 
   useEffect(() => {
     setEditorCode(isPreview ? previewCode : sourceCode);
-  }, [ isPreview, previewCode, sourceCode ]);
+  }, [isPreview, previewCode, sourceCode]);
 
   return (
     <div className={`flex flex-col gap-3 h-[${height ?? 'initial'}] w-[${width ?? 'initial'}]`}>

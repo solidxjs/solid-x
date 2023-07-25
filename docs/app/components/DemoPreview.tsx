@@ -18,19 +18,19 @@ export const DemoPreview = ({
   previewMeta,
   sourceCode,
   scope,
-  onErrorStateChange
+  onErrorStateChange,
 }: Props) => {
   const code = useCompleteCode({
     editorCode,
     isPreview,
     previewMeta,
-    sourceCode
+    sourceCode,
   });
   const { element, error } = useRunner({
     code,
     scope,
     onRendered: () => onErrorStateChange(null),
-    onRuntimeError: (error) => onErrorStateChange(error.message)
+    onRuntimeError: (error) => onErrorStateChange(error.message),
   });
   const onErrorStateChangeHandler = useEffectEvent(onErrorStateChange);
 
@@ -38,7 +38,5 @@ export const DemoPreview = ({
     onErrorStateChangeHandler(error);
   }, [error]);
 
-  return (
-    <div className="flex justify-center p-6">{element}</div>
-  );
+  return <div className="flex justify-center p-6">{element}</div>;
 };

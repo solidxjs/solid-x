@@ -11,16 +11,13 @@ import { ComponentProps, useMemo } from 'react';
 const globalImports = {
   'solid-js': SolidJS,
   'solid-js/web': SolidJSWeb,
-  '@solid-x/material': SolidX
+  '@solid-x/material': SolidX,
 };
 
 type LiveDemoProps = ComponentProps<typeof LiveDemo>;
-type PickedLiveDemoProps = Pick<LiveDemoProps,
-  | 'height'
-  | 'previewMeta'
-  | 'language'
-  | 'sourceCode'
-  | 'width'
+type PickedLiveDemoProps = Pick<
+  LiveDemoProps,
+  'height' | 'previewMeta' | 'language' | 'sourceCode' | 'width'
 >;
 type Scope = Omit<LiveDemoProps['scope'], 'globalImports'>;
 type Props = Partial<PickedLiveDemoProps> & {
@@ -32,12 +29,12 @@ export default function ComponentDemo({
   height,
   previewMeta,
   sourceCode,
-  width
+  width,
 }: Props) {
   const scope = useMemo(() => {
     return {
       ...propScope,
-      globalImports
+      globalImports,
     };
   }, [propScope]);
   return (

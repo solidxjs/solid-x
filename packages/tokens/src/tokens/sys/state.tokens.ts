@@ -1,16 +1,16 @@
 const state = {
   dragged: {
-    stateLayerOpacity: null
+    stateLayerOpacity: null,
   },
   focus: {
-    stateLayerOpacity: null
+    stateLayerOpacity: null,
   },
   hover: {
-    stateLayerOpacity: null
+    stateLayerOpacity: null,
   },
   pressed: {
-    stateLayerOpacity: null
-  }
+    stateLayerOpacity: null,
+  },
 };
 
 export default state;

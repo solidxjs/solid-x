@@ -19,9 +19,9 @@ const meta: Meta<typeof Button> = {
     type: { control: 'select', options: ['submit', 'reset'] },
     variant: {
       control: 'select',
-      options: ['elevated', 'filled', 'outlined', 'text', 'filledTonal']
-    }
-  }
+      options: ['elevated', 'filled', 'outlined', 'text', 'filledTonal'],
+    },
+  },
 };
 export default meta;
 
@@ -35,40 +35,40 @@ export const ElevatedButton: Story = {
   render: Template,
   args: {
     children: 'Elevated',
-    variant: 'elevated'
-  }
+    variant: 'elevated',
+  },
 };
 
 export const FilledButton: Story = {
   render: Template,
   args: {
     children: 'Filled',
-    variant: 'filled'
-  }
+    variant: 'filled',
+  },
 };
 
 export const FilledTonalButton: Story = {
   render: Template,
   args: {
     children: 'Filled Tonal',
-    variant: 'filledTonal'
-  }
+    variant: 'filledTonal',
+  },
 };
 
 export const OutlinedButton: Story = {
   render: Template,
   args: {
     children: 'Outlined',
-    variant: 'outlined'
-  }
+    variant: 'outlined',
+  },
 };
 
 export const TextButton: Story = {
   render: Template,
   args: {
     children: 'Text',
-    variant: 'text'
-  }
+    variant: 'text',
+  },
 };
 
 export const LeadingIconButton: Story = {
@@ -77,8 +77,8 @@ export const LeadingIconButton: Story = {
     children: 'Elevated',
     icon: <DemoIcon height="18px" width="18px" />,
     iconPosition: 'leading',
-    variant: 'elevated'
-  }
+    variant: 'elevated',
+  },
 };
 
 export const TrailingIconButton: Story = {
@@ -87,6 +87,6 @@ export const TrailingIconButton: Story = {
     children: 'Elevated',
     icon: <DemoIcon height="18px" width="18px" />,
     iconPosition: 'trailing',
-    variant: 'elevated'
-  }
+    variant: 'elevated',
+  },
 };

@@ -7,7 +7,7 @@ const light = create({
   brandImage: './logo.png',
   appBg: refDefaults.palette.neutral[98],
   colorPrimary: refDefaults.palette.primary[40],
-  colorSecondary: refDefaults.palette.secondary[40]
+  colorSecondary: refDefaults.palette.secondary[40],
 });
 
 const dark = create({
@@ -16,7 +16,7 @@ const dark = create({
   brandImage: './logo-dark.png',
   appBg: refDefaults.palette.neutral[6],
   colorPrimary: refDefaults.palette.primary[80],
-  colorSecondary: refDefaults.palette.secondary[80]
+  colorSecondary: refDefaults.palette.secondary[80],
 });
 
 const themes = { dark, light };

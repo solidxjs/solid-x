@@ -21,24 +21,23 @@ export default function DemoPage() {
       const solidJSPromise = import('solid-js');
       const solidWebPromise = import('solid-js/web');
 
-      const [
-        solidJS,
-        solidWeb,
-        ...loadedComponents
-      ] = await Promise.all([
+      const [solidJS, solidWeb, ...loadedComponents] = await Promise.all([
         solidJSPromise,
         solidWebPromise,
-        ...componentsPromise
+        ...componentsPromise,
       ]);
-      const componentImports = components.reduce((acc, component, index) => ({
-        ...acc,
-        [`@solid-x/material/${component}`]: loadedComponents[index]
-      }), {});
+      const componentImports = components.reduce(
+        (acc, component, index) => ({
+          ...acc,
+          [`@solid-x/material/${component}`]: loadedComponents[index],
+        }),
+        {},
+      );
 
       setGlobalImports({
         'solid-js': solidJS,
         'solid-js/web': solidWeb,
-        ...componentImports
+        ...componentImports,
       });
     }
 
@@ -48,7 +47,7 @@ export default function DemoPage() {
   return (
     <LiveDemo
       scope={{
-        globalImports
+        globalImports,
       }}
       sourceCode={sourceCode}
       previewMeta={previewMeta}

@@ -8,15 +8,15 @@ export default defineConfig({
   plugins: [
     vanillaExtractPlugin(),
     dts({
-      tsconfigPath: resolve(__dirname, 'tsconfig.build.json')
+      tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
     }),
-    solidPlugin({ ssr: false })
+    solidPlugin({ ssr: false }),
   ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       fileName: (_, entryName) => `${entryName}.js`,
-      formats: ['es']
+      formats: ['es'],
     },
     minify: false,
     rollupOptions: {
@@ -24,8 +24,8 @@ export default defineConfig({
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',
-        sourcemap: true
-      }
-    }
-  }
+        sourcemap: true,
+      },
+    },
+  },
 });

@@ -5,18 +5,18 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
   ],
   framework: {
     name: 'storybook-solidjs-vite',
     options: {
       builder: {
-        viteConfigPath: '.storybook/vite.config.ts'
-      }
-    }
+        viteConfigPath: '.storybook/vite.config.ts',
+      },
+    },
   },
   docs: {
-    autodocs: 'tag'
-  }
+    autodocs: 'tag',
+  },
 };
 export default config;

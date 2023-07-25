@@ -9,7 +9,7 @@ export const baseTheme = createTheme(tokens, {
       colorLowered: sys.color.surfaceContainer.low,
       elevation: sys.elevation.level3,
       elevationLowered: sys.elevation.level1,
-      shadowColor: sys.color.shadow.base
+      shadowColor: sys.color.shadow.base,
     },
     label: {
       color: sys.color.primary.base,
@@ -17,59 +17,59 @@ export const baseTheme = createTheme(tokens, {
       lineHeight: sys.typescale.label.lg.lineHeight,
       size: sys.typescale.label.lg.size,
       tracking: sys.typescale.label.lg.tracking,
-      weight: sys.typescale.label.lg.weight
+      weight: sys.typescale.label.lg.weight,
     },
     icon: {
-      color: sys.color.primary.base
+      color: sys.color.primary.base,
     },
     focus: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.primary.base,
-        opacity: sys.state.focus.stateLayerOpacity
+        opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.primary.base
+        color: sys.color.primary.base,
       },
       label: {
-        color: sys.color.primary.base
-      }
+        color: sys.color.primary.base,
+      },
     },
     hovered: {
       container: {
         elevation: sys.elevation.level4,
-        elevationLowered: sys.elevation.level2
+        elevationLowered: sys.elevation.level2,
       },
       stateLayer: {
         color: sys.color.primary.base,
-        opacity: sys.state.hover.stateLayerOpacity
+        opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.primary.base
+        color: sys.color.primary.base,
       },
       label: {
-        color: sys.color.primary.base
-      }
+        color: sys.color.primary.base,
+      },
     },
     pressed: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.primary.base,
-        opacity: sys.state.pressed.stateLayerOpacity
+        opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.primary.base
+        color: sys.color.primary.base,
       },
       label: {
-        color: sys.color.primary.base
-      }
-    }
+        color: sys.color.primary.base,
+      },
+    },
   },
   primary: {
     container: {
@@ -77,7 +77,7 @@ export const baseTheme = createTheme(tokens, {
       colorLowered: sys.color.primary.container,
       elevation: sys.elevation.level3,
       elevationLowered: sys.elevation.level1,
-      shadowColor: sys.color.shadow.base
+      shadowColor: sys.color.shadow.base,
     },
     label: {
       color: sys.color.onPrimary.container,
@@ -85,59 +85,59 @@ export const baseTheme = createTheme(tokens, {
       lineHeight: sys.typescale.label.lg.lineHeight,
       size: sys.typescale.label.lg.size,
       tracking: sys.typescale.label.lg.tracking,
-      weight: sys.typescale.label.lg.weight
+      weight: sys.typescale.label.lg.weight,
     },
     icon: {
-      color: sys.color.onPrimary.container
+      color: sys.color.onPrimary.container,
     },
     focus: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onPrimary.container,
-        opacity: sys.state.focus.stateLayerOpacity
+        opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onPrimary.container
+        color: sys.color.onPrimary.container,
       },
       label: {
-        color: sys.color.onPrimary.container
-      }
+        color: sys.color.onPrimary.container,
+      },
     },
     hovered: {
       container: {
         elevation: sys.elevation.level4,
-        elevationLowered: sys.elevation.level2
+        elevationLowered: sys.elevation.level2,
       },
       stateLayer: {
         color: sys.color.onPrimary.container,
-        opacity: sys.state.hover.stateLayerOpacity
+        opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onPrimary.container
+        color: sys.color.onPrimary.container,
       },
       label: {
-        color: sys.color.onPrimary.container
-      }
+        color: sys.color.onPrimary.container,
+      },
     },
     pressed: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onPrimary.container,
-        opacity: sys.state.pressed.stateLayerOpacity
+        opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onPrimary.container
+        color: sys.color.onPrimary.container,
       },
       label: {
-        color: sys.color.onPrimary.container
-      }
-    }
+        color: sys.color.onPrimary.container,
+      },
+    },
   },
   secondary: {
     container: {
@@ -145,7 +145,7 @@ export const baseTheme = createTheme(tokens, {
       colorLowered: sys.color.secondary.container,
       elevation: sys.elevation.level3,
       elevationLowered: sys.elevation.level1,
-      shadowColor: sys.color.shadow.base
+      shadowColor: sys.color.shadow.base,
     },
     label: {
       color: sys.color.onSecondary.container,
@@ -153,59 +153,59 @@ export const baseTheme = createTheme(tokens, {
       lineHeight: sys.typescale.label.lg.lineHeight,
       size: sys.typescale.label.lg.size,
       tracking: sys.typescale.label.lg.tracking,
-      weight: sys.typescale.label.lg.weight
+      weight: sys.typescale.label.lg.weight,
     },
     icon: {
-      color: sys.color.onSecondary.container
+      color: sys.color.onSecondary.container,
     },
     focus: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        opacity: sys.state.focus.stateLayerOpacity
+        opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onSecondary.container
+        color: sys.color.onSecondary.container,
       },
       label: {
-        color: sys.color.onSecondary.container
-      }
+        color: sys.color.onSecondary.container,
+      },
     },
     hovered: {
       container: {
         elevation: sys.elevation.level4,
-        elevationLowered: sys.elevation.level2
+        elevationLowered: sys.elevation.level2,
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        opacity: sys.state.hover.stateLayerOpacity
+        opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onSecondary.container
+        color: sys.color.onSecondary.container,
       },
       label: {
-        color: sys.color.onSecondary.container
-      }
+        color: sys.color.onSecondary.container,
+      },
     },
     pressed: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onSecondary.container,
-        opacity: sys.state.pressed.stateLayerOpacity
+        opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onSecondary.container
+        color: sys.color.onSecondary.container,
       },
       label: {
-        color: sys.color.onSecondary.container
-      }
-    }
+        color: sys.color.onSecondary.container,
+      },
+    },
   },
   tertiary: {
     container: {
@@ -213,7 +213,7 @@ export const baseTheme = createTheme(tokens, {
       colorLowered: sys.color.tertiary.container,
       elevation: sys.elevation.level3,
       elevationLowered: sys.elevation.level1,
-      shadowColor: sys.color.shadow.base
+      shadowColor: sys.color.shadow.base,
     },
     label: {
       color: sys.color.onTertiary.container,
@@ -221,58 +221,58 @@ export const baseTheme = createTheme(tokens, {
       lineHeight: sys.typescale.label.lg.lineHeight,
       size: sys.typescale.label.lg.size,
       tracking: sys.typescale.label.lg.tracking,
-      weight: sys.typescale.label.lg.weight
+      weight: sys.typescale.label.lg.weight,
     },
     icon: {
-      color: sys.color.onTertiary.container
+      color: sys.color.onTertiary.container,
     },
     focus: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onTertiary.container,
-        opacity: sys.state.focus.stateLayerOpacity
+        opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onTertiary.container
+        color: sys.color.onTertiary.container,
       },
       label: {
-        color: sys.color.onTertiary.container
-      }
+        color: sys.color.onTertiary.container,
+      },
     },
     hovered: {
       container: {
         elevation: sys.elevation.level4,
-        elevationLowered: sys.elevation.level2
+        elevationLowered: sys.elevation.level2,
       },
       stateLayer: {
         color: sys.color.onTertiary.container,
-        opacity: sys.state.hover.stateLayerOpacity
+        opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onTertiary.container
+        color: sys.color.onTertiary.container,
       },
       label: {
-        color: sys.color.onTertiary.container
-      }
+        color: sys.color.onTertiary.container,
+      },
     },
     pressed: {
       container: {
         elevation: sys.elevation.level3,
-        elevationLowered: sys.elevation.level1
+        elevationLowered: sys.elevation.level1,
       },
       stateLayer: {
         color: sys.color.onTertiary.container,
-        opacity: sys.state.pressed.stateLayerOpacity
+        opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
-        color: sys.color.onTertiary.container
+        color: sys.color.onTertiary.container,
       },
       label: {
-        color: sys.color.onTertiary.container
-      }
-    }
-  }
+        color: sys.color.onTertiary.container,
+      },
+    },
+  },
 });

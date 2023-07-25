@@ -15,8 +15,8 @@ const meta: Meta<typeof Button> = {
     href: { control: 'text' },
     onAction: { action: 'onAction' },
     target: { control: 'text' },
-    type: { control: 'select', options: ['submit', 'reset'] }
-  }
+    type: { control: 'select', options: ['submit', 'reset'] },
+  },
 };
 export default meta;
 
@@ -30,6 +30,6 @@ const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) =
 export const Basic: Story = {
   render: Template,
   args: {
-    children: 'Button'
-  }
+    children: 'Button',
+  },
 };

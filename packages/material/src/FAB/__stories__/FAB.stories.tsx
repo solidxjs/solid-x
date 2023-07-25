@@ -13,8 +13,8 @@ const meta: Meta<typeof FAB> = {
     ariaLabel: { control: 'text' },
     children: { control: 'text' },
     onAction: { action: 'onAction' },
-    variant: { control: 'select', options: ['surface', 'primary', 'secondary', 'tertiary'] }
-  }
+    variant: { control: 'select', options: ['surface', 'primary', 'secondary', 'tertiary'] },
+  },
 };
 export default meta;
 
@@ -28,32 +28,32 @@ export const SurfaceFAB: Story = {
   render: Template,
   args: {
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'surface'
-  }
+    variant: 'surface',
+  },
 };
 
 export const PrimaryFAB: Story = {
   render: Template,
   args: {
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const SecondaryFAB: Story = {
   render: Template,
   args: {
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const TertiaryFAB: Story = {
   render: Template,
   args: {
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 };
 
 export const SmallFAB: Story = {
@@ -61,8 +61,8 @@ export const SmallFAB: Story = {
   args: {
     icon: <DemoIcon height="24px" width="24px" />,
     size: 'small',
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const LargeFAB: Story = {
@@ -70,8 +70,8 @@ export const LargeFAB: Story = {
   args: {
     icon: <DemoIcon height="36px" width="36px" />,
     size: 'large',
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const SurfaceExtendedFAB: Story = {
@@ -79,8 +79,8 @@ export const SurfaceExtendedFAB: Story = {
   args: {
     children: 'Surface',
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'surface'
-  }
+    variant: 'surface',
+  },
 };
 
 export const PrimaryExtendedFAB: Story = {
@@ -88,8 +88,8 @@ export const PrimaryExtendedFAB: Story = {
   args: {
     children: 'Primary',
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const SecondaryExtendedFAB: Story = {
@@ -97,8 +97,8 @@ export const SecondaryExtendedFAB: Story = {
   args: {
     children: 'Secondary',
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const TertiaryExtendedFAB: Story = {
@@ -106,6 +106,6 @@ export const TertiaryExtendedFAB: Story = {
   args: {
     children: 'Tertiary',
     icon: <DemoIcon height="24px" width="24px" />,
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 };

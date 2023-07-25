@@ -3,21 +3,16 @@ import solidPlugin from 'vite-plugin-solid';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [
-    solidPlugin({ ssr: false }),
-    vanillaExtractPlugin()
-  ],
+  plugins: [solidPlugin({ ssr: false }), vanillaExtractPlugin()],
   test: {
     environment: 'jsdom',
     globals: true,
     reporters: ['default', 'html'],
     outputFile: './reports/index.html',
-    setupFiles: [
-      './setupVitest.js',
-    ],
+    setupFiles: ['./setupVitest.js'],
     transformMode: { web: [/\.[jt]sx?$/] },
   },
   resolve: {
     conditions: ['development', 'browser'],
-  }
+  },
 });

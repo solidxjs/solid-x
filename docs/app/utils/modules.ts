@@ -1,4 +1,4 @@
 export const componentModules = {
-  'Badge': () => import('@solid-x/material/Badge')
+  Badge: () => import('@solid-x/material/Badge'),
 };
-export type ModuleName = (keyof typeof componentModules);
+export type ModuleName = keyof typeof componentModules;

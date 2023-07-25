@@ -3,11 +3,7 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": [
-      "vite/client",
-      "vitest",
-      "@testing-library/jest-dom"
-    ]
+    "types": ["vite/client", "vitest", "@testing-library/jest-dom"]
   },
   "extends": "../../tsconfig.json"
 }

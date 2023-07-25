@@ -4,13 +4,13 @@ export const tokens = createThemeContract({
   small: {
     color: null,
     shape: null,
-    size: null
+    size: null,
   },
   large: {
     container: {
       color: null,
       shape: null,
-      size: null
+      size: null,
     },
     label: {
       color: null,
@@ -18,7 +18,7 @@ export const tokens = createThemeContract({
       lineHeight: null,
       size: null,
       tracking: null,
-      weight: null
-    }
-  }
+      weight: null,
+    },
+  },
 });

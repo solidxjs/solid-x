@@ -4,8 +4,8 @@ const typeface = {
   weight: {
     bold: null,
     medium: null,
-    regular: null
-  }
+    regular: null,
+  },
 };
 
 export default typeface;

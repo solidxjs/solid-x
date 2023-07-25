@@ -3,25 +3,25 @@ const shape = {
     none: null,
     xs: {
       full: null,
-      top: null
+      top: null,
     },
     sm: {
-      full: null
+      full: null,
     },
     md: {
-      full: null
+      full: null,
     },
     lg: {
       end: null,
       full: null,
-      top: null
+      top: null,
     },
     xl: {
       full: null,
-      top: null
+      top: null,
     },
-    full: null
-  }
+    full: null,
+  },
 };
 
 export default shape;

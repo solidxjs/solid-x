@@ -8,7 +8,7 @@ import { render as renderSolid } from 'solid-js/web';
 export type Globals = Record<string, any>;
 export type Scope = Globals & {
   imports?: Record<string, any>;
-  globalImports?: Record<string,any>;
+  globalImports?: Record<string, any>;
 };
 type Props = {
   code: string;
@@ -28,11 +28,7 @@ type SolidToReactProps = {
   onError?: (error: Error) => void;
   onRendered?: () => void;
 };
-const SolidToReact = ({
-  children,
-  onError,
-  onRendered
-}: SolidToReactProps) => {
+const SolidToReact = ({ children, onError, onRendered }: SolidToReactProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const errorRef = useRef(false);
 
@@ -40,12 +36,9 @@ const SolidToReact = ({
     if (!ref.current) return;
 
     let dispose: (() => void) | undefined;
-    
+
     try {
-      dispose = renderSolid(
-        () => children({}),
-        ref.current
-      );
+      dispose = renderSolid(() => children({}), ref.current);
     } catch (e) {
       errorRef.current = true;
       onError?.(e as Error);
@@ -53,7 +46,7 @@ const SolidToReact = ({
 
     return () => dispose?.();
   }, [children]);
-  
+
   useEffect(() => {
     if (!errorRef.current) {
       onRendered?.();
@@ -71,11 +64,18 @@ const SolidToReact = ({
  * @param param0.code The code to run
  * @param param0.scope The import scope
  */
-export const useRunner = ({ code, preserveOnError = true, props, scope, onRendered, onRuntimeError }: Props) => {
+export const useRunner = ({
+  code,
+  preserveOnError = true,
+  props,
+  scope,
+  onRendered,
+  onRuntimeError,
+}: Props) => {
   const elementRef = useRef<ReactElement | null>(null);
   const [result, setResult] = useState<UseRunnerReturn>({
     element: elementRef.current,
-    error: null
+    error: null,
   });
 
   useEffect(() => {
@@ -84,12 +84,12 @@ export const useRunner = ({ code, preserveOnError = true, props, scope, onRender
       elementRef.current = element;
       setResult({
         element,
-        error: null
+        error: null,
       });
     } catch (err: any) {
       setResult({
         element: preserveOnError ? elementRef.current : err.toString(),
-        error: (err as Error).message
+        error: (err as Error).message,
       });
     }
   }, [code, preserveOnError, props, scope]);
@@ -113,7 +113,7 @@ const evalCode = (code: string, scope: Scope) => {
       throw new Error(`Module not found: ${module}`);
     },
     Fragment,
-    ...globals
+    ...globals,
   };
   const fn = new Function(...Object.keys(finalScope), code);
   return fn(...Object.values(finalScope));
@@ -122,10 +122,15 @@ const evalCode = (code: string, scope: Scope) => {
 const compileCode = (code: string) =>
   transform(code, {
     presets: [presetSolid, 'typescript', 'react', 'es2015'],
-    filename: 'demo.jsx'
+    filename: 'demo.jsx',
   }).code?.replace(/"use strict";/, '') ?? '';
 
-const generateElement = ({ code, scope, onRendered, onRuntimeError }: Props): ReactElement | null => {
+const generateElement = ({
+  code,
+  scope,
+  onRendered,
+  onRuntimeError,
+}: Props): ReactElement | null => {
   if (!code.trim()) return null;
 
   const compiledCode = compileCode(code);

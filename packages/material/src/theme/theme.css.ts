@@ -19,5 +19,5 @@ createGlobalTheme(':root', sysContract.typescale, sysDefaults.typescale(refContr
 createGlobalTheme(
   `.${THEME_CLASS.DARK_THEME}`,
   sysContract.color,
-  sysDefaults.colorDark(refContract, sysContract)
+  sysDefaults.colorDark(refContract, sysContract),
 );

@@ -7,7 +7,7 @@ const buttonTokens = {
     elevation: null,
     outlineColor: null,
     outlineWidth: null,
-    shadowColor: null
+    shadowColor: null,
   },
   label: {
     color: null,
@@ -15,75 +15,75 @@ const buttonTokens = {
     lineHeight: null,
     size: null,
     tracking: null,
-    weight: null
+    weight: null,
   },
   icon: {
-    color: null
+    color: null,
   },
   disabled: {
     container: {
       color: null,
       elevation: null,
       opacity: null,
-      outlineColor: null
+      outlineColor: null,
     },
     label: {
       color: null,
-      opacity: null
+      opacity: null,
     },
     icon: {
       color: null,
-      opacity: null
-    }
+      opacity: null,
+    },
   },
   focus: {
     container: {
       elevation: null,
-      outlineColor: null
+      outlineColor: null,
     },
     stateLayer: {
       color: null,
-      opacity: null
+      opacity: null,
     },
     label: {
-      color: null
+      color: null,
     },
     icon: {
-      color: null
-    }
+      color: null,
+    },
   },
   hovered: {
     container: {
       elevation: null,
-      outlineColor: null
+      outlineColor: null,
     },
     stateLayer: {
       color: null,
-      opacity: null
+      opacity: null,
     },
     label: {
-      color: null
+      color: null,
     },
     icon: {
-      color: null
-    }
+      color: null,
+    },
   },
   pressed: {
     container: {
       elevation: null,
-      outlineColor: null
+      outlineColor: null,
     },
     stateLayer: {
       color: null,
-      opacity: null
+      opacity: null,
     },
     label: {
-      color: null
+      color: null,
     },
     icon: {
-      color: null
-    }
-  }
+      color: null,
+    },
+  },
 };
 
 export const tokens = createThemeContract({
@@ -91,5 +91,5 @@ export const tokens = createThemeContract({
   filled: deepCloneSerializableObject(buttonTokens),
   filledTonal: deepCloneSerializableObject(buttonTokens),
   outlined: deepCloneSerializableObject(buttonTokens),
-  text: deepCloneSerializableObject(buttonTokens)
+  text: deepCloneSerializableObject(buttonTokens),
 });

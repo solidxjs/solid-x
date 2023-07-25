@@ -3,7 +3,7 @@ import themes from './brandTheme';
 
 const withTheme = (Story: StoryFn, context: StoryContext) => {
   const theme = context.globals['theme'];
-  
+
   if (theme === 'sidebyside' || theme === 'stacked') {
     return (
       <div class={`sx-sb-multi-theme sx-sb-${theme}`}>
@@ -16,13 +16,13 @@ const withTheme = (Story: StoryFn, context: StoryContext) => {
       </div>
     );
   }
-  
-  const themeClass = (theme === 'dark') ? 'sx-dark' : undefined;
+
+  const themeClass = theme === 'dark' ? 'sx-dark' : undefined;
   return (
     <div class={themeClass}>
-        <Story />
+      <Story />
     </div>
-  )
+  );
 };
 
 const preview: Preview = {
@@ -33,18 +33,18 @@ const preview: Preview = {
       default: 'light',
       values: [
         { value: themes.light.appBg, name: 'light' },
-        { value: themes.dark.appBg, name: 'dark' }
-      ]
+        { value: themes.dark.appBg, name: 'dark' },
+      ],
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
+        date: /Date$/,
+      },
     },
     docs: {
-      theme: themes.dark
-    }
+      theme: themes.dark,
+    },
   },
   globalTypes: {
     theme: {
@@ -57,12 +57,12 @@ const preview: Preview = {
           { value: 'light', icon: 'sun', title: 'Light (default)' },
           { value: 'dark', icon: 'moon', title: 'Dark' },
           { value: 'sidebyside', icon: 'sidebyside', title: 'Side-by-side' },
-          { value: 'stacked', icon: 'stacked', title: 'Stacked' }
+          { value: 'stacked', icon: 'stacked', title: 'Stacked' },
         ],
         dynamicTitle: true,
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 export default preview;

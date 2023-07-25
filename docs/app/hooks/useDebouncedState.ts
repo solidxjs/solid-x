@@ -33,11 +33,8 @@ function debounce<T extends (...args: any[]) => any>(func: T, wait = 300) {
  * @returns The value and debounced state setter
  */
 export function useDebouncedState<V>(initialValue: V, wait: number) {
-  const [ value, setValue ] = useState(initialValue);
-  const debouncedSetValue = useMemo(
-    () => debounce(setValue, wait),
-    [setValue]
-  );
+  const [value, setValue] = useState(initialValue);
+  const debouncedSetValue = useMemo(() => debounce(setValue, wait), [setValue]);
 
-  return [ value, debouncedSetValue ] as const;
+  return [value, debouncedSetValue] as const;
 }

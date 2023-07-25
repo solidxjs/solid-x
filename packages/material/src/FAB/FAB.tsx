@@ -70,7 +70,7 @@ type FABProps = {
 export const FAB: Component<FABProps> = (_props) => {
   const props = mergeDefaults(_props, {
     elevation: 'default',
-    iconPosition: 'leading'
+    iconPosition: 'leading',
   });
   const [localProps, passThroughProps] = splitProps(props, [
     'children',
@@ -78,7 +78,7 @@ export const FAB: Component<FABProps> = (_props) => {
     'icon',
     'iconPosition',
     'size',
-    'variant'
+    'variant',
   ]);
   const buttonIcon = createMemo(
     () =>
@@ -88,7 +88,7 @@ export const FAB: Component<FABProps> = (_props) => {
           class={styles.icon}>
           {localProps.icon}
         </span>
-      )
+      ),
   );
   const rootClass = createMemo(() =>
     styles.fab({
@@ -96,8 +96,8 @@ export const FAB: Component<FABProps> = (_props) => {
       icon: localProps.iconPosition,
       size: localProps.size,
       type: localProps.children ? 'extended' : 'regular',
-      variant: localProps.variant
-    })
+      variant: localProps.variant,
+    }),
   );
 
   return (
