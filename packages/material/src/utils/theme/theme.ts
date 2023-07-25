@@ -1,4 +1,4 @@
-import { ComplexStyleRule } from '@vanilla-extract/css';
+import type { ComplexStyleRule } from '@vanilla-extract/css';
 
 /**
  * converts camelCase to kebab-case string.

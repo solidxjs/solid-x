@@ -81,12 +81,12 @@ const copyThemeFiles = () => {
   } as Plugin;
 };
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     // we will be using the rollup plugin here as it generates the files in the way
     // want in a component library.
     vanillaExtractPlugin({
-      identifiers: 'debug',
+      identifiers: mode === 'development' ? 'debug' : 'short',
       cwd: path.resolve(__dirname, 'src')
     }),
     dts({
@@ -140,4 +140,4 @@ export default defineConfig({
       }
     }
   }
-});
+}));

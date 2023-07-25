@@ -1,1 +1,1 @@
-export { default, FAB as Button } from './FAB';
+export { default, FAB } from './FAB';
