@@ -38,7 +38,7 @@
       "import": "./dist/index.js"
     },
     "./*": {
-      "import": "./dist/*/*.js"
+      "import": "./dist/*/index.js"
     }
   },
   "files": [

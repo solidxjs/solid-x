@@ -17,3 +17,6 @@ dist
 # Test reports
 coverage
 reports
+
+# Turbo dirs
+.turbo

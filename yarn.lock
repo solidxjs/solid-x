@@ -2503,9 +2503,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solid-x/docs@workspace:docs":
+"@solid-x/docs@workspace:apps/docs":
   version: 0.0.0-use.local
-  resolution: "@solid-x/docs@workspace:docs"
+  resolution: "@solid-x/docs@workspace:apps/docs"
   dependencies:
     "@babel/standalone": ^7.22.9
     "@solid-x/material": "workspace:^"

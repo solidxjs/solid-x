@@ -14,8 +14,8 @@
   "license": "MIT",
   "author": "Raghavan Renganathan",
   "workspaces": [
-    "packages/*",
-    "docs"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "postinstall": "husky install"
