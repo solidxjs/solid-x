@@ -2,13 +2,13 @@
   "name": "@solid-x/material",
   "version": "0.1.0",
   "description": "Design tokens for materialize components",
-  "homepage": "https://github.com/solid-ui/solid-x#readme",
+  "homepage": "https://github.com/raghavan-renganathan/solid-x#readme",
   "bugs": {
-    "url": "https://github.com/solid-ui/solid-x/issues"
+    "url": "https://github.com/raghavan-renganathan/solid-x/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/solid-ui/solid-x",
+    "url": "git+https://github.com/raghavan-renganathan/solid-x",
     "directory": "packages/material"
   },
   "license": "MIT",
