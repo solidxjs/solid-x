@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 import '@/styles/globals.css';
 import '@/styles/prism-theme.css';
+import '@solid-x/material/theme.css';
 
 export default function DemoPage() {
   const { components = [], previewMeta, sourceCode } = useDemoMeta();
