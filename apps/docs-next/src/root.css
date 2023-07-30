@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sx-header-height: 58px;
+}
+
+.subheading-anchor {
+  @apply opacity-0 transition-opacity ms-1;
+
+  span:target + &,
+  :hover > &,
+  &:focus {
+    @apply opacity-100;
+  }
+
+  span + &,
+  :hover > & {
+    @apply !no-underline;
+  }
+
+  &:after {
+    @apply content-['#'] px-1;
+    @apply text-gray-300 dark:text-neutral-700;
+    span:target + & {
+      @apply text-gray-400;
+      @apply dark:text-neutral-500;
+    }
+  }
+}

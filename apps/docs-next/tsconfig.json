@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["solid-js", "vite/client"],
+    "paths": {
+      "~/*": ["./src/*"],
+      "@solid-x/material": ["../../packages/material/dist/types"],
+      "@solid-x/material/*": ["../../packages/material/dist/types/*"],
+    },
+  },
+  "extends": "../../tsconfig.json"
+}
