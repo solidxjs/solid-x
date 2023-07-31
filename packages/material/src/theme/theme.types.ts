@@ -7,11 +7,18 @@ import type { RuntimeFn } from '@vanilla-extract/recipes';
 type RecipeStyleRule = ComplexStyleRule | string;
 type VariantDefinitions = Record<string, RecipeStyleRule>;
 
-export type StyleGroups = string;
+type Components = 'Badge';
+
+export type StyleGroups = Record<string, string>;
 export type VariantGroups = Record<string, VariantDefinitions>;
 
-export type ComponentThemeType<Styles extends StyleGroups, Variants extends VariantGroups> = {
+export type ComponentThemeType<
+  Styles extends StyleGroups = StyleGroups,
+  Variants extends VariantGroups = VariantGroups,
+> = {
+  componentName: Components;
   componentRecipe?: RuntimeFn<Variants>;
   defaultTheme: string | Record<string, string>;
-  styles: Record<Styles, string>;
+  styles: Styles;
+  tokens: Record<string, any>;
 };

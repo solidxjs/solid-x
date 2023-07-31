@@ -19,13 +19,17 @@ type BadgeProps = {
 
 export const Badge: Component<BadgeProps> = (_props) => {
   const props = mergeDefaults(_props, { variant: 'large' });
-  const { classes, styles } = useComponentTheme(BadgeTheme, () => props.variant, {
-    get variant() {
-      return props.variant;
+  const { classes, customThemeStyles, styles } = useComponentTheme(
+    BadgeTheme,
+    () => props.variant,
+    {
+      get variant() {
+        return props.variant;
+      },
     },
-  });
+  );
   return (
-    <span class={classes()} role="presentation">
+    <span class={classes()} role="presentation" style={customThemeStyles()}>
       {props.variant === 'large' && <span class={styles().text}>{props.children}</span>}
     </span>
   );
