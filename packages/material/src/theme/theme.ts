@@ -1,26 +1,17 @@
-import { RefTokens, SysTokens, ref, sys } from './theme.tokens.css';
+import { SysTokens, sys } from './theme.tokens.css';
 
-export const THEME_CLASS = {
-  DARK_THEME: 'sx-dark',
+export const SELECTORS = {
+  DARK_THEME: '[data-sx-theme="dark"]',
 } as const;
 
-export type Theme = {
+export type Theme = SysTokens & {
   /**
    * The name of the theme.
    */
   name: string;
-  /**
-   * The reference tokens.
-   */
-  ref: RefTokens;
-  /**
-   * The system tokens.
-   */
-  sys: SysTokens;
 };
 
 export const Material: Theme = {
   name: 'Material',
-  ref,
-  sys,
+  ...sys,
 };

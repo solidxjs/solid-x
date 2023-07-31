@@ -1,6 +1,6 @@
 import { refDefaults, sysDefaults } from '@solid-x/tokens';
 import { createGlobalTheme } from '@vanilla-extract/css';
-import { THEME_CLASS } from './theme';
+import { SELECTORS } from './theme';
 import { ref as refContract, sys as sysContract } from './theme.tokens.css';
 
 createGlobalTheme(':root', refContract.palette, refDefaults.palette);
@@ -17,7 +17,7 @@ createGlobalTheme(':root', sysContract.typescale, sysDefaults.typescale(refContr
  * Dark theme support
  */
 createGlobalTheme(
-  `.${THEME_CLASS.DARK_THEME}`,
+  SELECTORS.DARK_THEME,
   sysContract.color,
   sysDefaults.colorDark(refContract, sysContract),
 );

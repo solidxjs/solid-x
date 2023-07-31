@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming';
+import { create, type ThemeVars } from '@storybook/theming';
 import { refDefaults } from '@solid-x/tokens';
 
 const light = create({
@@ -19,6 +19,6 @@ const dark = create({
   colorSecondary: refDefaults.palette.secondary[80],
 });
 
-const themes = { dark, light };
+const themes: { dark: ThemeVars, light: ThemeVars } = { dark, light };
 
 export default themes;

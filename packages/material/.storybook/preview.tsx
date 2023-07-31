@@ -10,16 +10,15 @@ const withTheme = (Story: StoryFn, context: StoryContext) => {
         <div>
           <Story />
         </div>
-        <div class="sx-dark">
+        <div data-sx-theme="dark">
           <Story />
         </div>
       </div>
     );
   }
 
-  const themeClass = theme === 'dark' ? 'sx-dark' : undefined;
   return (
-    <div class={themeClass}>
+    <div data-sx-theme={theme}>
       <Story />
     </div>
   );
