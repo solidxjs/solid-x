@@ -31,7 +31,7 @@ type CalloutProps = {
   children: JSXElement
 };
 
-export function Callout(props: CalloutProps) {
+export const Callout = (props: CalloutProps) => {
   const localProps = mergeProps({ type: 'default', emoji: TypeToEmoji['default']}, props) as NonNullable<CalloutProps>;
   return (
     <div
@@ -52,4 +52,4 @@ export function Callout(props: CalloutProps) {
       <div class="w-full min-w-0 leading-7">{localProps.children}</div>
     </div>
   );
-}
+};

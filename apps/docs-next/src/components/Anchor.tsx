@@ -1,12 +1,12 @@
 import { ComponentProps, createMemo, splitProps } from 'solid-js';
 import { A } from 'solid-start';
-import { OpenInNew } from './icons';
+import { OpenInNew } from './Icons';
 
 export type AnchorProps = ComponentProps<'a'> & {
   newWindow?: boolean
 };
 
-export function Anchor (props: AnchorProps) {
+export const Anchor = (props: AnchorProps) => {
   const [local, others] = splitProps(props, ['children']);
   const newWindow = createMemo(() => props.newWindow);
   const href = createMemo(() => props.href ?? '');

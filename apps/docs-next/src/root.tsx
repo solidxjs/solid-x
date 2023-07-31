@@ -16,18 +16,13 @@ import {
   ServerContext,
   Title
 } from 'solid-start';
-import { Header } from '~/components/header';
+import { AppHeader } from '~/components/AppHeader';
+import { PageStateProvider } from '~/components/context/PageStateContext';
 import { MDXProvider } from '~/libs/solid-mdx';
 import { getComponents } from '~/mdx-components';
-import { MDXFile, MetaFile } from '~/root.types';
+import { NavigationStateProvider } from './components/context/NavigationStateContext';
 import './root.css';
 import './shiki.css';
-
-// Import all the pages for generating the headings
-export const mods = /*#__PURE__*/ import.meta.glob<false, string, MDXFile>('./routes/**/*.{md,mdx}', {
-  query: { meta: '' }
-});
-export const sections = import.meta.glob<false, string, MetaFile>('./routes/**/_meta.{js,ts}');
 
 export default function Root() {
   const event = useContext(ServerContext);
@@ -78,12 +73,16 @@ export default function Root() {
           <ColorModeScript storageType={storageManager.type} />
           <Suspense>
             <ColorModeProvider storageManager={storageManager}>
-              <MDXProvider components={getComponents()}>
-                <Header />
-                <Routes>
-                  <FileRoutes />
-                </Routes>
-              </MDXProvider>
+              <NavigationStateProvider>
+                <PageStateProvider>
+                  <MDXProvider components={getComponents()}>
+                    <AppHeader />
+                    <Routes>
+                      <FileRoutes />
+                    </Routes>
+                  </MDXProvider>
+                </PageStateProvider>
+              </NavigationStateProvider>
             </ColorModeProvider>
           </Suspense>
         </ErrorBoundary>

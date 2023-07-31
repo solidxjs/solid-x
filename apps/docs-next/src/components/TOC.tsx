@@ -1,22 +1,19 @@
 import clsx from 'clsx';
 import { For, createEffect, createMemo } from 'solid-js';
 import { isServer } from 'solid-js/web';
-import { HeadingsMeta } from '~/root.types';
-import { useActiveAnchor } from './active-anchor';
-import { Anchor } from './anchor';
+import { Anchor } from './Anchor';
+import { useActiveAnchor } from './context/ActiveAnchorContext';
+import { usePageState } from './context/PageStateContext';
 
 const linkClassName = clsx(
   'text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100',
   'contrast-more:text-gray-800 contrast-more:dark:text-gray-50'
 );
 
-type TOCProps = {
-  contents: HeadingsMeta[]
-};
-
-export function TOC(props: TOCProps) {
+export const TOC = () => {
   let root: HTMLDivElement | undefined;
   const activeAnchor = useActiveAnchor();
+  const { sections } = usePageState();
   const activeSlug = createMemo(() => Object.entries(activeAnchor).find(
     ([, { isActive }]) => isActive
   )?.[0]);
@@ -25,16 +22,14 @@ export function TOC(props: TOCProps) {
     if (!activeSlug() || isServer) return;
 
     const anchor = root?.querySelector(
-      `li > a[href="#${activeSlug}"]`
+      `li > a[href="#${activeSlug()}"]`
     );
 
     if (anchor) {
-      (window as any).scrollIntoView(anchor, {
+      anchor.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
         inline: 'center',
-        scrollMode: 'always',
-        boundary: root
       });
     }
   });
@@ -48,13 +43,13 @@ export function TOC(props: TOCProps) {
       )}
     >
       {
-        props.contents.length > 0 && (
+        sections().length > 0 && (
           <>
             <p class="mb-4 font-semibold tracking-tight">
               On this page
             </p>
             <ul>
-              <For each={props.contents}>
+              <For each={sections()}>
                 {(heading) => (
                   <li class="my-2 scroll-my-6 scroll-py-6">
                     <a
@@ -84,7 +79,7 @@ export function TOC(props: TOCProps) {
       }
       <div
         class={clsx(
-          props.contents.length &&
+          sections().length &&
           'mt-8 border-t bg-white pt-8 shadow-[0_-12px_16px_white] dark:bg-dark dark:shadow-[0_-12px_16px_#111]',
           'sticky bottom-0 flex flex-col items-start gap-2 pb-8 dark:border-neutral-800',
           'contrast-more:border-t contrast-more:border-neutral-400 contrast-more:shadow-none contrast-more:dark:border-neutral-400'
@@ -100,4 +95,4 @@ export function TOC(props: TOCProps) {
       </div>
     </div>
   );
-}
+};

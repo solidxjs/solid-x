@@ -1,9 +1,9 @@
 import { Outlet } from '@solidjs/router';
-import { Layout } from '~/components';
+import { Layout } from '~/components/Layout';
 
 export default function DocsLayout() {
   return (
-    <Layout page="docs">
+    <Layout>
       <Outlet />
     </Layout>
   );

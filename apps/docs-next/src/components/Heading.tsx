@@ -1,13 +1,15 @@
 import clsx from 'clsx';
-import { ComponentProps, createEffect, splitProps } from 'solid-js';
-import { ActiveAnchor, useIntersectionObserver, useSetActiveAnchor, useSlugs } from './active-anchor';
+import { ComponentProps, createEffect, onMount, splitProps } from 'solid-js';
+import { ActiveAnchor, useIntersectionObserver, useSetActiveAnchor, useSlugs } from './context/ActiveAnchorContext';
 import { Dynamic } from 'solid-js/web';
+import { usePageState } from './context/PageStateContext';
 
 // Anchor links
-export function HeadingLink(props: ComponentProps<'h2'> & {
+export const Heading = (props: ComponentProps<'h2'> & {
   tag: `h${2 | 3 | 4 | 5 | 6}`
   context: { index: number }
-}) {
+}) => {
+  const { addSection } = usePageState();
   const setActiveAnchor = useSetActiveAnchor();
   const slugs = useSlugs();
   const observer = useIntersectionObserver();
@@ -30,6 +32,10 @@ export function HeadingLink(props: ComponentProps<'h2'> & {
         return ret as ActiveAnchor;
       });
     };
+  });
+
+  onMount(() => {
+    addSection?.(getSectionString(local.children), local.id ?? '', getSectionDepth(local.tag));
   });
 
   return (
@@ -56,4 +62,23 @@ export function HeadingLink(props: ComponentProps<'h2'> & {
       />
     </Dynamic>
   );
-}
+};
+
+const getSectionString = (children: unknown) => {
+  if (typeof children == 'string') {
+    return children as string;
+  }
+  if (children instanceof Element) {
+    const e = document.createElement('textarea');
+    e.innerHTML = children.innerHTML;
+    return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue ?? '';
+  }
+  if (Array.isArray(children)) {
+    let str = '';
+    children.forEach((item) => (str += getSectionString(item)));
+    return str;
+  }
+  return '';
+};
+
+const getSectionDepth = (tag: `h${2 | 3 | 4 | 5 | 6}`) => Number(tag.charAt(1));

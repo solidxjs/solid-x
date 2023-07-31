@@ -11,7 +11,7 @@ const makePrimaryColor =
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,md,mdx}'],
+  content: ['./content/**/*.{,tsx,md,mdx}', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: ['class', '[data-kb-theme="dark"]'],
   theme: {
     screens: {

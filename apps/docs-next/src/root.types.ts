@@ -1,30 +1,19 @@
-export type PageMeta = {
+export type Page = {
   title: string;
   href: string;
   links?: never;
   type: 'page';
 };
-export type CategoryMeta = {
+export type Category = {
   title: string;
   href?: never;
-  links: (CategoryMeta | PageMeta)[];
+  links: (Category | Page)[];
   type: 'category';
 };
-export type HeaderMeta = {
+export type Header = {
   title: string;
   href?: never;
   links?: never;
   type: 'header';
 };
-export type HeadingsMeta = {
-  depth: number;
-  slug: string;
-  text: string;
-};
-export type SectionsMeta = (CategoryMeta | HeaderMeta | PageMeta);
-export type MetaFile = {
-  default: SectionsMeta[]
-};
-export type MDXFile = {
-  getHeadings: () => HeadingsMeta[];
-};
+export type Section = (Category | Header | Page);

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --sx-header-height: 58px;
+  --sx-header-height: 4rem;
 }
 
 .subheading-anchor {

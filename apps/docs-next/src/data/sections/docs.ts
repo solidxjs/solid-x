@@ -1,4 +1,4 @@
-import { SectionsMeta } from '../../root.types';
+import { Section } from '~/root.types';
 
 const TYPE = {
   CATEGORY: 'category',
@@ -70,6 +70,6 @@ const meta = [
     href: 'https://solidjs.com?utm_source=solidx.dev&utm_medium=referral&utm_campaign=sidebar',
     type: TYPE.PAGE
   }
-] as SectionsMeta[];
+] as Section[];
 
 export default meta;

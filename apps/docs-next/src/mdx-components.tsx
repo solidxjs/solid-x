@@ -2,7 +2,10 @@ import { IconButton } from '@solid-x/material/IconButton';
 import { Title as MetaTitle } from '@solidjs/meta';
 import { clsx } from 'clsx';
 import { Component, ComponentProps, createSignal, Show, splitProps } from 'solid-js';
-import { Callout, CheckIcon, CopyIcon, HeadingLink, TabsSnippets } from '~/components';
+import { Callout } from '~/components/Callout';
+import { Heading } from '~/components/Heading';
+import { CheckIcon, CopyIcon } from '~/components/Icons';
+import { Tabs } from '~/components/Tabs';
 
 export const getComponents = (): Record<string, Component> => {
   const context = { index: 0 };
@@ -20,11 +23,11 @@ export const getComponents = (): Record<string, Component> => {
         </h1>
       );
     },
-    h2: props => <HeadingLink tag="h2" context={context} {...props} />,
-    h3: props => <HeadingLink tag="h3" context={context} {...props} />,
-    h4: props => <HeadingLink tag="h4" context={context} {...props} />,
-    h5: props => <HeadingLink tag="h5" context={context} {...props} />,
-    h6: props => <HeadingLink tag="h6" context={context} {...props} />,
+    h2: props => <Heading tag="h2" context={context} {...props} />,
+    h3: props => <Heading tag="h3" context={context} {...props} />,
+    h4: props => <Heading tag="h4" context={context} {...props} />,
+    h5: props => <Heading tag="h5" context={context} {...props} />,
+    h6: props => <Heading tag="h6" context={context} {...props} />,
     p: props => <p class="mt-6 leading-7 first:mt-0" {...props} />,
     ul: props => (
       <ul
@@ -100,6 +103,6 @@ export const getComponents = (): Record<string, Component> => {
      * Custom Components
      */
     Callout: Callout as Component,
-    TabsSnippets: TabsSnippets
+    Tabs: Tabs
   };
 };

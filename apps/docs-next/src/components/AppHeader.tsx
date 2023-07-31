@@ -1,7 +1,7 @@
 import { Link, useMatch } from '@solidjs/router';
 import { clsx } from 'clsx';
-import { GitHubIcon } from './icons';
-import { ThemeSelector } from './theme-selector';
+import { GitHubIcon } from './Icons';
+import { ThemeSelector } from './ThemeSelector';
 
 const logo = (
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20" viewBox="0 0 2000 464">
@@ -116,68 +116,70 @@ const classes = {
   inactive: 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200',
 };
 
-export function Header() {
+export const AppHeader = () => {
   const isDocumentationPath = useMatch(() => '/docs/*');
   const isAboutPath = useMatch(() => '/about/*');
 
   return (
     <header
       class={
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white dark:bg-dark border-b border-b-black/20 dark:border-b-white/20 px-4 transition duration-500 lg:px-6'
+        'sticky top-0 z-50 bg-white dark:bg-dark border-b border-b-black/20 dark:border-b-white/20 px-4 transition duration-500 lg:px-6 h-[var(--sx-header-height)]'
       }
     >
-      <div class="mr-6 flex lg:hidden">
-        {/* <MobileNavigation sections={props.navSections} /> */}
-      </div>
-      <div class="relative flex flex-grow basis-0 items-center space-x-2">
-        <Link
-          class="text-gray-800 dark:text-gray-200 font-medium font-display text-xl leading-none"
-          href="/"
-        >
-          {logo}
-        </Link>
-        <span class="rounded bg-gray-200 text-gray-800 px-1.5 py-1 text-sm leading-none dark:bg-gray-800 dark:text-gray-300">
-          v0.1.0
-        </span>
-      </div>
-
-      <div class="relative flex basis-0 justify-end md:flex-grow items-center py-2">
-        <div id="docsearch" class="mx-3.5 flex items-center justify-center" />
-        <div class="hidden lg:flex lg:space-x-1.5 text-sm">
-          <Link
-            href="/docs/introduction"
-            class={clsx(
-              classes.links,
-              isDocumentationPath()
-                ? classes.active
-                : classes.inactive
-            )}
-          >
-            Documentation
-          </Link>
-          <Link
-            href="/about"
-            class={clsx(
-              'px-3 py-2 rounded-md flex items-center justify-center transition',
-              isAboutPath()
-                ? classes.active
-                : classes.inactive
-            )}
-          >
-            About
-          </Link>
+      <nav class="flex flex-wrap items-center justify-between h-full max-w-[90rem] mx-auto">
+        <div class="mr-6 flex lg:hidden">
+          {/* <MobileNavigation sections={props.navSections} /> */}
         </div>
-        <Link
-          href="https://github.com/raghavan-renganathan/solid-x"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-2.5 mx-2 rounded flex items-center justify-center transition text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
-          aria-label="GitHub"
-        >
-          <GitHubIcon class="h-5 w-5" />
-        </Link>
-        <ThemeSelector />
-      </div>
+        <div class="relative flex flex-grow basis-0 items-center space-x-2">
+          <Link
+            class="text-gray-800 dark:text-gray-200 font-medium font-display text-xl leading-none"
+            href="/"
+          >
+            {logo}
+          </Link>
+          <span class="rounded bg-gray-200 text-gray-800 px-1.5 py-1 text-sm leading-none dark:bg-gray-800 dark:text-gray-300">
+            v0.1.0
+          </span>
+        </div>
+
+        <div class="relative flex basis-0 justify-end md:flex-grow items-center py-2">
+          <div id="docsearch" class="mx-3.5 flex items-center justify-center" />
+          <div class="hidden lg:flex lg:space-x-1.5 text-sm">
+            <Link
+              href="/docs/introduction"
+              class={clsx(
+                classes.links,
+                isDocumentationPath()
+                  ? classes.active
+                  : classes.inactive
+              )}
+            >
+              Documentation
+            </Link>
+            <Link
+              href="/about"
+              class={clsx(
+                'px-3 py-2 rounded-md flex items-center justify-center transition',
+                isAboutPath()
+                  ? classes.active
+                  : classes.inactive
+              )}
+            >
+              About
+            </Link>
+          </div>
+          <Link
+            href="https://github.com/raghavan-renganathan/solid-x"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 mx-2 rounded flex items-center justify-center transition text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
+            aria-label="GitHub"
+          >
+            <GitHubIcon class="h-5 w-5" />
+          </Link>
+          <ThemeSelector />
+        </div>
+      </nav>
     </header>
   );
 };

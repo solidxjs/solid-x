@@ -1,7 +1,7 @@
 import { ConfigColorMode, Select, useColorMode } from '@kobalte/core';
 import { JSX } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { MoonIcon, SunIcon, SystemIcon } from './icons';
+import { MoonIcon, SunIcon, SystemIcon } from './Icons';
 
 interface ThemeOption {
   value: ConfigColorMode;
@@ -27,7 +27,7 @@ const THEME_OPTIONS: ThemeOption[] = [
   },
 ];
 
-export function ThemeSelector() {
+export const ThemeSelector = () => {
   const { colorMode, setColorMode } = useColorMode();
 
   return (
