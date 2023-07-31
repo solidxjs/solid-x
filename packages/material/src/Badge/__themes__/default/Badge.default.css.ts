@@ -1,14 +1,14 @@
 import { createTheme } from '@vanilla-extract/css';
-import { sys } from '../../theme';
-import { tokens } from './theme.tokens.css';
+import { sys } from '../../../theme';
+import { tokens } from '../Badge.tokens.css';
 
-export const baseTheme = createTheme(tokens, {
-  small: {
+export const defaultTheme = {
+  small: createTheme(tokens.small, {
     color: sys.color.error.base,
     shape: sys.shape.corner.full,
     size: '6px',
-  },
-  large: {
+  }),
+  large: createTheme(tokens.large, {
     container: {
       color: sys.color.error.base,
       shape: sys.shape.corner.full,
@@ -22,5 +22,5 @@ export const baseTheme = createTheme(tokens, {
       tracking: sys.typescale.label.sm.tracking,
       weight: sys.typescale.label.sm.weight,
     },
-  },
-});
+  }),
+};

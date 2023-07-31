@@ -6,6 +6,10 @@ const meta: Meta<typeof Badge> = {
   title: 'Status/Badge',
   tags: ['autodocs'],
   component: Badge,
+  argTypes: {
+    children: { control: 'string' },
+    variant: { control: 'select', options: ['large', 'small'] },
+  },
 };
 export default meta;
 

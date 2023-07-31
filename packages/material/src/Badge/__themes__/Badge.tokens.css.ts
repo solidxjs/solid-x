@@ -1,12 +1,12 @@
 import { createThemeContract } from '@vanilla-extract/css';
 
-export const tokens = createThemeContract({
-  small: {
+export const tokens = {
+  small: createThemeContract({
     color: null,
     shape: null,
     size: null,
-  },
-  large: {
+  }),
+  large: createThemeContract({
     container: {
       color: null,
       shape: null,
@@ -20,5 +20,5 @@ export const tokens = createThemeContract({
       tracking: null,
       weight: null,
     },
-  },
-});
+  }),
+};

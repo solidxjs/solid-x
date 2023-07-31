@@ -1,6 +1,7 @@
 import { Component } from 'solid-js';
-import * as styles from './__styles__/Badge.styles.css';
+import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
+import { BadgeTheme } from './__themes__/default/Badge.theme';
 
 type BadgeProps = {
   /**
@@ -13,14 +14,19 @@ type BadgeProps = {
    * The variant of the badge.
    * @default 'large'
    */
-  variant?: styles.StyleVariant;
+  variant?: 'small' | 'large';
 };
 
 export const Badge: Component<BadgeProps> = (_props) => {
   const props = mergeDefaults(_props, { variant: 'large' });
+  const { classes, styles } = useComponentTheme(BadgeTheme, () => props.variant, {
+    get variant() {
+      return props.variant;
+    },
+  });
   return (
-    <span class={styles.badge({ variant: props.variant })} role="presentation">
-      {props.variant === 'large' && <span class={styles.text}>{props.children}</span>}
+    <span class={classes()} role="presentation">
+      {props.variant === 'large' && <span class={styles().text}>{props.children}</span>}
     </span>
   );
 };
