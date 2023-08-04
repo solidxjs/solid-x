@@ -2,6 +2,7 @@ import { Link, useMatch } from '@solidjs/router';
 import { clsx } from 'clsx';
 import { GitHubIcon } from './Icons';
 import { ThemeSelector } from './ThemeSelector';
+import { MobileSidebar } from './MobileSidebar';
 
 const logo = (
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20" viewBox="0 0 2000 464">
@@ -112,8 +113,16 @@ const logo = (
 
 const classes = {
   links: 'px-3 py-2 rounded-md flex items-center justify-center transition',
-  active: 'font-semibold text-gray-800 dark:text-gray-200',
-  inactive: 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200',
+  inactive: clsx(
+    'text-gray-500 hover:bg-gray-100 hover:text-gray-900',
+    'dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50',
+    'contrast-more:text-gray-900 contrast-more:dark:text-gray-50',
+    'contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50'
+  ),
+  active: clsx(
+    'bg-primary-100 font-semibold text-primary-800 dark:bg-primary-400/10 dark:text-primary-600',
+    'contrast-more:border-primary-500 contrast-more:dark:border-primary-500'
+  )
 };
 
 export const AppHeader = () => {
@@ -127,10 +136,10 @@ export const AppHeader = () => {
       }
     >
       <nav class="flex flex-wrap items-center justify-between h-full max-w-[90rem] mx-auto">
-        <div class="mr-6 flex lg:hidden">
-          {/* <MobileNavigation sections={props.navSections} /> */}
+        <div class="me-4 flex lg:hidden">
+          <MobileSidebar />
         </div>
-        <div class="relative flex flex-grow basis-0 items-center space-x-2">
+        <div class="relative flex flex-grow basis-0 items-center gap-2">
           <Link
             class="text-gray-800 dark:text-gray-200 font-medium font-display text-xl leading-none"
             href="/"
@@ -144,7 +153,7 @@ export const AppHeader = () => {
 
         <div class="relative flex basis-0 justify-end md:flex-grow items-center py-2">
           <div id="docsearch" class="mx-3.5 flex items-center justify-center" />
-          <div class="hidden lg:flex lg:space-x-1.5 text-sm">
+          <div class="hidden lg:flex lg:gap-2 text-sm">
             <Link
               href="/docs/introduction"
               class={clsx(
@@ -159,7 +168,7 @@ export const AppHeader = () => {
             <Link
               href="/about"
               class={clsx(
-                'px-3 py-2 rounded-md flex items-center justify-center transition',
+                classes.links,
                 isAboutPath()
                   ? classes.active
                   : classes.inactive

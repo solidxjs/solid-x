@@ -6,6 +6,13 @@
 
 :root {
   --sx-header-height: 4rem;
+  --sx-primary-hue: 212deg;
+  --sx-menu-height: 3.75rem;
+  --sx-banner-height: 2.5rem;
+}
+
+[data-kb-theme="dark"] {
+  --sx-primary-hue: 204deg;
 }
 
 .subheading-anchor {

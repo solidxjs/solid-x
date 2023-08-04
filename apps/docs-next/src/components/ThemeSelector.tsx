@@ -13,17 +13,17 @@ const THEME_OPTIONS: ThemeOption[] = [
   {
     value: 'light',
     label: 'Light',
-    icon: () => <SunIcon class="h-4 w-4" />,
+    icon: () => <SunIcon class="h-5 w-5" />,
   },
   {
     value: 'dark',
     label: 'Dark',
-    icon: () => <MoonIcon class="h-4 w-4" />,
+    icon: () => <MoonIcon class="h-5 w-5" />,
   },
   {
     value: 'system',
     label: 'System',
-    icon: () => <SystemIcon class="h-4 w-4" />,
+    icon: () => <SystemIcon class="h-5 w-5" />,
   },
 ];
 
@@ -52,7 +52,7 @@ export const ThemeSelector = () => {
     >
       <Select.Trigger
         aria-label="toggle color mode"
-        class="min-w-[90px] flex p-2.5 rounded-md cursor-pointer items-center justify-center transition text-gray-600 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-800"
+        class="min-w-[20px] md:min-w-[90px] flex p-2.5 rounded-md cursor-pointer items-center justify-center transition text-gray-600 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-800"
       >
         <Select.Value<ThemeOption>>
           {({ selectedOptions }) => (
@@ -60,7 +60,7 @@ export const ThemeSelector = () => {
               <Dynamic
                 component={THEME_OPTIONS.find(i => i.value === colorMode())?.icon}
               />
-              <span class="text-sm">
+              <span class="text-sm hidden md:inline">
                 {selectedOptions()[0].label}
               </span>
             </span>

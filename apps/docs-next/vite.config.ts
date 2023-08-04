@@ -2,7 +2,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
-// import vercelSolid from 'solid-start-vercel';
+import vercelSolid from 'solid-start-vercel';
 import solid from 'solid-start/vite';
 import { defineConfig } from 'vite';
 import { mdx } from './plugins/mdx-plugin';
@@ -20,7 +20,7 @@ export default defineConfig({
       ]
     }),
     solid({
-      // adapter: vercelSolid({}),
+      adapter: vercelSolid({}),
       extensions: ['.mdx', '.md'],
       routesDir: '../content'
     }),

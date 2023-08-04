@@ -6,9 +6,8 @@ import { Callout } from '~/components/Callout';
 import { Heading } from '~/components/Heading';
 import { CheckIcon, CopyIcon } from '~/components/Icons';
 import { Tabs } from '~/components/Tabs';
-
+const context = { index: 0 };
 export const getComponents = (): Record<string, Component> => {
-  const context = { index: 0 };
   return {
     h1: (props: ComponentProps<'h1'>) => {
       const [local, others] = splitProps(props, ['children']);

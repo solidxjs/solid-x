@@ -1,6 +1,6 @@
 import { ParentProps, Show } from 'solid-js';
 import { PageNavigation } from './PageNavigation';
-import { SideBar } from './Sidebar';
+import { Sidebar } from './Sidebar';
 import { TOC } from './TOC';
 import { ActiveAnchorProvider } from './context/ActiveAnchorContext';
 import { useNavigationStateContext } from './context/NavigationStateContext';
@@ -20,7 +20,7 @@ export const Layout = (props: LayoutProps) => {
             !props.hideSidebar && (
               <div class="hidden lg:relative lg:block lg:flex-none">
                 <div class="sticky top-[var(--sx-header-height)] h-[calc(100vh-var(--sx-header-height))] overflow-y-auto py-6 pl-6 pr-2">
-                  <SideBar />
+                  <Sidebar />
                 </div>
               </div>
             )
@@ -48,7 +48,9 @@ export const Layout = (props: LayoutProps) => {
           </div>
           {
             !props.hideTOC && (
-              <TOC />
+              <div class="hidden xl:block shrink-0">
+                <TOC />
+              </div>
             )
           }
         </ActiveAnchorProvider>
