@@ -1,8 +1,9 @@
-import { Link, useMatch } from '@solidjs/router';
 import { clsx } from 'clsx';
+import { A as Link, useMatch } from 'solid-start';
+import { FlexSearch } from './FlexSearch';
 import { GitHubIcon } from './Icons';
-import { ThemeSelector } from './ThemeSelector';
 import { MobileSidebar } from './MobileSidebar';
+import { ThemeSelector } from './ThemeSelector';
 
 const logo = (
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="20" viewBox="0 0 2000 464">
@@ -117,12 +118,12 @@ const classes = {
     'text-gray-500 hover:bg-gray-100 hover:text-gray-900',
     'dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50',
     'contrast-more:text-gray-900 contrast-more:dark:text-gray-50',
-    'contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50'
+    'contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50',
   ),
   active: clsx(
     'bg-primary-100 font-semibold text-primary-800 dark:bg-primary-400/10 dark:text-primary-600',
-    'contrast-more:border-primary-500 contrast-more:dark:border-primary-500'
-  )
+    'contrast-more:border-primary-500 contrast-more:dark:border-primary-500',
+  ),
 };
 
 export const AppHeader = () => {
@@ -133,8 +134,7 @@ export const AppHeader = () => {
     <header
       class={
         'sticky top-0 z-50 bg-white dark:bg-dark border-b border-b-black/20 dark:border-b-white/20 px-4 transition duration-500 lg:px-6 h-[var(--sx-header-height)]'
-      }
-    >
+      }>
       <nav class="flex flex-wrap items-center justify-between h-full max-w-[90rem] mx-auto">
         <div class="me-4 flex lg:hidden">
           <MobileSidebar />
@@ -142,8 +142,7 @@ export const AppHeader = () => {
         <div class="relative flex flex-grow basis-0 items-center gap-2">
           <Link
             class="text-gray-800 dark:text-gray-200 font-medium font-display text-xl leading-none"
-            href="/"
-          >
+            href="/">
             {logo}
           </Link>
           <span class="rounded bg-gray-200 text-gray-800 px-1.5 py-1 text-sm leading-none dark:bg-gray-800 dark:text-gray-300">
@@ -152,28 +151,21 @@ export const AppHeader = () => {
         </div>
 
         <div class="relative flex basis-0 justify-end md:flex-grow items-center py-2">
-          <div id="docsearch" class="mx-3.5 flex items-center justify-center" />
+          <div id="docsearch" class="mx-3.5 flex items-center justify-center">
+            <FlexSearch class="hidden md:inline-block min-w-[200px]" />
+          </div>
           <div class="hidden lg:flex lg:gap-2 text-sm">
             <Link
               href="/docs/introduction"
               class={clsx(
                 classes.links,
-                isDocumentationPath()
-                  ? classes.active
-                  : classes.inactive
-              )}
-            >
+                isDocumentationPath() ? classes.active : classes.inactive,
+              )}>
               Documentation
             </Link>
             <Link
               href="/about"
-              class={clsx(
-                classes.links,
-                isAboutPath()
-                  ? classes.active
-                  : classes.inactive
-              )}
-            >
+              class={clsx(classes.links, isAboutPath() ? classes.active : classes.inactive)}>
               About
             </Link>
           </div>
@@ -182,8 +174,7 @@ export const AppHeader = () => {
             target="_blank"
             rel="noopener noreferrer"
             class="p-2.5 mx-2 rounded flex items-center justify-center transition text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
-            aria-label="GitHub"
-          >
+            aria-label="GitHub">
             <GitHubIcon class="h-5 w-5" />
           </Link>
           <ThemeSelector />

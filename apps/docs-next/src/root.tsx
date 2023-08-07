@@ -14,7 +14,7 @@ import {
   Routes,
   Scripts,
   ServerContext,
-  Title
+  Title,
 } from 'solid-start';
 import { AppHeader } from '~/components/AppHeader';
 import { PageStateProvider } from '~/components/context/PageStateContext';
@@ -27,10 +27,10 @@ import './shiki.css';
 export default function Root() {
   const event = useContext(ServerContext);
   const storageManager = cookieStorageManagerSSR(
-    isServer ? event?.request.headers.get('cookie') ?? '' : document.cookie
+    isServer ? event?.request.headers.get('cookie') ?? '' : document.cookie,
   );
   return (
-    <Html lang="en">
+    <Html lang="en" dir="ltr">
       <Head>
         <Title>SolidStart - With MDX</Title>
         <Meta charset="utf-8" />

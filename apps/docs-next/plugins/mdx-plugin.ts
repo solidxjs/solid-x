@@ -2,12 +2,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { nodeTypes } from '@mdx-js/mdx';
 import mdxPlugin, { type Options as MDXOptions } from '@mdx-js/rollup';
+import fs from 'node:fs';
+import path from 'node:path';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
 import { Plugin } from 'vite';
+import remarkStructurizeData from './remarkStructurizeData';
 
-export const mdx = (options: MDXOptions) => ({
+const SEARCH_DATA_FILENAME = path.resolve(process.cwd(), 'public', 'search-data.json');
+const searchData = {};
+
+export const mdx = (options: MDXOptions) => ([{
   ...mdxPlugin({
     jsx: true,
     jsxImportSource: 'solid-js',
@@ -19,6 +25,7 @@ export const mdx = (options: MDXOptions) => ({
     ],
     remarkPlugins: [
       ...options.remarkPlugins ?? [],
+      [remarkStructurizeData, { output: searchData }],
       [
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -48,4 +55,9 @@ export const mdx = (options: MDXOptions) => ({
     ]
   }),
   enforce: 'pre',
-} as Plugin);
+}, {
+  name: 'generate-search-json',
+  closeBundle() {
+    fs.writeFileSync(SEARCH_DATA_FILENAME, JSON.stringify(searchData));
+  },
+}] as Plugin[]);

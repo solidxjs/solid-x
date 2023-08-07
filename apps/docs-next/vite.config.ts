@@ -8,6 +8,7 @@ import { defineConfig } from 'vite';
 import { mdx } from './plugins/mdx-plugin';
 
 export default defineConfig({
+  assetsInclude: [/search-data.json/i],
   plugins: [
     mdx({
       rehypePlugins:[
