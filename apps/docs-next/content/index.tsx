@@ -10,11 +10,12 @@ export default function Index() {
             <span class="text-[var(--primary-color)]">with Solid X</span>
           </h1>
           <p class="text-stone-400 max-w-[50ch] mx-auto my-2 leading-relaxed">
-            Solid X provides a comprehensive suite of UI components to help you build web applications
-            faster. Get started with the Material You UI, which our components ship with by default, or
-            bring your own design-system to our production-ready component library.
+            Solid X provides a comprehensive suite of UI components to help you build web
+            applications faster. Get started with the Material You UI, which our components ship
+            with by default, or bring your own design-system to our production-ready component
+            library.
           </p>
-          <A class='' href="/docs">
+          <A class="" href="/docs">
             Get started <span>→</span>
           </A>
         </div>

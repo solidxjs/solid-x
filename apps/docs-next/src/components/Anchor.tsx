@@ -3,7 +3,7 @@ import { A } from 'solid-start';
 import { OpenInNew } from './Icons';
 
 export type AnchorProps = ComponentProps<'a'> & {
-  newWindow?: boolean
+  newWindow?: boolean;
 };
 
 export const Anchor = (props: AnchorProps) => {
@@ -15,7 +15,8 @@ export const Anchor = (props: AnchorProps) => {
     return (
       <a target="_blank" rel="noreferrer" {...others}>
         <span class="flex items-center gap-1">
-          {local.children}<OpenInNew class="inline" height="1em" width="1em" />
+          {local.children}
+          <OpenInNew class="inline" height="1em" width="1em" />
         </span>
         <span class="sr-only select-none"> (opens in a new tab)</span>
       </a>
@@ -23,8 +24,12 @@ export const Anchor = (props: AnchorProps) => {
   }
 
   if (!href()) {
-    return (<a {...props}></a>);
+    return <a {...props}></a>;
   }
 
-  return (<A {...props} href={href()}>{local.children}</A>);
+  return (
+    <A {...props} href={href()}>
+      {local.children}
+    </A>
+  );
 };

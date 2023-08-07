@@ -17,14 +17,12 @@ const SetActiveAnchorContext = createContext<SetStoreFunction<ActiveAnchor>>();
 
 const IntersectionObserverContext = createContext<IntersectionObserver | null>(null);
 const slugs = new WeakMap();
-const SlugsContext = createContext<WeakMap<any, any>>(slugs);
-
+const SlugsContext = createContext<WeakMap<object, unknown>>(slugs);
 
 export const useActiveAnchor = () => useContext(ActiveAnchorContext);
 export const useSetActiveAnchor = () => useContext(SetActiveAnchorContext);
 
-export const useIntersectionObserver = () =>
-  useContext(IntersectionObserverContext);
+export const useIntersectionObserver = () => useContext(IntersectionObserverContext);
 export const useSlugs = () => useContext(SlugsContext);
 
 export const ActiveAnchorProvider: ParentComponent = (props) => {
@@ -32,8 +30,8 @@ export const ActiveAnchorProvider: ParentComponent = (props) => {
   let observerRef: IntersectionObserver | null = null;
   if (!isServer) {
     observerRef = new IntersectionObserver(
-      entries => {
-        setActiveAnchor(f => {
+      (entries) => {
+        setActiveAnchor((f) => {
           const ret = { ...f };
 
           for (const entry of entries) {
@@ -46,7 +44,7 @@ export const ActiveAnchorProvider: ParentComponent = (props) => {
               ret[slug] = {
                 index,
                 aboveHalfViewport,
-                insideHalfViewport
+                insideHalfViewport,
               };
             }
           }
@@ -56,10 +54,7 @@ export const ActiveAnchorProvider: ParentComponent = (props) => {
           let largestIndexAboveViewport = -1;
           for (const s in ret) {
             ret[s].isActive = false;
-            if (
-              ret[s].insideHalfViewport &&
-              ret[s].index < smallestIndexInViewport
-            ) {
+            if (ret[s].insideHalfViewport && ret[s].index < smallestIndexInViewport) {
               smallestIndexInViewport = ret[s].index;
               activeSlug = s;
             }
@@ -79,8 +74,8 @@ export const ActiveAnchorProvider: ParentComponent = (props) => {
       },
       {
         rootMargin: '0px 0px -50%',
-        threshold: [0, 1]
-      }
+        threshold: [0, 1],
+      },
     );
   }
   return (

@@ -16,4 +16,4 @@ export type Header = {
   links?: never;
   type: 'header';
 };
-export type Section = (Category | Header | Page);
+export type Section = Category | Header | Page;

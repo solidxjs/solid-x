@@ -26,7 +26,10 @@ export const HighlightMatches = (props: Props) => (
     <Show
       when={props.match.length > 0 && props.children && props.children.length > 0}
       fallback={<>{props.children}</>}>
-      {highlighter(props.children!, props.match)}
+      {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        highlighter(props.children!, props.match)
+      }
     </Show>
   </>
 );

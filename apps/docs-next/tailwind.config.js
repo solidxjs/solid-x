@@ -1,7 +1,7 @@
 import colors from 'tailwindcss/colors';
 
 const makePrimaryColor =
-  l =>
+  (l) =>
     ({ opacityValue }) => {
       if (opacityValue === undefined) {
         return `hsl(var(--sx-primary-hue) 100% ${l}%)`;
@@ -19,7 +19,7 @@ const config = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1536px'
+      '2xl': '1536px',
     },
     fontSize: {
       xs: '.75rem',
@@ -31,10 +31,10 @@ const config = {
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
-      '6xl': '4rem'
+      '6xl': '4rem',
     },
     letterSpacing: {
-      tight: '-0.015em'
+      tight: '-0.015em',
     },
     colors: {
       transparent: 'transparent',
@@ -59,14 +59,14 @@ const config = {
         700: makePrimaryColor(39),
         750: makePrimaryColor(35),
         800: makePrimaryColor(32),
-        900: makePrimaryColor(24)
-      }
+        900: makePrimaryColor(24),
+      },
     },
     extend: {
       colors: {
-        dark: '#111'
-      }
-    }
+        dark: '#111',
+      },
+    },
   },
 };
 

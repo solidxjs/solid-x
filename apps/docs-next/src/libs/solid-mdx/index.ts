@@ -6,23 +6,21 @@ import {
   createMemo,
   mergeProps,
   splitProps,
-  useContext
+  useContext,
 } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import { HTMLElements, SVGElements } from './elements';
 
 export type MDXComponents = {
-  [key in keyof JSX.IntrinsicElements]: (
-    props: JSX.IntrinsicElements[key]
-  ) => JSX.Element;
+  [key in keyof JSX.IntrinsicElements]: (props: JSX.IntrinsicElements[key]) => JSX.Element;
 };
 
-export type MDXProps<P = any> = ParentProps<{
+export type MDXProps<P = unknown> = ParentProps<{
   components?:
-  | MDXComponents
-  | {
-    [k: string]: (props: P) => JSX.Element;
-  };
+    | MDXComponents
+    | {
+        [k: string]: (props: P) => JSX.Element;
+      };
 }>;
 
 export type MDXComponent = (props: MDXProps) => JSX.Element;
@@ -34,12 +32,12 @@ export const MDXContext = createContext<MDXComponents>(
         Dynamic,
         mergeProps(props, {
           component: el,
-        })
+        }),
       );
     };
 
     return acc;
-  }, {} as MDXComponents)
+  }, {} as MDXComponents),
 );
 export const MDXProvider: MDXComponent = (props) => {
   const context = useContext(MDXContext);

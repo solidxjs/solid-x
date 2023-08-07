@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
-import { JSXElement, mergeProps } from 'solid-js';
+import { JSXElement } from 'solid-js';
+import { mergeDefaults } from '~/utils';
 
 const TypeToEmoji = {
   default: '💡',
@@ -32,16 +33,13 @@ type CalloutProps = {
 };
 
 export const Callout = (props: CalloutProps) => {
-  const localProps = mergeProps(
-    { type: 'default', emoji: TypeToEmoji['default'] },
-    props,
-  ) as NonNullable<CalloutProps>;
+  const localProps = mergeDefaults(props, { type: 'default', emoji: TypeToEmoji['default'] });
   return (
     <div
       class={clsx(
         'overflow-x-auto mt-6 flex rounded-lg border py-2 px-2 items-center gap-2',
         'contrast-more:border-current contrast-more:dark:border-current',
-        classes[localProps.type!],
+        classes[localProps.type],
       )}>
       <div
         class="select-none text-xl ltr:pl-3 ltr:pr-2 rtl:pr-3 rtl:pl-2"

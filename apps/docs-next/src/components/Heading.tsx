@@ -1,14 +1,21 @@
 import clsx from 'clsx';
 import { ComponentProps, createEffect, onMount, splitProps } from 'solid-js';
-import { ActiveAnchor, useIntersectionObserver, useSetActiveAnchor, useSlugs } from './context/ActiveAnchorContext';
+import {
+  ActiveAnchor,
+  useIntersectionObserver,
+  useSetActiveAnchor,
+  useSlugs,
+} from './context/ActiveAnchorContext';
 import { Dynamic } from 'solid-js/web';
 import { usePageState } from './context/PageStateContext';
 
 // Anchor links
-export const Heading = (props: ComponentProps<'h2'> & {
-  tag: `h${2 | 3 | 4 | 5 | 6}`
-  context: { index: number }
-}) => {
+export const Heading = (
+  props: ComponentProps<'h2'> & {
+    tag: `h${2 | 3 | 4 | 5 | 6}`;
+    context: { index: number };
+  },
+) => {
   const { addSection } = usePageState();
   const setActiveAnchor = useSetActiveAnchor();
   const slugs = useSlugs();
@@ -48,18 +55,13 @@ export const Heading = (props: ComponentProps<'h2'> & {
           h3: 'mt-8 text-2xl',
           h4: 'mt-8 text-xl',
           h5: 'mt-8 text-lg',
-          h6: 'mt-8 text-base'
-        }[local.tag]
+          h6: 'mt-8 text-base',
+        }[local.tag],
       )}
-      {...others}
-    >
+      {...others}>
       {local.children}
       <span class="absolute -mt-20" id={local.id} ref={obRef} />
-      <a
-        href={`#${local.id}`}
-        class="subheading-anchor"
-        aria-label="Permalink for this section"
-      />
+      <a href={`#${local.id}`} class="subheading-anchor" aria-label="Permalink for this section" />
     </Dynamic>
   );
 };

@@ -49,6 +49,7 @@ const loadIndexesPromise = {
 } as { current?: Promise<void> };
 const loadIndexes = () => {
   if (!loadIndexesPromise.current) loadIndexesPromise.current = loadIndexesImpl();
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return loadIndexesPromise.current!;
 };
 const loadIndexesImpl = async () => {

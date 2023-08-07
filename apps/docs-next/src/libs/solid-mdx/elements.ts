@@ -1,8 +1,6 @@
 import { JSX } from 'solid-js';
 
-const HTMLElements: Set<
-  keyof JSX.HTMLElementTags | keyof JSX.HTMLElementDeprecatedTags
-> = new Set([
+const HTMLElements: Set<keyof JSX.HTMLElementTags | keyof JSX.HTMLElementDeprecatedTags> = new Set([
   'a',
   'abbr',
   'address',
@@ -118,7 +116,7 @@ const HTMLElements: Set<
   'keygen',
   'menuitem',
   'noindex',
-  'param'
+  'param',
 ]);
 
 const booleans = [
@@ -161,12 +159,7 @@ const Properties = new Set([
   ...booleans,
 ]);
 
-const ChildProperties = new Set([
-  'innerHTML',
-  'textContent',
-  'innerText',
-  'children',
-]);
+const ChildProperties = new Set(['innerHTML', 'textContent', 'innerText', 'children']);
 
 // React Compat
 const Aliases = {

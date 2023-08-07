@@ -12,11 +12,15 @@ type NavigationStateData = {
 };
 
 const getRootPath = (pathname: string) => pathname.match(/^\/([a-z]+)\/.*$/)?.[1] ?? '';
-export const NavigationStateContext = createContext<NavigationStateData>({ sections: () => [], previousPage: () => undefined, nextPage: () => undefined });
+export const NavigationStateContext = createContext<NavigationStateData>({
+  sections: () => [],
+  previousPage: () => undefined,
+  nextPage: () => undefined,
+});
 
 export const NavigationStateProvider = (props: ParentProps) => {
-  const [store, setStore] = createStore<{ sections: Section[], prevPage?: Page, nextPage?: Page }>({
-    sections: []
+  const [store, setStore] = createStore<{ sections: Section[]; prevPage?: Page; nextPage?: Page }>({
+    sections: [],
   });
   const data: NavigationStateData = {
     sections() {
@@ -29,7 +33,7 @@ export const NavigationStateProvider = (props: ParentProps) => {
       return store.prevPage;
     },
   };
-  
+
   createEffect(() => {
     const { pathname } = useLocation();
     const rootPath = getRootPath(pathname);
@@ -37,24 +41,24 @@ export const NavigationStateProvider = (props: ParentProps) => {
     if (rootPath in sectionsData) {
       sections.push(...sectionsData[rootPath as keyof typeof sectionsData]);
     }
-    
+
     const flatten = (item: Section) => [item, _.flatMapDeep<Section, Section>(item.links, flatten)];
-    const allLinks = createMemo(() => _.flatMapDeep<Section, Section>(sections, flatten).filter(i => i.type === 'page'));
-    const linkIndex = createMemo(() => allLinks().findIndex(link => link.href === pathname));
+    const allLinks = createMemo(() =>
+      _.flatMapDeep<Section, Section>(sections, flatten).filter((i) => i.type === 'page'),
+    );
+    const linkIndex = createMemo(() => allLinks().findIndex((link) => link.href === pathname));
     const previousPage = createMemo(() => allLinks()[linkIndex() - 1] as Page | undefined);
     const nextPage = createMemo(() => allLinks()[linkIndex() + 1] as Page | undefined);
-    
+
     setStore({
       nextPage: nextPage(),
       prevPage: previousPage(),
-      sections
+      sections,
     });
   });
 
   return (
-    <NavigationStateContext.Provider value={data}>
-      {props.children}
-    </NavigationStateContext.Provider>
+    <NavigationStateContext.Provider value={data}>{props.children}</NavigationStateContext.Provider>
   );
 };
 
