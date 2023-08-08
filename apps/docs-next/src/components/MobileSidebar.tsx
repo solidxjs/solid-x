@@ -43,24 +43,26 @@ export const MobileSidebar = () => {
           isOpen() ? 'max-h-full' : 'max-h-0',
         )}>
         <Sidebar class="bg-white dark:bg-dark p-5">
-          <div class="pt-4 pb-8 md:hidden">
-            <FlexSearch />
-          </div>
-          <div class="flex flex-col gap-2 text-sm">
-            <Link
-              href="/docs/introduction"
-              class={clsx(
-                classes.links,
-                isDocumentationPath() ? classes.active : classes.inactive,
-              )}>
-              Documentation
-            </Link>
-            <Link
-              href="/about"
-              class={clsx(classes.links, isAboutPath() ? classes.active : classes.inactive)}>
-              About
-            </Link>
-          </div>
+          <ul class="border-b border-b-black/20 dark:border-white/20 pb-8 mb-8">
+            <div class="pt-4 pb-8 md:hidden">
+              <FlexSearch />
+            </div>
+            <div class="flex flex-col gap-2 text-sm">
+              <Link
+                href="/docs/introduction"
+                class={clsx(
+                  classes.links,
+                  isDocumentationPath() ? classes.active : classes.inactive,
+                )}>
+                Documentation
+              </Link>
+              <Link
+                href="/about"
+                class={clsx(classes.links, isAboutPath() ? classes.active : classes.inactive)}>
+                About
+              </Link>
+            </div>
+          </ul>
         </Sidebar>
       </div>
     </div>

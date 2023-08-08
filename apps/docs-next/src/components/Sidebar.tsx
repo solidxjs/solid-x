@@ -1,20 +1,11 @@
 import clsx from 'clsx';
-import {
-  ComponentProps,
-  For,
-  Match,
-  Show,
-  Switch,
-  createMemo,
-  createSignal,
-  splitProps,
-} from 'solid-js';
+import { ComponentProps, For, Match, Switch, createMemo, createSignal, splitProps } from 'solid-js';
 import { A as Link, useLocation } from 'solid-start';
 import { Category, Header, Page } from '~/root.types';
+import { Anchor } from './Anchor';
 import { Collapse } from './Collapse';
 import { ChevronRight } from './Icons';
 import { useNavigationStateContext } from './context/NavigationStateContext';
-import { Anchor } from './Anchor';
 
 const classes = {
   link: clsx(
@@ -102,11 +93,7 @@ export const Sidebar = (props: ComponentProps<'aside'>) => {
   return (
     <aside class={clsx(local.class, 'h-full min-w-[250px] overflow-y-auto')} {...others}>
       <nav>
-        <Show when={props.children != null}>
-          <ul class="border-b border-b-black/20 dark:border-white/20 pb-8 mb-8">
-            {props.children}
-          </ul>
-        </Show>
+        {props.children}
         <ul class="flex flex-col gap-1">
           <For each={navigationState.sections()}>
             {(item) => (

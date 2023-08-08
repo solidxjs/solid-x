@@ -138,25 +138,6 @@ export const Search = (props: SearchProps) => {
   };
 
   const shouldRenderList = createMemo(() => show() && Boolean(props.value));
-  const icon = (
-    <kbd
-      class={clsx(
-        'absolute my-1.5 select-none ltr:right-1.5 rtl:left-1.5',
-        'h-5 rounded bg-white px-1.5 font-mono text-[10px] font-medium text-gray-500',
-        'border dark:border-gray-100/20 dark:bg-dark/50',
-        'contrast-more:border-current contrast-more:text-current contrast-more:dark:border-current',
-        'items-center gap-1 transition-opacity',
-        props.value
-          ? 'z-20 flex cursor-pointer hover:opacity-70'
-          : 'pointer-events-none hidden sm:flex',
-      )}
-      title={props.value ? 'Clear' : undefined}
-      onClick={() => {
-        props.onInput('');
-      }}>
-      {props.value && focused() ? 'ESC' : iconContent()}
-    </kbd>
-  );
 
   return (
     <div class={clsx('relative md:w-64', props.class)}>
@@ -182,7 +163,25 @@ export const Search = (props: SearchProps) => {
         type="search"
         placeholder="Search documentation..."
         onKeyDown={handleKeyDown}
-        suffix={icon}
+        suffix={
+          <kbd
+            class={clsx(
+              'absolute my-1.5 select-none ltr:right-1.5 rtl:left-1.5',
+              'h-5 rounded bg-white px-1.5 font-mono text-[10px] font-medium text-gray-500',
+              'border dark:border-gray-100/20 dark:bg-dark/50',
+              'contrast-more:border-current contrast-more:text-current contrast-more:dark:border-current',
+              'items-center gap-1 transition-opacity',
+              props.value
+                ? 'z-20 flex cursor-pointer hover:opacity-70'
+                : 'pointer-events-none hidden sm:flex',
+            )}
+            title={props.value ? 'Clear' : undefined}
+            onClick={() => {
+              props.onInput('');
+            }}>
+            {props.value && focused() ? 'ESC' : iconContent()}
+          </kbd>
+        }
       />
 
       <Show when={shouldRenderList()}>
