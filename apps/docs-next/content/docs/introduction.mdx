@@ -13,16 +13,3 @@ own design system on top of our components.
 
 This section contains a collection of frequently asked questions and answers about the Solid X library. If you
 have a question that is not answered here, feel free to [start a discussion](https://github.com/solid-ui/solid-x/discussions)
-
-export function FAQBox({ title, children }) {
-  return (
-    <details
-      open
-      className="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4">
-      <summary>
-        <strong className="text-lg">{title}</strong>
-      </summary>
-      <div className="nx-p-2">{children}</div>
-    </details>
-  );
-}

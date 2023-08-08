@@ -61,7 +61,7 @@ export const mdx = (options: MDXOptions) =>
     {
       name: 'generate-search-json',
       closeBundle() {
-        fs.writeFileSync(SEARCH_DATA_FILENAME, JSON.stringify(searchData));
+        fs.writeFileSync(SEARCH_DATA_FILENAME, JSON.stringify(searchData, null, 2));
       },
     },
   ] as Plugin[];
