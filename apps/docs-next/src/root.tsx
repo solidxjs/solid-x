@@ -68,7 +68,7 @@ export default function Root() {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <Body class="dark:bg-dark h-screen w-screen">
+      <Body class="dark:bg-dark min-h-screen w-screen">
         <ErrorBoundary>
           <ColorModeScript storageType={storageManager.type} />
           <Suspense>

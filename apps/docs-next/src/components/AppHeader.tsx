@@ -132,9 +132,9 @@ export const AppHeader = () => {
 
   return (
     <header
-      class={
-        'sticky top-0 z-50 bg-white dark:bg-dark border-b border-b-black/20 dark:border-b-white/20 px-4 transition duration-500 lg:px-6 h-[var(--sx-header-height)]'
-      }>
+      class="sticky top-0 z-50 bg-white dark:bg-dark border-b border-b-black/20
+        dark:border-b-white/20 px-4 transition duration-500 lg:px-6 h-[var(--sx-header-height)]
+        backdrop-blur-md">
       <nav class="flex flex-wrap items-center justify-between h-full max-w-[90rem] mx-auto">
         <div class="me-4 flex lg:hidden">
           <MobileSidebar />

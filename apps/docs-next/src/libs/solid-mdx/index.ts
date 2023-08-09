@@ -15,7 +15,7 @@ export type MDXComponents = {
   [key in keyof JSX.IntrinsicElements]: (props: JSX.IntrinsicElements[key]) => JSX.Element;
 };
 
-export type MDXProps<P = unknown> = ParentProps<{
+export type MDXProps<P = object> = ParentProps<{
   components?:
     | MDXComponents
     | {
