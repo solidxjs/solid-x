@@ -5,6 +5,7 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import vercelSolid from 'solid-start-vercel';
 import solid from 'solid-start/vite';
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { mdx } from './plugins/mdx-plugin';
 
 export default defineConfig({
@@ -18,5 +19,11 @@ export default defineConfig({
       extensions: ['.mdx', '.md'],
       routesDir: '../content',
     }),
+    viteStaticCopy({
+      targets: [{
+        src: 'built/search-data.json',
+        dest: '.'
+      }]
+    })
   ],
 });
