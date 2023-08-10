@@ -71,7 +71,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5, @babel/core@npm:^7.20.7, @babel/core@npm:^7.22.9":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5, @babel/core@npm:^7.20.7, @babel/core@npm:^7.22.10, @babel/core@npm:^7.22.9":
   version: 7.22.10
   resolution: "@babel/core@npm:7.22.10"
   dependencies:
@@ -3548,7 +3548,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@solid-x/material@workspace:packages/material"
   dependencies:
+    "@babel/core": ^7.22.10
     "@solid-x/tokens": "workspace:^"
+    "@solidjs/router": ^0.8.3
     "@solidjs/testing-library": ^0.8.4
     "@storybook/addon-essentials": ^7.1.0
     "@storybook/addon-interactions": ^7.1.0
@@ -3561,16 +3563,19 @@ __metadata:
     "@types/testing-library__jest-dom": ^5.14.8
     "@vanilla-extract/css": ^1.12.0
     "@vanilla-extract/dynamic": ^2.0.3
+    "@vanilla-extract/esbuild-plugin": ^2.2.2
     "@vanilla-extract/recipes": ^0.4.0
     "@vanilla-extract/rollup-plugin": ^1.2.2
     "@vanilla-extract/vite-plugin": ^3.8.2
     "@vitest/coverage-v8": ^0.33.0
     "@vitest/ui": ^0.33.0
+    babel-preset-solid: ^1.7.7
     glob: ^10.3.3
     jsdom: ^22.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
     rimraf: ^5.0.1
+    rollup: ^3.28.0
     solid-js: ^1.7.8
     storybook: ^7.1.0
     storybook-solidjs: ^1.0.0-beta.2
@@ -3618,7 +3623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solidjs/router@npm:^0.8.2":
+"@solidjs/router@npm:^0.8.2, @solidjs/router@npm:^0.8.3":
   version: 0.8.3
   resolution: "@solidjs/router@npm:0.8.3"
   peerDependencies:
@@ -5494,6 +5499,15 @@ __metadata:
   dependencies:
     "@vanilla-extract/private": ^1.0.3
   checksum: 9ad4068d7e28361a7aca46b5f14094e74613428fb600e54227d8ba7a35926c0d7339de1876eb2b3563f6d97c0f08fa09d5ff597f76776f8edca37510165682b0
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/esbuild-plugin@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@vanilla-extract/esbuild-plugin@npm:2.2.2"
+  dependencies:
+    "@vanilla-extract/integration": ^6.2.0
+  checksum: 8a757f9df6e0bd37efec6aaf3fb2c28d06166248bf2ffde4ba2fd489a5776fe14ecf5cc03992b45b8b619627ca40f3333dd736519a89b8f47869046910320f97
   languageName: node
   linkType: hard
 
@@ -14660,7 +14674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.25.0 || ^3.3.0, rollup@npm:^3.10.0, rollup@npm:^3.27.1":
+"rollup@npm:^2.25.0 || ^3.3.0, rollup@npm:^3.10.0, rollup@npm:^3.27.1, rollup@npm:^3.28.0":
   version: 3.28.0
   resolution: "rollup@npm:3.28.0"
   dependencies:
