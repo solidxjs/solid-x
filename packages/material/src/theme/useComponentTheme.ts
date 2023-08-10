@@ -51,6 +51,7 @@ export function useComponentTheme<C extends ComponentThemeType>(
  * @param tokens The component theme tokens
  * @returns The var map for the custom theme values
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function createVarMap(values: Record<string, any>, tokens: Record<string, any>) {
   const flatValues = flattenObject(values);
   const flatTokens = flattenObject(tokens);
@@ -75,6 +76,7 @@ function createVarMap(values: Record<string, any>, tokens: Record<string, any>) 
  * @returns The flattened object
  */
 function flattenObject(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   obj: Record<string, any>,
   parent?: string,
   result: Record<string, string> = {},

@@ -3,7 +3,7 @@
     "outDir": "dist",
     "declarationDir": "dist/types"
   },
-  "extends": "../../tsconfig.build.json",
-  "exclude": ["*/**/__stories__/*", "*/**/__styles__/*", "*/**/__tests__/*"],
+  "extends": ["./tsconfig.json"],
+  "exclude": ["*/**/__stories__/*", "*/**/__tests__/*"],
   "include": ["src"]
 }

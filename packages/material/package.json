@@ -2,19 +2,48 @@
   "name": "@solid-x/material",
   "version": "0.1.0",
   "description": "Design tokens for materialize components",
+  "author": "Raghavan Renganathan",
+  "license": "MIT",
   "homepage": "https://github.com/raghavan-renganathan/solid-x#readme",
-  "bugs": {
-    "url": "https://github.com/raghavan-renganathan/solid-x/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raghavan-renganathan/solid-x",
     "directory": "packages/material"
   },
-  "license": "MIT",
-  "author": "Raghavan Renganathan",
+  "bugs": {
+    "url": "https://github.com/raghavan-renganathan/solid-x/issues"
+  },
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "solid": "./dist/server/index.js",
+      "import": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "node": "./dist/server/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./*": {
+      "types": "./dist/types/*/index.d.ts",
+      "solid": "./dist/server/*/index.js",
+      "import": "./dist/esm/*/index.js",
+      "browser": "./dist/esm/*/index.js",
+      "node": "./dist/server/*/index.js",
+      "require": "./dist/cjs/*/index.js"
+    },
+    "./*.css": "./dist/*.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "yarn clean && vite build",
+    "build": "yarn clean && yarn build:dom && yarn build:ssr",
+    "build:dom": "vite build",
+    "build:ssr": "vite build --config vite.ssr.config.ts",
     "build:dev": "storybook build",
     "clean": "rimraf built dist",
     "dev": "storybook dev -p 6006",
@@ -23,33 +52,11 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest"
   },
-  "module": "./dist/index.js",
-  "types": "./dist/types/index.d.ts",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/types/index.d.ts"
-      ],
-      "./*": [
-        "./dist/types/*/index.d.ts"
-      ]
-    }
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    },
-    "./*": {
-      "import": "./dist/*/index.js"
-    },
-    "./*.css": "./dist/*.css"
-  },
-  "files": [
-    "dist"
-  ],
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
+    "@babel/core": "^7.22.10",
     "@solid-x/tokens": "workspace:^",
+    "@solidjs/router": "^0.8.3",
     "@solidjs/testing-library": "^0.8.4",
     "@storybook/addon-essentials": "^7.1.0",
     "@storybook/addon-interactions": "^7.1.0",
@@ -62,16 +69,19 @@
     "@types/testing-library__jest-dom": "^5.14.8",
     "@vanilla-extract/css": "^1.12.0",
     "@vanilla-extract/dynamic": "^2.0.3",
+    "@vanilla-extract/esbuild-plugin": "^2.2.2",
     "@vanilla-extract/recipes": "^0.4.0",
     "@vanilla-extract/rollup-plugin": "^1.2.2",
     "@vanilla-extract/vite-plugin": "^3.8.2",
     "@vitest/coverage-v8": "^0.33.0",
     "@vitest/ui": "^0.33.0",
+    "babel-preset-solid": "^1.7.7",
     "glob": "^10.3.3",
     "jsdom": "^22.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
+    "rollup": "^3.28.0",
     "solid-js": "^1.7.8",
     "storybook": "^7.1.0",
     "storybook-solidjs": "^1.0.0-beta.2",

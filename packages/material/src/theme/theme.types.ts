@@ -20,5 +20,6 @@ export type ComponentThemeType<
   componentRecipe?: RuntimeFn<Variants>;
   defaultTheme: string | Record<string, string>;
   styles: Styles;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tokens: Record<string, any>;
 };

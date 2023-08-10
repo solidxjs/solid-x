@@ -83,6 +83,19 @@ const copyThemeFiles = () => {
   } as Plugin;
 };
 
+const commonRollupOutputOptions: Rollup.OutputOptions = {
+  assetFileNames({ name = '' }) {
+    if (vanillaExtractAssetReg.test(name)) {
+      return name.replace(vanillaExtractAssetReg, '');
+    }
+    return name;
+  },
+  chunkFileNames: '[name]-[hash].js',
+  entryFileNames: '[name].js',
+  exports: 'named',
+  sourcemap: true,
+};
+
 export default defineConfig(({ mode }) => ({
   plugins: [
     // we will be using the rollup plugin here as it generates the files in the way
@@ -93,6 +106,7 @@ export default defineConfig(({ mode }) => ({
     }),
     dts({
       tsconfigPath: path.resolve(__dirname, 'tsconfig.build.json'),
+      outDir: 'dist/types'
     }),
     solidPlugin({ ssr: false }),
     // Copy over CSS assets for storybook
@@ -118,22 +132,20 @@ export default defineConfig(({ mode }) => ({
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
       ]),
-      formats: ['es'],
     },
+    outDir: 'dist',
     minify: false,
     rollupOptions: {
       external: ['solid-js', 'solid-js/web'],
-      output: {
-        assetFileNames({ name = '' }) {
-          if (vanillaExtractAssetReg.test(name)) {
-            return name.replace(vanillaExtractAssetReg, '');
-          }
-          return name;
-        },
-        chunkFileNames: '[name]-[hash].js',
-        entryFileNames: '[name].js',
-        sourcemap: true,
-      },
+      output: [{
+        ...commonRollupOutputOptions,
+        format: 'cjs',
+        dir: 'dist/cjs',
+      }, {
+        ...commonRollupOutputOptions,
+        format: 'esm',
+        dir: 'dist/esm',
+      }],
     },
   },
 }));
