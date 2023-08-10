@@ -6,6 +6,8 @@ import { Callout } from '~/components/Callout';
 import { Heading } from '~/components/Heading';
 import { CheckIcon, CopyIcon } from '~/components/Icons';
 import { Tabs } from '~/components/Tabs';
+import { ComponentDemo } from '~/components/ComponentDemo';
+
 const context = { index: 0 };
 export const getComponents = (): Record<string, Component> => {
   return {
@@ -90,6 +92,7 @@ export const getComponents = (): Record<string, Component> => {
      * Custom Components
      */
     Callout: Callout as Component,
+    ComponentDemo: ComponentDemo,
     Tabs: Tabs,
   };
 };

@@ -12,8 +12,8 @@ pre.shiki:hover .sx-copy-btn {
 
 pre {
   /* In theory shiki will overwrite these, but this is to make sure there are defaults regardless */
-  background-color: white;
-  color: black;
+  background-color: inherit;
+  color: inherit;
 
   /* Give it some space to breathe */
   padding: 12px;
