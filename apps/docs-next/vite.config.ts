@@ -17,7 +17,7 @@ export default defineConfig({
     solid({
       adapter: vercelSolid({}),
       extensions: ['.mdx', '.md'],
-      routesDir: '../content',
+      routesDir: 'content',
     }),
     viteStaticCopy({
       targets: [{
