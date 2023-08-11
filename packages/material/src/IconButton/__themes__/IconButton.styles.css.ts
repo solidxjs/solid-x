@@ -1,9 +1,8 @@
 import { ComplexStyleRule, createVar, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { baseTheme } from '../__theme__/theme.default.css';
-import { tokens } from '../__theme__/theme.tokens.css';
 import { sys } from '../../theme';
 import { CompoundVariantStyles, VariantOptions } from '../../utils/theme';
+import { tokens } from './IconButton.tokens.css';
 
 /****************
  * Private Vars *
@@ -25,35 +24,32 @@ type StyleVariant = 'filled' | 'filledTonal' | 'outlined' | 'standard';
 /********************
  * Component Styles *
  ********************/
-const base = style([
-  baseTheme,
-  {
-    blockSize: '40px',
-    borderRadius: sys.shape.corner.full,
-    inlineSize: '40px',
+const base = style({
+  blockSize: '40px',
+  borderRadius: sys.shape.corner.full,
+  inlineSize: '40px',
+
+  // Overridable properties
+  color: iconColor,
+
+  // use ::before for container
+  '::before': {
+    borderStyle: 'solid',
 
     // Overridable properties
-    color: iconColor,
-
-    // use ::before for container
-    '::before': {
-      borderStyle: 'solid',
-
-      // Overridable properties
-      background: containerColor,
-      borderColor: outlineColor,
-      borderWidth: outlineWidth,
-      opacity: containerOpacity,
-    },
-
-    // use ::after for state layer
-    '::after': {
-      // Overridable properties
-      background: stateLayerColor,
-      opacity: stateLayerOpacity,
-    },
+    background: containerColor,
+    borderColor: outlineColor,
+    borderWidth: outlineWidth,
+    opacity: containerOpacity,
   },
-]);
+
+  // use ::after for state layer
+  '::after': {
+    // Overridable properties
+    background: stateLayerColor,
+    opacity: stateLayerOpacity,
+  },
+});
 
 /**********************
  * Component Variants *
@@ -215,7 +211,7 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
 /********************
  * Component Recipe *
  ********************/
-const iconButton = recipe({
+const componentRecipe = recipe({
   base,
   compoundVariants,
   variants,
@@ -228,5 +224,5 @@ const iconButton = recipe({
 /***********
  * Exports *
  ***********/
-export { iconButton };
-export type { SelectionVariant, StyleVariant };
+const styles = { base };
+export { componentRecipe, styles };

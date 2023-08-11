@@ -1,8 +1,8 @@
-import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
+import { Component, JSX, JSXElement, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
+import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
-import * as styles from './__styles__/IconButton.styles.css';
-import './__theme__/theme.default.css';
+import { IconButtonTheme } from './__themes__/default/IconButton.theme';
 
 type ButtonProps = {
   /**
@@ -64,7 +64,7 @@ type ButtonProps = {
    * Specifies the visual variant of the button to use.
    * @default 'standard'
    */
-  variant?: styles.StyleVariant;
+  variant?: 'filled' | 'filledTonal' | 'outlined' | 'standard';
 
   /**
    * Specifies the callback to call when an action is performed on the button. This
@@ -100,11 +100,18 @@ export const IconButton: Component<ButtonProps> = (_props) => {
     'toggle',
     'variant',
   ]);
-  const rootClass = createMemo(() =>
-    styles.iconButton({
-      selection: localProps.toggle ? (localProps.selected ? 'selected' : 'unselected') : 'default',
-      variant: localProps.variant,
-    }),
+
+  const { classes, customThemeStyles } = useComponentTheme(
+    IconButtonTheme,
+    () => localProps.variant,
+    {
+      get selection() {
+        return localProps.toggle ? (localProps.selected ? 'selected' : 'unselected') : 'default';
+      },
+      get variant() {
+        return localProps.variant;
+      },
+    },
   );
 
   const handleOnAction = (event: Event) => {
@@ -118,7 +125,11 @@ export const IconButton: Component<ButtonProps> = (_props) => {
   };
 
   return (
-    <ButtonBase class={rootClass()} onAction={handleOnAction} {...passThroughProps}>
+    <ButtonBase
+      class={classes()}
+      onAction={handleOnAction}
+      style={customThemeStyles()}
+      {...passThroughProps}>
       {localProps.toggle && localProps.selected && localProps.selectedIcon
         ? localProps.selectedIcon
         : localProps.children}

@@ -14,17 +14,19 @@ export function useComponentTheme<C extends ComponentThemeType>(
   key: keyof C['defaultTheme'] | Accessor<keyof C['defaultTheme']>,
   options: Parameters<NonNullable<C['componentRecipe']>>[0],
 ) {
-  const { componentRecipe, defaultTheme, styles } = theme;
+  // IMPORTANT!!!
+  // Treat all the parameters as reactive vars. So, no operations that would result in
+  // loss of reactivity.
 
   // Get the default theme class
   const defaultThemeClass = createMemo(() =>
-    typeof defaultTheme === 'string'
-      ? defaultTheme
-      : defaultTheme[(typeof key === 'function' ? key() : key) as string],
+    typeof theme.defaultTheme === 'string'
+      ? theme.defaultTheme
+      : theme.defaultTheme[(typeof key === 'function' ? key() : key) as string],
   );
 
   // Get the style class from the recipe
-  const recipeClass = createMemo(() => componentRecipe?.(options) ?? '');
+  const recipeClass = createMemo(() => theme.componentRecipe?.(options) ?? '');
 
   // Get custom theme overrides from ThemeContext
   const customTheme = useThemeContext().components[theme.componentName];
@@ -39,7 +41,7 @@ export function useComponentTheme<C extends ComponentThemeType>(
     customThemeStyles: () => customThemeStyles,
     defaultThemeClass: () => defaultThemeClass(),
     recipeClass: () => recipeClass(),
-    styles: () => styles as C['styles'],
+    styles: () => theme.styles as C['styles'],
   };
 }
 

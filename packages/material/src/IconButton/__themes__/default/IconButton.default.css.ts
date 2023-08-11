@@ -1,9 +1,9 @@
 import { createTheme } from '@vanilla-extract/css';
-import { tokens } from './theme.tokens.css';
-import { sys } from '../../theme';
+import { tokens } from '../IconButton.tokens.css';
+import { sys } from '../../../theme';
 
-export const baseTheme = createTheme(tokens, {
-  filled: {
+export const defaultTheme = {
+  filled: createTheme(tokens.filled, {
     container: {
       color: {
         default: sys.color.primary.base,
@@ -82,8 +82,8 @@ export const baseTheme = createTheme(tokens, {
         },
       },
     },
-  },
-  filledTonal: {
+  }),
+  filledTonal: createTheme(tokens.filledTonal, {
     container: {
       color: {
         default: sys.color.secondary.container,
@@ -162,8 +162,8 @@ export const baseTheme = createTheme(tokens, {
         },
       },
     },
-  },
-  outlined: {
+  }),
+  outlined: createTheme(tokens.outlined, {
     container: {
       color: {
         default: 'transparent',
@@ -242,8 +242,8 @@ export const baseTheme = createTheme(tokens, {
         },
       },
     },
-  },
-  standard: {
+  }),
+  standard: createTheme(tokens.standard, {
     container: {
       color: {
         default: 'transparent',
@@ -322,5 +322,5 @@ export const baseTheme = createTheme(tokens, {
         },
       },
     },
-  },
-});
+  }),
+};
