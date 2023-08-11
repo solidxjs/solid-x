@@ -1,8 +1,8 @@
 import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
+import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
-import * as styles from './__styles__/Button.styles.css';
-import './__theme__/theme.default.css';
+import { ButtonTheme } from './__themes__/default/Button.theme';
 
 type ButtonProps = {
   /**
@@ -46,7 +46,7 @@ type ButtonProps = {
    * of the label
    * @default 'leading'
    */
-  iconPosition?: styles.IconVariant;
+  iconPosition?: 'leading' | 'trailing';
 
   /**
    * Where to display the linked `href` URL for a link button. For example
@@ -65,7 +65,7 @@ type ButtonProps = {
    * Specifies the visual variant of the button to use.
    * @default 'outlined'
    */
-  variant?: styles.StyleVariant;
+  variant?: 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
 
   /**
    * Specifies the callback to call when an action is performed on the button. This
@@ -89,18 +89,21 @@ export const Button: Component<ButtonProps> = (_props) => {
     'iconPosition',
     'variant',
   ]);
-  const buttonIcon = createMemo(
-    () => localProps.icon && <span class={styles.icon}>{localProps.icon}</span>,
+  const { classes, customThemeStyles, styles } = useComponentTheme(
+    ButtonTheme,
+    () => localProps.variant,
+    {
+      get variant() {
+        return localProps.variant;
+      },
+    },
   );
-  const rootClass = createMemo(() =>
-    styles.button({
-      icon: localProps.icon != null ? localProps.iconPosition : 'none',
-      variant: localProps.variant,
-    }),
+  const buttonIcon = createMemo(
+    () => localProps.icon && <span class={styles().icon}>{localProps.icon}</span>,
   );
 
   return (
-    <ButtonBase class={rootClass()} {...passThroughProps}>
+    <ButtonBase class={classes()} style={customThemeStyles()} {...passThroughProps}>
       {localProps.iconPosition === 'leading' && buttonIcon()}
       {localProps.children}
       {localProps.iconPosition === 'trailing' && buttonIcon()}

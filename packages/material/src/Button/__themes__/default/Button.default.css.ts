@@ -1,9 +1,9 @@
 import { createTheme } from '@vanilla-extract/css';
-import { tokens } from './theme.tokens.css';
-import { sys } from '../../theme';
+import { sys } from '../../../theme';
+import { tokens } from '../Button.tokens.css';
 
-export const baseTheme = createTheme(tokens, {
-  elevated: {
+export const defaultTheme = {
+  elevated: createTheme(tokens.elevated, {
     container: {
       color: sys.color.surfaceContainer.low,
       elevation: sys.elevation.level1,
@@ -86,8 +86,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
       },
     },
-  },
-  filled: {
+  }),
+  filled: createTheme(tokens.filled, {
     container: {
       color: sys.color.primary.base,
       elevation: sys.elevation.level0,
@@ -170,8 +170,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onPrimary.base,
       },
     },
-  },
-  filledTonal: {
+  }),
+  filledTonal: createTheme(tokens.filledTonal, {
     container: {
       color: sys.color.secondary.container,
       elevation: sys.elevation.level0,
@@ -254,8 +254,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onSecondary.container,
       },
     },
-  },
-  outlined: {
+  }),
+  outlined: createTheme(tokens.outlined, {
     container: {
       color: 'transparent',
       elevation: sys.elevation.level0,
@@ -338,8 +338,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
       },
     },
-  },
-  text: {
+  }),
+  text: createTheme(tokens.text, {
     container: {
       color: 'transparent',
       elevation: sys.elevation.level0,
@@ -422,5 +422,5 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
       },
     },
-  },
-});
+  }),
+};

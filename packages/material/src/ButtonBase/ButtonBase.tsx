@@ -1,8 +1,10 @@
 import { Component, JSX, JSXElement } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import * as styles from './__styles__/ButtonBase.styles.css';
+import * as styles from './__themes__/ButtonBase.styles.css';
 import { joinTruthy } from '../utils/array';
 import { mergeDefaults } from '../utils/object';
+
+type NativeButtonProps = JSX.HTMLAttributes<'button'>;
 
 type ButtonBaseProps = {
   /**
@@ -42,6 +44,11 @@ type ButtonBaseProps = {
   href?: string;
 
   /**
+   * Inline styles for the button component.
+   */
+  style?: NativeButtonProps['style'];
+
+  /**
    * Where to display the linked `href` URL for a link button. For example
    * pass `_blank` to open the link in a new tab.
    */
@@ -77,6 +84,7 @@ export const ButtonBase: Component<ButtonBaseProps> = (_props) => {
       disabled={props.disabled && !props.href}
       href={props.href ? props.href : undefined}
       onClick={(event: Event) => props.onAction?.(event)}
+      style={props.style}
       // Target is only applicable for Link buttons
       target={props.href ? props.target : undefined}
       // Link buttons do not have type

@@ -1,7 +1,6 @@
 import { createVar, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { baseTheme } from '../__theme__/theme.default.css';
-import { tokens } from '../__theme__/theme.tokens.css';
+import { tokens } from './Button.tokens.css';
 
 /****************
  * Private Vars *
@@ -24,49 +23,45 @@ const outlineWidth = createVar();
 /***************************
  * Component Variant types *
  ***************************/
-type IconVariant = 'leading' | 'trailing';
 type StyleVariant = 'elevated' | 'filled' | 'filledTonal' | 'outlined' | 'text';
 
 /********************
  * Component Styles *
  ********************/
-const base = style([
-  baseTheme,
-  {
-    blockSize: '40px',
-    borderRadius: '20px',
-    gap: '8px',
-    minInlineSize: '64px',
+const base = style({
+  blockSize: '40px',
+  borderRadius: '20px',
+  gap: '8px',
+  minInlineSize: '64px',
+
+  // Overridable properties
+  boxShadow: containerElevation,
+  color: labelColor,
+  opacity: labelOpacity,
+  fontFamily: labelFont,
+  fontSize: labelSize,
+  fontWeight: labelWeight,
+  letterSpacing: labelTracking,
+  lineHeight: labelLineHeight,
+
+  // use ::before for container
+  '::before': {
+    borderStyle: 'solid',
 
     // Overridable properties
-    boxShadow: containerElevation,
-    color: labelColor,
-    opacity: labelOpacity,
-    fontFamily: labelFont,
-    fontSize: labelSize,
-    fontWeight: labelWeight,
-    letterSpacing: labelTracking,
-    lineHeight: labelLineHeight,
-
-    // use ::before for container
-    '::before': {
-      borderStyle: 'solid',
-
-      // Overridable properties
-      background: containerColor,
-      borderColor: outlineColor,
-      borderWidth: outlineWidth,
-      opacity: containerOpacity,
-    },
-
-    // use ::after for state layer
-    '::after': {
-      // Overridable properties
-      background: stateLayerColor,
-      opacity: stateLayerOpacity,
-    },
+    background: containerColor,
+    borderColor: outlineColor,
+    borderWidth: outlineWidth,
+    opacity: containerOpacity,
   },
-]);
+
+  // use ::after for state layer
+  '::after': {
+    // Overridable properties
+    background: stateLayerColor,
+    opacity: stateLayerOpacity,
+  },
+});
 
 const icon = style({
   display: 'inline-flex',
@@ -165,7 +160,7 @@ const variants = {
 /********************
  * Component Recipe *
  ********************/
-const button = recipe({
+const componentRecipe = recipe({
   base,
   variants,
   defaultVariants: {
@@ -177,5 +172,5 @@ const button = recipe({
 /***********
  * Exports *
  ***********/
-export { button, icon };
-export type { IconVariant, StyleVariant };
+const styles = { base, icon };
+export { componentRecipe, styles };

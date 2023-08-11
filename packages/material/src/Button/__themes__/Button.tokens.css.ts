@@ -93,3 +93,5 @@ export const tokens = createThemeContract({
   outlined: deepCloneSerializableObject(buttonTokens),
   text: deepCloneSerializableObject(buttonTokens),
 });
+
+export type Tokens = typeof tokens;

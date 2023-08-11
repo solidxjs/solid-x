@@ -1,5 +1,6 @@
 import type { ComplexStyleRule } from '@vanilla-extract/css';
 import type { RuntimeFn } from '@vanilla-extract/recipes';
+import type { ComponentsConfig } from './componentsConfig';
 
 /**
  * Helper types from @vanilla-extract/recipes
@@ -7,7 +8,7 @@ import type { RuntimeFn } from '@vanilla-extract/recipes';
 type RecipeStyleRule = ComplexStyleRule | string;
 type VariantDefinitions = Record<string, RecipeStyleRule>;
 
-type Components = 'Badge';
+type Components = keyof ComponentsConfig;
 
 export type StyleGroups = Record<string, string>;
 export type VariantGroups = Record<string, VariantDefinitions>;
