@@ -1,6 +1,5 @@
 // @refresh reload
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from '@kobalte/core';
-import '@solid-x/material/theme/theme.css';
 import { Suspense, useContext } from 'solid-js';
 import { isServer } from 'solid-js/web';
 import {
@@ -21,6 +20,8 @@ import { PageStateProvider } from '~/components/context/PageStateContext';
 import { MDXProvider } from '~/libs/solid-mdx';
 import { getComponents } from '~/mdx-components';
 import { NavigationStateProvider } from './components/context/NavigationStateContext';
+
+import '@solid-x/material/theme.css';
 import './root.css';
 import './shiki.css';
 

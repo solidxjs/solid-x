@@ -12,6 +12,7 @@ import {
   onCleanup,
   onMount,
 } from 'solid-js';
+import { isServer } from 'solid-js/web';
 import { useNavigate } from 'solid-start';
 import { Anchor } from './Anchor';
 import { Input } from './Input';
@@ -65,6 +66,7 @@ export const Search = (props: SearchProps) => {
   };
 
   onMount(() => {
+    if (isServer) return;
     window.addEventListener('keydown', handleGlobalKeyDown);
 
     setIconContent(
@@ -79,6 +81,7 @@ export const Search = (props: SearchProps) => {
   });
 
   onCleanup(() => {
+    if (isServer) return;
     window.removeEventListener('keydown', handleGlobalKeyDown);
   });
 
