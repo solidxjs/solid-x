@@ -1,9 +1,9 @@
 import { createTheme } from '@vanilla-extract/css';
-import { tokens } from './theme.tokens.css';
-import { sys } from '../../theme';
+import { tokens } from '../FAB.tokens.css';
+import { sys } from '../../../theme';
 
-export const baseTheme = createTheme(tokens, {
-  surface: {
+export const defaultTheme = {
+  surface: createTheme(tokens.surface, {
     container: {
       color: sys.color.surfaceContainer.high,
       colorLowered: sys.color.surfaceContainer.low,
@@ -70,8 +70,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.primary.base,
       },
     },
-  },
-  primary: {
+  }),
+  primary: createTheme(tokens.primary, {
     container: {
       color: sys.color.primary.container,
       colorLowered: sys.color.primary.container,
@@ -138,8 +138,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onPrimary.container,
       },
     },
-  },
-  secondary: {
+  }),
+  secondary: createTheme(tokens.secondary, {
     container: {
       color: sys.color.secondary.container,
       colorLowered: sys.color.secondary.container,
@@ -206,8 +206,8 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onSecondary.container,
       },
     },
-  },
-  tertiary: {
+  }),
+  tertiary: createTheme(tokens.tertiary, {
     container: {
       color: sys.color.tertiary.container,
       colorLowered: sys.color.tertiary.container,
@@ -274,5 +274,5 @@ export const baseTheme = createTheme(tokens, {
         color: sys.color.onTertiary.container,
       },
     },
-  },
-});
+  }),
+};

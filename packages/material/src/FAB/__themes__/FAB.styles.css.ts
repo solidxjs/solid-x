@@ -1,8 +1,7 @@
 import { ComplexStyleRule, createVar, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { CompoundVariantStyles, VariantOptions } from '../../utils/theme';
-import { baseTheme } from '../__theme__/theme.default.css';
-import { tokens } from '../__theme__/theme.tokens.css';
+import { tokens } from './FAB.tokens.css';
 
 /****************
  * Private Vars *
@@ -23,44 +22,38 @@ const labelWeight = createVar();
 /***************************
  * Component Variant types *
  ***************************/
-type ElevationVariant = 'default' | 'lowered';
-type IconVariant = 'leading' | 'trailing';
-type SizeVariant = 'small' | 'medium' | 'large';
 type StyleVariant = 'surface' | 'primary' | 'secondary' | 'tertiary';
 
 /********************
  * Component Styles *
  ********************/
-const base = style([
-  baseTheme,
-  {
-    border: 'none',
+const base = style({
+  border: 'none',
 
+  // Overridable properties
+  boxShadow: containerElevation,
+  color: labelColor,
+  opacity: labelOpacity,
+  fontFamily: labelFont,
+  fontSize: labelSize,
+  fontWeight: labelWeight,
+  letterSpacing: labelTracking,
+  lineHeight: labelLineHeight,
+
+  // use ::before for container
+  '::before': {
     // Overridable properties
-    boxShadow: containerElevation,
-    color: labelColor,
-    opacity: labelOpacity,
-    fontFamily: labelFont,
-    fontSize: labelSize,
-    fontWeight: labelWeight,
-    letterSpacing: labelTracking,
-    lineHeight: labelLineHeight,
-
-    // use ::before for container
-    '::before': {
-      // Overridable properties
-      background: containerColor,
-      opacity: containerOpacity,
-    },
-
-    // use ::after for state layer
-    '::after': {
-      // Overridable properties
-      background: stateLayerColor,
-      opacity: stateLayerOpacity,
-    },
+    background: containerColor,
+    opacity: containerOpacity,
   },
-]);
+
+  // use ::after for state layer
+  '::after': {
+    // Overridable properties
+    background: stateLayerColor,
+    opacity: stateLayerOpacity,
+  },
+});
 
 const icon = style({
   display: 'inline-flex',
@@ -265,7 +258,7 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
 /********************
  * Component Recipe *
  ********************/
-const fab = recipe({
+const componentRecipe = recipe({
   base,
   compoundVariants,
   variants,
@@ -281,5 +274,5 @@ const fab = recipe({
 /***********
  * Exports *
  ***********/
-export { fab, icon };
-export type { ElevationVariant, IconVariant, SizeVariant, StyleVariant };
+const styles = { base, icon };
+export { componentRecipe, styles };

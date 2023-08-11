@@ -1,8 +1,8 @@
 import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
-import * as styles from './__styles__/FAB.styles.css';
-import './__theme__/theme.default.css';
+import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
+import { FABTheme } from './__themes__/default/FAB.theme';
 
 type FABProps = {
   /**
@@ -29,7 +29,7 @@ type FABProps = {
    * Whether to have the default elevation or to have it lowered.
    * @default 'default'
    */
-  elevation?: styles.ElevationVariant;
+  elevation?: 'default' | 'lowered';
 
   /**
    * The icon to be displayed in the button.
@@ -41,7 +41,7 @@ type FABProps = {
    * of the label
    * @default 'leading'
    */
-  iconPosition?: styles.IconVariant;
+  iconPosition?: 'leading' | 'trailing';
 
   /**
    * The size of the FAB. Note that this only affects the size of the component
@@ -49,13 +49,13 @@ type FABProps = {
    *
    * @default 'medium'
    */
-  size?: styles.SizeVariant;
+  size?: 'small' | 'medium' | 'large';
 
   /**
    * Specifies the visual variant of the button to use.
    * @default 'surface'
    */
-  variant?: styles.StyleVariant;
+  variant?: 'surface' | 'primary' | 'secondary' | 'tertiary';
 
   /**
    * Specifies the callback to call when an action is performed on the button. This
@@ -71,6 +71,8 @@ export const FAB: Component<FABProps> = (_props) => {
   const props = mergeDefaults(_props, {
     elevation: 'default',
     iconPosition: 'leading',
+    size: 'medium',
+    variant: 'surface',
   });
   const [localProps, passThroughProps] = splitProps(props, [
     'children',
@@ -80,28 +82,42 @@ export const FAB: Component<FABProps> = (_props) => {
     'size',
     'variant',
   ]);
+
+  const { classes, customThemeStyles, styles } = useComponentTheme(
+    FABTheme,
+    () => localProps.variant,
+    {
+      get elevation() {
+        return localProps.elevation;
+      },
+      get icon() {
+        return localProps.iconPosition;
+      },
+      get size() {
+        return localProps.size;
+      },
+      get type() {
+        return localProps.children ? 'extended' : 'regular';
+      },
+      get variant() {
+        return localProps.variant;
+      },
+    },
+  );
+
   const buttonIcon = createMemo(
     () =>
       localProps.icon && (
         <span
           aria-hidden={passThroughProps.ariaLabel || localProps.children ? 'true' : 'false'}
-          class={styles.icon}>
+          class={styles().icon}>
           {localProps.icon}
         </span>
       ),
   );
-  const rootClass = createMemo(() =>
-    styles.fab({
-      elevation: localProps.elevation,
-      icon: localProps.iconPosition,
-      size: localProps.size,
-      type: localProps.children ? 'extended' : 'regular',
-      variant: localProps.variant,
-    }),
-  );
 
   return (
-    <ButtonBase {...passThroughProps} class={rootClass()}>
+    <ButtonBase {...passThroughProps} class={classes()} style={customThemeStyles()}>
       {localProps.iconPosition === 'leading' && buttonIcon()}
       {localProps.children}
       {localProps.iconPosition === 'trailing' && buttonIcon()}
