@@ -93,6 +93,9 @@ export const Button: Component<ButtonProps> = (_props) => {
     ButtonTheme,
     () => localProps.variant,
     {
+      get icon() {
+        return localProps.icon != null ? localProps.iconPosition : 'none';
+      },
       get variant() {
         return localProps.variant;
       },

@@ -1,5 +1,5 @@
 import { componentRecipe, styles } from '../Button.styles.css';
-import { tokens, type Tokens } from '../Button.tokens.css';
+import { tokens } from '../Button.tokens.css';
 import { defaultTheme } from './Button.default.css';
 
 /*******************
@@ -16,4 +16,4 @@ export const ButtonTheme = {
 /********************
  * Component Tokens *
  ********************/
-export type ButtonTokens = Tokens;
+export type ButtonTokens = typeof tokens;
