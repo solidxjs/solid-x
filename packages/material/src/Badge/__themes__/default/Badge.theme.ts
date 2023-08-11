@@ -1,5 +1,5 @@
 import { componentRecipe, styles } from '../Badge.styles.css';
-import { tokens, type Tokens } from '../Badge.tokens.css';
+import { tokens } from '../Badge.tokens.css';
 import { defaultTheme } from './Badge.default.css';
 
 /*******************
@@ -16,4 +16,4 @@ export const BadgeTheme = {
 /********************
  * Component Tokens *
  ********************/
-export type BadgeTokens = Tokens;
+export type BadgeTokens = typeof tokens;
