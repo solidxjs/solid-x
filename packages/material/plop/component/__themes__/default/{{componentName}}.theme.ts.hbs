@@ -1,0 +1,19 @@
+import { componentRecipe, styles } from '../{{componentName}}.styles.css';
+import { tokens } from '../{{componentName}}.tokens.css';
+import { defaultTheme } from './{{componentName}}.default.css';
+
+/*******************
+ * Component Theme *
+ *******************/
+export const {{componentName}}Theme = {
+  componentName: '{{componentName}}',
+  componentRecipe,
+  defaultTheme,
+  styles,
+  tokens,
+} as const;
+
+/********************
+ * Component Tokens *
+ ********************/
+export type {{componentName}}Tokens = typeof tokens;

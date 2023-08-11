@@ -1,0 +1,18 @@
+import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
+import { {{componentName}} } from '../{{componentName}}';
+
+const meta: Meta<typeof {{componentName}}> = {
+  title: '{{componentName}}',
+  tags: ['autodocs'],
+  component: {{componentName}},
+  argTypes: {},
+};
+export default meta;
+
+type Story = StoryObj<typeof {{componentName}}>;
+
+const Template: StoryFn<typeof {{componentName}}> = (args) => <{{componentName}} {...args} />;
+
+export const Basic: Story = {
+  render: Template,
+};
