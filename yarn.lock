@@ -3256,9 +3256,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solid-x/docs-next@workspace:apps/docs-next":
+"@solid-x/docs-next@workspace:apps/docs":
   version: 0.0.0-use.local
-  resolution: "@solid-x/docs-next@workspace:apps/docs-next"
+  resolution: "@solid-x/docs-next@workspace:apps/docs"
   dependencies:
     "@kobalte/core": ^0.9.8
     "@mdx-js/mdx": ^2.3.0
