@@ -53,7 +53,6 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest"
   },
-  "packageManager": "yarn@3.6.1",
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@solid-x/tokens": "workspace:^",
