@@ -170,7 +170,7 @@ export const AppHeader = () => {
             </Link>
           </div>
           <Link
-            href="https://github.com/raghavan-renganathan/solid-x"
+            href="https://github.com/solidxjs/solid-x"
             target="_blank"
             rel="noopener noreferrer"
             class="p-2.5 mx-2 rounded flex items-center justify-center transition text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"

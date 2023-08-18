@@ -2,7 +2,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
-import vercelSolid from 'solid-start-vercel';
+import netlifySolid from 'solid-start-netlify';
 import solid from 'solid-start/vite';
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
@@ -15,7 +15,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
     }),
     solid({
-      adapter: vercelSolid({}),
+      adapter: netlifySolid({}),
       extensions: ['.mdx', '.md'],
       routesDir: 'content',
     }),

@@ -4,14 +4,14 @@
   "description": "Design tokens for materialize components",
   "author": "Raghavan Renganathan",
   "license": "MIT",
-  "homepage": "https://github.com/raghavan-renganathan/solid-x#readme",
+  "homepage": "https://github.com/solidxjs/solid-x#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raghavan-renganathan/solid-x",
+    "url": "git+https://github.com/solidxjs/solid-x",
     "directory": "packages/material"
   },
   "bugs": {
-    "url": "https://github.com/raghavan-renganathan/solid-x/issues"
+    "url": "https://github.com/solidxjs/solid-x/issues"
   },
   "type": "module",
   "main": "./dist/cjs/index.js",
