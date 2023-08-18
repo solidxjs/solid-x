@@ -1,5 +1,5 @@
 {
-  "name": "@solid-x/docs-next",
+  "name": "@solid-x/docs",
   "version": "0.1.0",
   "private": true,
   "description": "Docs page for Solid X project",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/solidxjs/solid-x",
-    "directory": "apps/docs-next"
+    "directory": "apps/docs"
   },
   "license": "MIT",
   "author": "Raghavan Renganathan",
