@@ -14,8 +14,10 @@
   "author": "Raghavan Renganathan",
   "scripts": {
     "build": "turbo build",
+    "docs": "pnpm -r run docs",
     "lint": "eslint packages/** --ext .tsx,.ts,.jsx,.js --config .eslintrc.yml --cache",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test": "pnpm -r test"
   },
   "lint-staged": {
     "packages/**/src/**/*.{ts,tsx}": "prettier --write",
@@ -34,6 +36,6 @@
   },
   "engines": {
     "node": ">=18",
-    "pnpm": ">=3"
+    "pnpm": ">=8"
   }
 }
