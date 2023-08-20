@@ -1,4 +1,4 @@
-import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
+import { JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
 import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
@@ -77,7 +77,7 @@ export type ButtonProps = {
   onAction?: (event: Event) => void;
 };
 
-export const Button: Component<ButtonProps> = (_props) => {
+export const Button = (_props: ButtonProps) => {
   const props = mergeDefaults(_props, {
     disabled: false,
     iconPosition: 'leading',

@@ -1,6 +1,6 @@
 import { render, screen } from '@solidjs/testing-library';
 import { describe, expect, it } from 'vitest';
-import IconButton from '../IconButton';
+import { IconButton } from '../IconButton';
 import { DemoIcon } from '../__stories__/DemoIcon';
 
 describe.concurrent('IconButton', () => {

@@ -1,4 +1,4 @@
-import { Component, JSX, JSXElement, splitProps } from 'solid-js';
+import { JSX, JSXElement, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
 import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
@@ -84,7 +84,7 @@ export type IconButtonProps = {
   onSelectionChange?: (isSelected: boolean) => void;
 };
 
-export const IconButton: Component<IconButtonProps> = (_props) => {
+export const IconButton = (_props: IconButtonProps) => {
   const props = mergeDefaults(_props, {
     disabled: false,
     selected: false,

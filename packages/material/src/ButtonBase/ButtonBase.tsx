@@ -1,8 +1,8 @@
-import { Component, JSX, JSXElement } from 'solid-js';
+import { JSX, JSXElement } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import * as styles from './__themes__/ButtonBase.styles.css';
 import { joinTruthy } from '../utils/array';
 import { mergeDefaults } from '../utils/object';
+import * as styles from './__themes__/ButtonBase.styles.css';
 
 type NativeButtonProps = JSX.HTMLAttributes<'button'>;
 
@@ -71,7 +71,7 @@ export type ButtonBaseProps = {
   onAction?: (event: Event) => void;
 };
 
-export const ButtonBase: Component<ButtonBaseProps> = (_props) => {
+export const ButtonBase = (_props: ButtonBaseProps) => {
   const props = mergeDefaults(_props, {
     disabled: false,
   });

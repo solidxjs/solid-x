@@ -1,4 +1,3 @@
-import { Component } from 'solid-js';
 import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
 import { BadgeTheme } from './__themes__/default/Badge.theme';
@@ -17,7 +16,7 @@ export type BadgeProps = {
   variant?: 'small' | 'large';
 };
 
-export const Badge: Component<BadgeProps> = (_props) => {
+export const Badge = (_props: BadgeProps) => {
   const props = mergeDefaults(_props, { variant: 'large' });
   const { classes, customThemeStyles, styles } = useComponentTheme(
     BadgeTheme,

@@ -1,4 +1,4 @@
-import { Component, JSX, JSXElement, createMemo, splitProps } from 'solid-js';
+import { JSX, JSXElement, createMemo, splitProps } from 'solid-js';
 import { ButtonBase } from '../ButtonBase';
 import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
@@ -67,7 +67,7 @@ export type FABProps = {
   onAction?: (event: Event) => void;
 };
 
-export const FAB: Component<FABProps> = (_props) => {
+export const FAB = (_props: FABProps) => {
   const props = mergeDefaults(_props, {
     elevation: 'default',
     iconPosition: 'leading',

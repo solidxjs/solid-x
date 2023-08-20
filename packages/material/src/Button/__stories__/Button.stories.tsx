@@ -1,6 +1,6 @@
-import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
-import Button from '../Button';
 import { ComponentProps } from 'solid-js';
+import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
+import { Button } from '../Button';
 import { DemoIcon } from './DemoIcon';
 
 const meta: Meta<typeof Button> = {

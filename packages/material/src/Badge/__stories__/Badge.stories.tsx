@@ -1,6 +1,6 @@
 import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
 import { ThemeProvider } from '../../theme/ThemeProvider';
-import Badge from '../Badge';
+import { Badge } from '../Badge';
 
 const meta: Meta<typeof Badge> = {
   title: 'Status/Badge',

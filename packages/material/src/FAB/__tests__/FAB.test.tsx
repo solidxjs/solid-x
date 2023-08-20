@@ -1,6 +1,6 @@
 import { render, screen } from '@solidjs/testing-library';
 import { describe, expect, it } from 'vitest';
-import FAB from '../FAB';
+import { FAB } from '../FAB';
 
 describe.concurrent('FAB', () => {
   it('should render basic FAB', () => {

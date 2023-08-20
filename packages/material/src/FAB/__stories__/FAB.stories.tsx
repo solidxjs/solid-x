@@ -1,6 +1,6 @@
-import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
-import FAB from '../FAB';
 import { ComponentProps } from 'solid-js';
+import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
+import { FAB } from '../FAB';
 import { DemoIcon } from './DemoIcon';
 
 const meta: Meta<typeof FAB> = {

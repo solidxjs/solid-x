@@ -1,10 +1,10 @@
 import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
-import Button from '../ButtonBase';
+import { ButtonBase } from '../ButtonBase';
 import { ComponentProps } from 'solid-js';
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof ButtonBase> = {
   title: 'Controls/ButtonBase',
-  component: Button,
+  component: ButtonBase,
   tags: ['autodocs'],
   argTypes: {
     ariaExpanded: { control: 'text' },
@@ -20,11 +20,11 @@ const meta: Meta<typeof Button> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonBase>;
 
-const Template: StoryFn<typeof Button> = (args: ComponentProps<typeof Button>) => {
+const Template: StoryFn<typeof ButtonBase> = (args: ComponentProps<typeof ButtonBase>) => {
   console.log(args.disabled);
-  return <Button {...args} />;
+  return <ButtonBase {...args} />;
 };
 
 export const Basic: Story = {

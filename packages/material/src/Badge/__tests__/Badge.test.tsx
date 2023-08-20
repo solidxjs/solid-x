@@ -1,6 +1,6 @@
 import { render, screen } from '@solidjs/testing-library';
 import { describe, expect, it } from 'vitest';
-import Badge from '../Badge';
+import { Badge } from '../Badge';
 
 describe.concurrent('Badge', () => {
   it('should render correctly with variant=dot', () => {
