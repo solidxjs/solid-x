@@ -4,7 +4,7 @@ import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
 import { IconButtonTheme } from './__themes__/default/IconButton.theme';
 
-type ButtonProps = {
+export type IconButtonProps = {
   /**
    * The value for setting aria-expanded attribute.
    */
@@ -84,7 +84,7 @@ type ButtonProps = {
   onSelectionChange?: (isSelected: boolean) => void;
 };
 
-export const IconButton: Component<ButtonProps> = (_props) => {
+export const IconButton: Component<IconButtonProps> = (_props) => {
   const props = mergeDefaults(_props, {
     disabled: false,
     selected: false,
@@ -136,5 +136,3 @@ export const IconButton: Component<ButtonProps> = (_props) => {
     </ButtonBase>
   );
 };
-
-export default IconButton;

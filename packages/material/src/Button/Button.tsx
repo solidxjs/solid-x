@@ -4,7 +4,7 @@ import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
 import { ButtonTheme } from './__themes__/default/Button.theme';
 
-type ButtonProps = {
+export type ButtonProps = {
   /**
    * The value for setting aria-expanded attribute.
    */
@@ -113,5 +113,3 @@ export const Button: Component<ButtonProps> = (_props) => {
     </ButtonBase>
   );
 };
-
-export default Button;

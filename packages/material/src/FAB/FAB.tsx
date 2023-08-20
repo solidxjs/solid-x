@@ -4,7 +4,7 @@ import { useComponentTheme } from '../theme/useComponentTheme';
 import { mergeDefaults } from '../utils/object';
 import { FABTheme } from './__themes__/default/FAB.theme';
 
-type FABProps = {
+export type FABProps = {
   /**
    * The value for setting aria-expanded attribute.
    */
@@ -124,5 +124,3 @@ export const FAB: Component<FABProps> = (_props) => {
     </ButtonBase>
   );
 };
-
-export default FAB;

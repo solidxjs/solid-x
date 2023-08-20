@@ -6,7 +6,7 @@ import { mergeDefaults } from '../utils/object';
 
 type NativeButtonProps = JSX.HTMLAttributes<'button'>;
 
-type ButtonBaseProps = {
+export type ButtonBaseProps = {
   /**
    * The value for setting aria-expanded attribute.
    */
@@ -93,5 +93,3 @@ export const ButtonBase: Component<ButtonBaseProps> = (_props) => {
     </Dynamic>
   );
 };
-
-export default ButtonBase;
