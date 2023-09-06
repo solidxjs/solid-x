@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { Show, createEffect, createMemo, createSignal, on } from 'solid-js';
+import { ComponentProps, Show, createEffect, createSignal, on } from 'solid-js';
 import { A as Link, useLocation, useMatch } from 'solid-start';
 import { FlexSearch } from './FlexSearch';
 import { CloseIcon, Menu } from './Icons';
@@ -19,11 +19,11 @@ const classes = {
   ),
 };
 
-export const MobileSidebar = () => {
+export const MobileSidebar = (props: ComponentProps<typeof Sidebar>) => {
   const [isOpen, setIsOpen] = createSignal(false);
   const isDocumentationPath = useMatch(() => '/docs/*');
   const isAboutPath = useMatch(() => '/about/*');
-  const pathname = createMemo(() => useLocation().pathname);
+  const pathname = () => useLocation().pathname;
 
   createEffect(on(pathname, () => setIsOpen(false)));
 
@@ -42,7 +42,7 @@ export const MobileSidebar = () => {
           'fixed top-[var(--sx-header-height)] right-0 bottom-0 left-0 overflow-hidden transition-all ease-in-out motion-reduce:transition-none',
           isOpen() ? 'max-h-full' : 'max-h-0',
         )}>
-        <Sidebar class="bg-white dark:bg-dark p-5">
+        <Sidebar {...props} class="bg-white dark:bg-dark p-5">
           <ul class="border-b border-b-black/20 dark:border-white/20 pb-8 mb-8">
             <div class="pt-4 pb-8 md:hidden">
               <FlexSearch />

@@ -1,11 +1,10 @@
 import clsx from 'clsx';
-import { ComponentProps, For, Match, Switch, createMemo, createSignal, splitProps } from 'solid-js';
+import { ComponentProps, For, Match, Switch, createSignal, splitProps } from 'solid-js';
 import { A as Link, useLocation } from 'solid-start';
-import { Category, Header, Page } from '~/root.types';
+import { Category, Header, Page, Section } from '~/root.types';
 import { Anchor } from './Anchor';
 import { Collapse } from './Collapse';
 import { ChevronRight } from './Icons';
-import { useNavigationStateContext } from './context/NavigationStateContext';
 
 const classes = {
   link: clsx(
@@ -67,8 +66,8 @@ const SidebarHeader = (props: { item: Header }) => (
 
 const SidebarPage = (props: { item: Page }) => {
   const location = useLocation();
-  const isCurrent = createMemo(() => props.item.href.includes(location.pathname));
-  const isExternal = createMemo(() => /^https:\/\/|http:\/\//i.test(props.item.href));
+  const isCurrent = () => props.item.href.includes(location.pathname);
+  const isExternal = () => /^https:\/\/|http:\/\//i.test(props.item.href);
   return (
     <li class="flex flex-col">
       {isExternal() ? (
@@ -86,16 +85,15 @@ const SidebarPage = (props: { item: Page }) => {
   );
 };
 
-export const Sidebar = (props: ComponentProps<'aside'>) => {
+export const Sidebar = (props: ComponentProps<'aside'> & { sections: Section[] }) => {
   const [local, others] = splitProps(props, ['class']);
-  const navigationState = useNavigationStateContext();
 
   return (
     <aside class={clsx(local.class, 'h-full min-w-[250px] overflow-y-auto')} {...others}>
       <nav>
         {props.children}
         <ul class="flex flex-col gap-1">
-          <For each={navigationState.sections()}>
+          <For each={props.sections}>
             {(item) => (
               <Switch>
                 <Match when={item.type === 'category'}>

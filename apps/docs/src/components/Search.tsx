@@ -6,7 +6,6 @@ import {
   Show,
   Switch,
   createEffect,
-  createMemo,
   createSignal,
   on,
   onCleanup,
@@ -41,7 +40,7 @@ export const Search = (props: SearchProps) => {
   const [show, setShow] = createSignal(false);
   const [active, setActive] = createSignal(0);
   const [focused, setFocused] = createSignal(false);
-  const value = createMemo(() => props.value);
+  const value = () => props.value;
   const navigate = useNavigate();
   const [iconContent, setIconContent] = createSignal<JSXElement>(null);
 
@@ -140,7 +139,7 @@ export const Search = (props: SearchProps) => {
     }
   };
 
-  const shouldRenderList = createMemo(() => show() && Boolean(props.value));
+  const shouldRenderList = () => show() && Boolean(props.value);
 
   return (
     <div class={clsx('relative md:w-64', props.class)}>

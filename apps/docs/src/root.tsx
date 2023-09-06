@@ -15,11 +15,9 @@ import {
   ServerContext,
   Title,
 } from 'solid-start';
-import { AppHeader } from '~/components/AppHeader';
 import { PageStateProvider } from '~/components/context/PageStateContext';
 import { MDXProvider } from '~/libs/solid-mdx';
 import { getComponents } from '~/mdx-components';
-import { NavigationStateProvider } from './components/context/NavigationStateContext';
 
 import '@solid-x/material/theme.css';
 import './root.css';
@@ -33,7 +31,7 @@ export default function Root() {
   return (
     <Html lang="en" dir="ltr">
       <Head>
-        <Title>SolidStart - With MDX</Title>
+        <Title>Solid X</Title>
         <Meta charset="utf-8" />
         <Meta name="msapplication-TileColor" content="#fff" />
         <Meta name="theme-color" content="#fff" />
@@ -74,16 +72,13 @@ export default function Root() {
           <ColorModeScript storageType={storageManager.type} />
           <Suspense>
             <ColorModeProvider storageManager={storageManager}>
-              <NavigationStateProvider>
-                <PageStateProvider>
-                  <MDXProvider components={getComponents()}>
-                    <AppHeader />
-                    <Routes>
-                      <FileRoutes />
-                    </Routes>
-                  </MDXProvider>
-                </PageStateProvider>
-              </NavigationStateProvider>
+              <PageStateProvider>
+                <MDXProvider components={getComponents()}>
+                  <Routes>
+                    <FileRoutes />
+                  </Routes>
+                </MDXProvider>
+              </PageStateProvider>
             </ColorModeProvider>
           </Suspense>
         </ErrorBoundary>

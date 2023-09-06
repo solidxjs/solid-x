@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { For, Show, createEffect, createMemo } from 'solid-js';
+import { For, Show, createEffect } from 'solid-js';
 import { isServer } from 'solid-js/web';
 import { Anchor } from './Anchor';
 import { useActiveAnchor } from './context/ActiveAnchorContext';
@@ -14,9 +14,7 @@ export const TOC = () => {
   let root: HTMLDivElement | undefined;
   const activeAnchor = useActiveAnchor();
   const { sections } = usePageState();
-  const activeSlug = createMemo(
-    () => Object.entries(activeAnchor).find(([, { isActive }]) => isActive)?.[0],
-  );
+  const activeSlug = () => Object.entries(activeAnchor).find(([, { isActive }]) => isActive)?.[0];
 
   createEffect(() => {
     if (!activeSlug() || isServer) return;

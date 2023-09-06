@@ -4,13 +4,13 @@ import Slugger from 'github-slugger';
 import { Root } from 'remark-gfm';
 import { toString } from 'mdast-util-to-string';
 
-const captalize = (str: string) =>
+const capitalize = (str: string) =>
   str
     .split(' ')
     .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
     .join(' ');
 
-export default function remarkStructurizeData({ output }: { output: Record<string, unknown> }) {
+export default function remarkStructurizeData({ output }: { output: Record<string, unknown> }): (tree: any, file: any) => any {
   const slugger = new Slugger();
   const cache = new Map<string, string>();
   let activeSlug = '';
@@ -52,7 +52,7 @@ export default function remarkStructurizeData({ output }: { output: Record<strin
     const path = file.path.match(/.*content(.*)\.\w+$/i)?.[1] ?? '';
     const filename = (file.basename ?? '').replace(/[-_]/g, ' ').replace(/\.\w+$/, '');
     output[path] = {
-      title: captalize(filename),
+      title: capitalize(filename),
       data: Object.fromEntries(cache),
     };
     cache.clear();

@@ -1,5 +1,7 @@
 import { clsx } from 'clsx';
 import { A as Link, useMatch } from 'solid-start';
+import { LATEST_CHANGELOG_URL } from '~/data/versions/material';
+import { Section } from '~/root.types';
 import { FlexSearch } from './FlexSearch';
 import { GitHubIcon } from './Icons';
 import { MobileSidebar } from './MobileSidebar';
@@ -126,9 +128,9 @@ const classes = {
   ),
 };
 
-export const AppHeader = () => {
+export const AppHeader = (props: { sections: Section[] }) => {
   const isDocumentationPath = useMatch(() => '/docs/*');
-  const isAboutPath = useMatch(() => '/about/*');
+  const isChangelogPath = useMatch(() => '/changelog/*');
 
   return (
     <header
@@ -137,7 +139,7 @@ export const AppHeader = () => {
         backdrop-blur-md">
       <nav class="flex flex-wrap items-center justify-between h-full max-w-[90rem] mx-auto">
         <div class="me-4 flex lg:hidden">
-          <MobileSidebar />
+          <MobileSidebar sections={props.sections} />
         </div>
         <div class="relative flex flex-grow basis-0 items-center gap-2">
           <Link
@@ -164,9 +166,9 @@ export const AppHeader = () => {
               Documentation
             </Link>
             <Link
-              href="/about"
-              class={clsx(classes.links, isAboutPath() ? classes.active : classes.inactive)}>
-              About
+              href={LATEST_CHANGELOG_URL}
+              class={clsx(classes.links, isChangelogPath() ? classes.active : classes.inactive)}>
+              Changelog
             </Link>
           </div>
           <Link
