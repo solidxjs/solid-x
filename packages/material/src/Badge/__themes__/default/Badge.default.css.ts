@@ -4,18 +4,18 @@ import { tokens } from '../Badge.tokens.css';
 
 export const defaultTheme = {
   small: createTheme(tokens.small, {
-    color: sys.color.error.base,
+    color: sys.color.error,
     shape: sys.shape.corner.full,
     size: '6px',
   }),
   large: createTheme(tokens.large, {
     container: {
-      color: sys.color.error.base,
+      color: sys.color.error,
       shape: sys.shape.corner.full,
       size: '16px',
     },
     label: {
-      color: sys.color.onError.base,
+      color: sys.color.onError,
       font: sys.typescale.label.sm.font,
       lineHeight: sys.typescale.label.sm.lineHeight,
       size: sys.typescale.label.sm.size,

@@ -6,7 +6,7 @@ import { ref as refContract, sys as sysContract } from './theme.tokens.css';
 createGlobalTheme(':root', refContract.palette, refDefaults.palette);
 createGlobalTheme(':root', refContract.typeface, refDefaults.typeface);
 
-createGlobalTheme(':root', sysContract.color, sysDefaults.color(refContract, sysContract));
+createGlobalTheme(':root', sysContract.color, sysDefaults.color(refContract));
 createGlobalTheme(':root', sysContract.elevation, sysDefaults.elevation());
 createGlobalTheme(':root', sysContract.motion, sysDefaults.motion());
 createGlobalTheme(':root', sysContract.shape, sysDefaults.shape());
@@ -16,8 +16,4 @@ createGlobalTheme(':root', sysContract.typescale, sysDefaults.typescale(refContr
 /**
  * Dark theme support
  */
-createGlobalTheme(
-  SELECTORS.DARK_THEME,
-  sysContract.color,
-  sysDefaults.colorDark(refContract, sysContract),
-);
+createGlobalTheme(SELECTORS.DARK_THEME, sysContract.color, sysDefaults.colorDark(refContract));

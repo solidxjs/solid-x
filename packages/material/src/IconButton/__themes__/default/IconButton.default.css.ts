@@ -6,79 +6,79 @@ export const defaultTheme = {
   filled: createTheme(tokens.filled, {
     container: {
       color: {
-        default: sys.color.primary.base,
-        selected: sys.color.primary.base,
-        unselected: sys.color.surfaceContainer.highest,
+        default: sys.color.primary,
+        selected: sys.color.primary,
+        unselected: sys.color.surfaceContainerHighest,
       },
       outlineColor: 'transparent',
       outlineWidth: '0px',
     },
     icon: {
       color: {
-        default: sys.color.onPrimary.base,
-        selected: sys.color.onPrimary.base,
-        unselected: sys.color.primary.base,
+        default: sys.color.onPrimary,
+        selected: sys.color.onPrimary,
+        unselected: sys.color.primary,
       },
     },
     disabled: {
       container: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.12',
         outlineColor: 'transparent',
       },
       icon: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.38',
       },
     },
     focus: {
       stateLayer: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
         opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
       },
     },
     hovered: {
       stateLayer: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
         opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
       },
     },
     pressed: {
       stateLayer: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
         opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onPrimary.base,
-          selected: sys.color.onPrimary.base,
-          unselected: sys.color.primary.base,
+          default: sys.color.onPrimary,
+          selected: sys.color.onPrimary,
+          unselected: sys.color.primary,
         },
       },
     },
@@ -86,79 +86,79 @@ export const defaultTheme = {
   filledTonal: createTheme(tokens.filledTonal, {
     container: {
       color: {
-        default: sys.color.secondary.container,
-        selected: sys.color.secondary.container,
-        unselected: sys.color.surfaceContainer.highest,
+        default: sys.color.secondaryContainer,
+        selected: sys.color.secondaryContainer,
+        unselected: sys.color.surfaceContainerHighest,
       },
       outlineColor: 'transparent',
       outlineWidth: '0px',
     },
     icon: {
       color: {
-        default: sys.color.onSecondary.container,
-        selected: sys.color.onSecondary.container,
-        unselected: sys.color.onSurfaceVariant.base,
+        default: sys.color.onSecondaryContainer,
+        selected: sys.color.onSecondaryContainer,
+        unselected: sys.color.onSurfaceVariant,
       },
     },
     disabled: {
       container: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.12',
         outlineColor: 'transparent',
       },
       icon: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.38',
       },
     },
     focus: {
       stateLayer: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     hovered: {
       stateLayer: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     pressed: {
       stateLayer: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSecondary.container,
-          selected: sys.color.onSecondary.container,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSecondaryContainer,
+          selected: sys.color.onSecondaryContainer,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
@@ -167,78 +167,78 @@ export const defaultTheme = {
     container: {
       color: {
         default: 'transparent',
-        selected: sys.color.surface.inverse,
+        selected: sys.color.inverseSurface,
         unselected: 'transparent',
       },
-      outlineColor: sys.color.outline.base,
+      outlineColor: sys.color.outline,
       outlineWidth: '1px',
     },
     icon: {
       color: {
-        default: sys.color.onSurfaceVariant.base,
-        selected: sys.color.onSurface.inverse,
-        unselected: sys.color.onSurfaceVariant.base,
+        default: sys.color.onSurfaceVariant,
+        selected: sys.color.onInverseSurface,
+        unselected: sys.color.onSurfaceVariant,
       },
     },
     disabled: {
       container: {
         color: 'transparent',
         opacity: '0.12',
-        outlineColor: sys.color.onSurface.base,
+        outlineColor: sys.color.onSurface,
       },
       icon: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.38',
       },
     },
     focus: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     hovered: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     pressed: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.onSurface.inverse,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.onInverseSurface,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
@@ -255,9 +255,9 @@ export const defaultTheme = {
     },
     icon: {
       color: {
-        default: sys.color.onSurfaceVariant.base,
-        selected: sys.color.primary.base,
-        unselected: sys.color.onSurfaceVariant.base,
+        default: sys.color.onSurfaceVariant,
+        selected: sys.color.primary,
+        unselected: sys.color.onSurfaceVariant,
       },
     },
     disabled: {
@@ -267,58 +267,58 @@ export const defaultTheme = {
         outlineColor: 'transparent',
       },
       icon: {
-        color: sys.color.onSurface.base,
+        color: sys.color.onSurface,
         opacity: '0.38',
       },
     },
     focus: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.focus.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     hovered: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.hover.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },
     pressed: {
       stateLayer: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
         opacity: sys.state.pressed.stateLayerOpacity,
       },
       icon: {
         color: {
-          default: sys.color.onSurfaceVariant.base,
-          selected: sys.color.primary.base,
-          unselected: sys.color.onSurfaceVariant.base,
+          default: sys.color.onSurfaceVariant,
+          selected: sys.color.primary,
+          unselected: sys.color.onSurfaceVariant,
         },
       },
     },

@@ -1,79 +1,41 @@
 const color = {
-  primary: {
-    base: null,
-    container: null,
-    inverse: null,
-  },
-  onPrimary: {
-    base: null,
-    container: null,
-  },
-  secondary: {
-    base: null,
-    container: null,
-  },
-  onSecondary: {
-    base: null,
-    container: null,
-  },
-  tertiary: {
-    base: null,
-    container: null,
-  },
-  onTertiary: {
-    base: null,
-    container: null,
-  },
-  error: {
-    base: null,
-    container: null,
-  },
-  onError: {
-    base: null,
-    container: null,
-  },
-  surface: {
-    base: null,
-    dim: null,
-    bright: null,
-    inverse: null,
-    tint: null,
-  },
-  onSurface: {
-    base: null,
-    inverse: null,
-  },
-  surfaceContainer: {
-    lowest: null,
-    low: null,
-    base: null,
-    high: null,
-    highest: null,
-  },
-  surfaceVariant: {
-    base: null,
-  },
-  onSurfaceVariant: {
-    base: null,
-  },
-  background: {
-    base: null,
-  },
-  onBackground: {
-    base: null,
-  },
-  outline: {
-    base: null,
-  },
-  outlineVariant: {
-    base: null,
-  },
-  shadow: {
-    base: null,
-  },
-  scrim: {
-    base: null,
-  },
+  primary: null,
+  onPrimary: null,
+  primaryContainer: null,
+  onPrimaryContainer: null,
+  inversePrimary: null,
+  secondary: null,
+  onSecondary: null,
+  secondaryContainer: null,
+  onSecondaryContainer: null,
+  tertiary: null,
+  onTertiary: null,
+  tertiaryContainer: null,
+  onTertiaryContainer: null,
+  error: null,
+  onError: null,
+  errorContainer: null,
+  onErrorContainer: null,
+  surface: null,
+  surfaceDim: null,
+  surfaceBright: null,
+  surfaceContainerLowest: null,
+  surfaceContainerLow: null,
+  surfaceContainer: null,
+  surfaceContainerHigh: null,
+  surfaceContainerHighest: null,
+  onSurface: null,
+  surfaceVariant: null,
+  onSurfaceVariant: null,
+  surfaceTint: null,
+  inverseSurface: null,
+  onInverseSurface: null,
+  background: null,
+  onBackground: null,
+  outline: null,
+  outlineVariant: null,
+  shadow: null,
+  scrim: null,
 };
 
 export default color;

@@ -26,24 +26,16 @@ const motion = {
     },
   },
   easing: {
-    linear: {
-      base: null,
-    },
-    standard: {
-      accelerate: null,
-      base: null,
-      decelerate: null,
-    },
-    emphasized: {
-      accelerate: null,
-      base: null,
-      decelerate: null,
-    },
-    legacy: {
-      accelerate: null,
-      base: null,
-      decelerate: null,
-    },
+    linear: null,
+    standardAccelerate: null,
+    standard: null,
+    standardDecelerate: null,
+    emphasizedAccelerate: null,
+    emphasized: null,
+    emphasizedDecelerate: null,
+    legacyAccelerate: null,
+    legacy: null,
+    legacyDecelerate: null,
   },
   path: null,
 };

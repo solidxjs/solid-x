@@ -31,24 +31,16 @@ const motion = () => ({
     },
   },
   easing: {
-    linear: {
-      base: 'cubic-bezier(0, 0, 1, 1)',
-    },
-    standard: {
-      accelerate: 'cubic-bezier(0.3, 0, 1, 1)',
-      base: 'cubic-bezier(0.2, 0, 0, 1)',
-      decelerate: 'cubic-bezier(0, 0, 0, 1)',
-    },
-    emphasized: {
-      accelerate: 'cubic-bezier(0.3, 0, 0.8, 0.15)',
-      base: 'cubic-bezier(0.2, 0, 0, 1)',
-      decelerate: 'cubic-bezier(0.05, 0.7, 0.1, 1)',
-    },
-    legacy: {
-      accelerate: 'cubic-bezier(0.4, 0, 0.2, 1)',
-      base: 'cubic-bezier(0, 0, 0.2, 1)',
-      decelerate: 'cubic-bezier(0, 0, 0.2, 1)',
-    },
+    linear: 'cubic-bezier(0, 0, 1, 1)',
+    standardAccelerate: 'cubic-bezier(0.3, 0, 1, 1)',
+    standard: 'cubic-bezier(0.2, 0, 0, 1)',
+    standardDecelerate: 'cubic-bezier(0, 0, 0, 1)',
+    emphasizedAccelerate: 'cubic-bezier(0.3, 0, 0.8, 0.15)',
+    emphasized: 'cubic-bezier(0.2, 0, 0, 1)',
+    emphasizedDecelerate: 'cubic-bezier(0.05, 0.7, 0.1, 1)',
+    legacyAccelerate: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    legacy: 'cubic-bezier(0, 0, 0.2, 1)',
+    legacyDecelerate: 'cubic-bezier(0, 0, 0.2, 1)',
   },
   path: '', // TODO: motion_path is not supported
 });
