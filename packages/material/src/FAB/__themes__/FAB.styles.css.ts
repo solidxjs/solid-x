@@ -253,6 +253,16 @@ const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> =
       inlineSize: '96px',
     },
   },
+  {
+    variants: {
+      type: 'extended',
+    },
+    style: {
+      borderRadius: '16px',
+      blockSize: '56px',
+      minInlineSize: '80px',
+    },
+  },
 ];
 
 /********************
