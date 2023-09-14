@@ -8,7 +8,7 @@ const shape = () => ({
     none: '0px',
     xs: {
       full: '4px',
-      top: '4px, 4px, 0px, 0px',
+      top: '4px 4px 0px 0px',
     },
     sm: {
       full: '8px',
