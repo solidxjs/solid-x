@@ -41,7 +41,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn clean && yarn build:dom && yarn build:ssr",
+    "build": "pnpm clean && pnpm build:dom && pnpm build:ssr",
     "build:dom": "vite build",
     "build:ssr": "vite build --config vite.ssr.config.ts",
     "build:dev": "storybook build",
