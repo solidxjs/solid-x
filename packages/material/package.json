@@ -84,6 +84,7 @@
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
     "rollup": "^3.28.0",
+    "solid-devtools": "^0.27.7",
     "solid-js": "^1.7.8",
     "storybook": "^7.1.0",
     "storybook-solidjs": "^1.0.0-beta.2",

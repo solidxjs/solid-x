@@ -1,8 +1,9 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import solidPlugin from 'vite-plugin-solid';
-import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import solidDevTools from 'solid-devtools/vite';
+import { UserConfig, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   plugins: [
@@ -11,6 +12,7 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
     }),
     solidPlugin({ ssr: false }),
+    solidDevTools({ autoname: true }),
   ],
   build: {
     lib: {
@@ -28,4 +30,4 @@ export default defineConfig({
       },
     },
   },
-});
+} as UserConfig);

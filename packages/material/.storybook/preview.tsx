@@ -1,6 +1,8 @@
 import type { Preview, StoryContext, StoryFn } from 'storybook-solidjs';
 import themes from './brandTheme';
 
+import 'solid-devtools';
+
 const withTheme = (Story: StoryFn, context: StoryContext) => {
   const theme = context.globals['theme'];
 
