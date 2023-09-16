@@ -1,6 +1,6 @@
 import type { ComplexStyleRule } from '@vanilla-extract/css';
 import type { RuntimeFn } from '@vanilla-extract/recipes';
-import type { ComponentsConfig } from './componentsConfig';
+import type { ComponentsConfig } from './components.types';
 
 /**
  * Helper types from @vanilla-extract/recipes

@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'solid-js';
-import { ComponentsConfig } from './componentsConfig';
+import { ComponentsConfig } from './components.types';
 
 export type ThemeContextValue = {
   components: ComponentsConfig;
