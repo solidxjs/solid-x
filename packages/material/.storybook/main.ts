@@ -1,4 +1,5 @@
 import type { StorybookConfig } from 'storybook-solidjs-vite';
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['./public', '../built/sb-static'],
@@ -19,4 +20,5 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
 };
+
 export default config;
