@@ -104,14 +104,14 @@ export const IconButton = (_props: IconButtonProps) => {
   const { classes, customThemeStyles } = useComponentTheme(
     IconButtonTheme,
     () => localProps.variant,
-    {
-      get selection() {
-        return localProps.toggle ? (localProps.selected ? 'selected' : 'unselected') : 'default';
-      },
-      get variant() {
-        return localProps.variant;
-      },
-    },
+    () => ({
+      selection: localProps.toggle
+        ? localProps.selected
+          ? ('selected' as const)
+          : ('unselected' as const)
+        : ('default' as const),
+      variant: localProps.variant,
+    }),
   );
 
   const handleOnAction = (event: Event) => {

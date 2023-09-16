@@ -86,23 +86,13 @@ export const FAB = (_props: FABProps) => {
   const { classes, customThemeStyles, styles } = useComponentTheme(
     FABTheme,
     () => localProps.variant,
-    {
-      get elevation() {
-        return localProps.elevation;
-      },
-      get icon() {
-        return localProps.iconPosition;
-      },
-      get size() {
-        return localProps.size;
-      },
-      get type() {
-        return localProps.children ? 'extended' : 'regular';
-      },
-      get variant() {
-        return localProps.variant;
-      },
-    },
+    () => ({
+      elevation: localProps.elevation,
+      icon: localProps.iconPosition,
+      size: localProps.size,
+      type: localProps.children ? ('extended' as const) : ('regular' as const),
+      variant: localProps.variant,
+    }),
   );
 
   const buttonIcon = createMemo(

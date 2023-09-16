@@ -7,12 +7,15 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
  * Hook to derive the styles from the component theme and variant options.
  *
  * @param theme The theme from which the style classes are to be derived.
+ * @param key The key for the current theme variant
  * @param options The variant options for the component.
  */
 export function useComponentTheme<C extends ComponentThemeType>(
   theme: C,
   key: keyof C['defaultTheme'] | Accessor<keyof C['defaultTheme']>,
-  options: Parameters<NonNullable<C['componentRecipe']>>[0],
+  options:
+    | Parameters<NonNullable<C['componentRecipe']>>[0]
+    | Accessor<Parameters<NonNullable<C['componentRecipe']>>[0]>,
 ) {
   // IMPORTANT!!!
   // Treat all the parameters as reactive vars. So, no operations that would result in
@@ -26,7 +29,9 @@ export function useComponentTheme<C extends ComponentThemeType>(
   );
 
   // Get the style class from the recipe
-  const recipeClass = createMemo(() => theme.componentRecipe?.(options) ?? '');
+  const recipeClass = createMemo(
+    () => theme.componentRecipe?.(typeof options === 'function' ? options() : options) ?? '',
+  );
 
   // Get custom theme overrides from ThemeContext
   const customTheme = useThemeContext().components[theme.componentName];

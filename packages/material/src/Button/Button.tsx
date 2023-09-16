@@ -92,14 +92,10 @@ export const Button = (_props: ButtonProps) => {
   const { classes, customThemeStyles, styles } = useComponentTheme(
     ButtonTheme,
     () => localProps.variant,
-    {
-      get icon() {
-        return localProps.icon != null ? localProps.iconPosition : 'none';
-      },
-      get variant() {
-        return localProps.variant;
-      },
-    },
+    () => ({
+      icon: localProps.icon != null ? localProps.iconPosition : ('none' as const),
+      variant: localProps.variant,
+    }),
   );
   const buttonIcon = createMemo(
     () => localProps.icon && <span class={styles().icon}>{localProps.icon}</span>,

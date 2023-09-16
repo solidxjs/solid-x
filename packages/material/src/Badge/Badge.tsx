@@ -21,11 +21,9 @@ export const Badge = (_props: BadgeProps) => {
   const { classes, customThemeStyles, styles } = useComponentTheme(
     BadgeTheme,
     () => props.variant,
-    {
-      get variant() {
-        return props.variant;
-      },
-    },
+    () => ({
+      variant: props.variant,
+    }),
   );
   return (
     <span class={classes()} role="presentation" style={customThemeStyles()}>
