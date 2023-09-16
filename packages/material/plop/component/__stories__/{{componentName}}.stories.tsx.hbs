@@ -1,3 +1,4 @@
+import { ComponentProps } from 'solid-js';
 import { Meta, StoryFn, StoryObj } from 'storybook-solidjs';
 import { {{componentName}} } from '../{{componentName}}';
 
@@ -11,7 +12,9 @@ export default meta;
 
 type Story = StoryObj<typeof {{componentName}}>;
 
-const Template: StoryFn<typeof {{componentName}}> = (args) => <{{componentName}} {...args} />;
+const Template: StoryFn<typeof {{componentName}}> = (args: ComponentProps<typeof {{componentName}}>) => (
+  <{{componentName}} {...args} />
+);
 
 export const Basic: Story = {
   render: Template,
