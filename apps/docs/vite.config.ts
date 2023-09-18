@@ -8,20 +8,16 @@ import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { mdx } from './plugins/mdx-plugin';
 
-const IGNORE_WARNINGS = [
-  'MODULE_LEVEL_DIRECTIVE',
-  'EVAL'
-];
+const IGNORE_WARNINGS = ['MODULE_LEVEL_DIRECTIVE', 'EVAL'];
 
 export default defineConfig({
   build: {
     rollupOptions: {
       onwarn(warning, warn) {
-        if (IGNORE_WARNINGS.includes(warning.code ?? ''))
-          return;
+        if (IGNORE_WARNINGS.includes(warning.code ?? '')) return;
         warn(warning);
-      }
-    }
+      },
+    },
   },
   plugins: [
     mdx({
@@ -34,10 +30,12 @@ export default defineConfig({
       routesDir: 'content',
     }),
     viteStaticCopy({
-      targets: [{
-        src: 'built/search-data.json',
-        dest: '.'
-      }]
-    })
+      targets: [
+        {
+          src: 'built/search-data.json',
+          dest: '.',
+        },
+      ],
+    }),
   ],
 });

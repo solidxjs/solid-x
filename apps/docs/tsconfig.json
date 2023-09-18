@@ -9,7 +9,8 @@
     "paths": {
       "~/*": ["./src/*"],
       "@solid-x/material": ["../../packages/material/dist/types"],
-      "@solid-x/material/*": ["../../packages/material/dist/types/*"]
+      "@solid-x/material/*": ["../../packages/material/dist/types/*"],
+      "flexsearch": ["node_modules/@types/flexsearch"]
     }
   },
   "extends": "../../tsconfig.json"

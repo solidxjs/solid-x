@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
 import { Plugin } from 'vite';
-import remarkStructurizeData from './remarkStructurizeData';
+import remarkStructurizeData from '../remark-structurize-data';
 
 const BUILT_DIR = path.resolve(process.cwd(), 'built');
 const SEARCH_DATA_FILENAME = path.resolve(BUILT_DIR, 'search-data.json');
