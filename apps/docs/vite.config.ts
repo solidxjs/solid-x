@@ -27,7 +27,6 @@ export default defineConfig({
     solid({
       adapter: netlifySolid({}),
       extensions: ['.mdx', '.md'],
-      routesDir: 'content',
     }),
     viteStaticCopy({
       targets: [
