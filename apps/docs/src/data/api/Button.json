@@ -1,0 +1,108 @@
+{
+  "description": "",
+  "displayName": "Button",
+  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/Button/Button.tsx",
+  "props": {
+    "ariaExpanded": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-expanded attribute.",
+      "name": "ariaExpanded",
+      "required": false,
+      "tags": {},
+      "type": { "name": "boolean | \"false\" | \"true\"" }
+    },
+    "ariaHasPopup": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-haspopup attribute.",
+      "name": "ariaHasPopup",
+      "required": false,
+      "tags": {},
+      "type": {
+        "name": "boolean | \"false\" | \"true\" | \"menu\" | \"listbox\" | \"tree\" | \"grid\" | \"dialog\""
+      }
+    },
+    "ariaLabel": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-label attribute.",
+      "name": "ariaLabel",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "children": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The text to be shown in the button.",
+      "name": "children",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "disabled": {
+      "defaultValue": { "value": "false" },
+      "description": "Whether or not the button is disabled.",
+      "name": "disabled",
+      "required": false,
+      "tags": { "default": "false" },
+      "type": { "name": "boolean" }
+    },
+    "href": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The URL that the link button points to.",
+      "name": "href",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "icon": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The icon to be displayed in the button.",
+      "name": "icon",
+      "required": false,
+      "tags": {},
+      "type": { "name": "Element" }
+    },
+    "iconPosition": {
+      "defaultValue": { "value": "'leading'" },
+      "description": "Whether to render the icon at the inline start or inline end\nof the label",
+      "name": "iconPosition",
+      "required": false,
+      "tags": { "default": "'leading'" },
+      "type": { "name": "\"leading\" | \"trailing\"" }
+    },
+    "target": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Where to display the linked `href` URL for a link button. For example\npass `_blank` to open the link in a new tab.",
+      "name": "target",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "type": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Specifies the type of the button, mainly for controlling forms. Setting\nthis to `submit` will submit the containing form; `reset` will reset the\nform.",
+      "name": "type",
+      "required": false,
+      "tags": {},
+      "type": { "name": "\"submit\" | \"reset\"" }
+    },
+    "variant": {
+      "defaultValue": { "value": "'outlined'" },
+      "description": "Specifies the visual variant of the button to use.",
+      "name": "variant",
+      "required": false,
+      "tags": { "default": "'outlined'" },
+      "type": { "name": "\"elevated\" | \"filled\" | \"filledTonal\" | \"outlined\" | \"text\"" }
+    },
+    "onAction": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Specifies the callback to call when an action is performed on the button. This\nis either a pointer interaction like a click or keyboard interaction like pressing\nEnter or Space.",
+      "name": "onAction",
+      "required": false,
+      "tags": { "param": "event The event object of the event that triggered the onAction" },
+      "type": { "name": "((event: Event) => void)" }
+    }
+  },
+  "tags": {},
+  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/Button/Button.tsx",
+  "name": "Button"
+}

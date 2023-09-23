@@ -1,0 +1,150 @@
+{
+  "description": "",
+  "displayName": "TextField",
+  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/TextField/TextField.tsx",
+  "props": {
+    "defaultValue": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The initial value of the text field. This will be used when the component\nis used in uncontrolled mode.",
+      "name": "defaultValue",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "disabled": {
+      "defaultValue": { "value": "false" },
+      "description": "Whether or not the text field is disabled.",
+      "name": "disabled",
+      "required": false,
+      "tags": { "default": "false" },
+      "type": { "name": "boolean" }
+    },
+    "leadingContent": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The leading content for the text field.",
+      "name": "leadingContent",
+      "required": false,
+      "tags": {},
+      "type": { "name": "Element" }
+    },
+    "label": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The label for the text field.",
+      "name": "label",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "maxLength": {
+      "defaultValue": { "value": "-1" },
+      "description": "Maximum allowed characters for the input. Setting -1 indicates that there is no\nlimit.",
+      "name": "maxLength",
+      "required": false,
+      "tags": { "default": "-1" },
+      "type": { "name": "number" }
+    },
+    "minLength": {
+      "defaultValue": { "value": "-1" },
+      "description": "Minimum allowed characters for the input. Setting -1 indicates that there is no\nlimit.",
+      "name": "minLength",
+      "required": false,
+      "tags": { "default": "-1" },
+      "type": { "name": "number" }
+    },
+    "name": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The name of the text-field, used when submitting an HTML form. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).",
+      "name": "name",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "prefixText": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Text that needs to be used as prefix for the text field.",
+      "name": "prefixText",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "readonly": {
+      "defaultValue": { "value": "false" },
+      "description": "Whether or not the text field is readonly.",
+      "name": "readonly",
+      "required": false,
+      "tags": { "default": "false" },
+      "type": { "name": "boolean" }
+    },
+    "status": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The status of the text field.",
+      "name": "status",
+      "required": false,
+      "tags": {},
+      "type": { "name": "\"error\"" }
+    },
+    "suffixText": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Text that needs to be used as suffix for the text field.",
+      "name": "suffixText",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "supportingText": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The supporting text for the text field. Use this to provide additional information\nabout the text field.",
+      "name": "supportingText",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "trailingContent": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The trailing content for the text field.",
+      "name": "trailingContent",
+      "required": false,
+      "tags": {},
+      "type": { "name": "Element" }
+    },
+    "value": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value of the text field. This will be used when the component is used in\ncontrolled mode.",
+      "name": "value",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "variant": {
+      "defaultValue": { "value": "'filled'" },
+      "description": "The variant of the text field.",
+      "name": "variant",
+      "required": false,
+      "tags": { "default": "'filled'" },
+      "type": { "name": "\"filled\"" }
+    },
+    "onChange": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The callback to call when the value of the text field is committed.",
+      "name": "onChange",
+      "required": false,
+      "tags": {
+        "param": "payload The payload containing the previous value and the current value of the component."
+      },
+      "type": { "name": "Action<ChangePayload<string>>" }
+    },
+    "onInput": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The callback to call when the value of the text field is changed. For controlled components, the\nparent component should hook to this event and push back the value.",
+      "name": "onInput",
+      "required": false,
+      "tags": {
+        "param": "payload The payload containing the previous value and the current value of the component."
+      },
+      "type": { "name": "Action<ChangePayload<string>>" }
+    }
+  },
+  "tags": {},
+  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/TextField/TextField.tsx",
+  "name": "TextField"
+}

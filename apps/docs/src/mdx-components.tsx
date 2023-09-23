@@ -6,6 +6,8 @@ import { Callout } from '~/components/Callout';
 import { Heading } from '~/components/Heading';
 import { CheckIcon, CopyIcon } from '~/components/Icons';
 import { Tabs } from '~/components/Tabs';
+import { ApiDoc } from '~/components/ApiDoc';
+
 const context = { index: 0 };
 export const getComponents = (): Record<string, Component> => {
   return {
@@ -83,12 +85,14 @@ export const getComponents = (): Record<string, Component> => {
       );
     },
     a: (props: ComponentProps<'a'>) => {
+      // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a target="_blank" rel="noopener noreferrer" {...props} />;
     },
 
     /**
      * Custom Components
      */
+    ApiDoc: ApiDoc as Component,
     Callout: Callout as Component,
     Tabs: Tabs,
   };

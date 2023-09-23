@@ -9,7 +9,7 @@ export type PropItem = {
     name: string;
   };
   description: string;
-  defaultValue: unknown;
+  defaultValue: { value: string };
   tags?: object;
 };
 export type ComponentDoc = {

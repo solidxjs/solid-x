@@ -1,0 +1,92 @@
+{
+  "description": "",
+  "displayName": "FAB",
+  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/FAB/FAB.tsx",
+  "props": {
+    "ariaExpanded": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-expanded attribute.",
+      "name": "ariaExpanded",
+      "required": false,
+      "tags": {},
+      "type": { "name": "boolean | \"false\" | \"true\"" }
+    },
+    "ariaHasPopup": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-haspopup attribute.",
+      "name": "ariaHasPopup",
+      "required": false,
+      "tags": {},
+      "type": {
+        "name": "boolean | \"false\" | \"true\" | \"menu\" | \"listbox\" | \"tree\" | \"grid\" | \"dialog\""
+      }
+    },
+    "ariaLabel": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The value for setting aria-label attribute.",
+      "name": "ariaLabel",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "children": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The text to be shown in the button.",
+      "name": "children",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "elevation": {
+      "defaultValue": { "value": "'default'" },
+      "description": "Whether to have the default elevation or to have it lowered.",
+      "name": "elevation",
+      "required": false,
+      "tags": { "default": "'default'" },
+      "type": { "name": "\"default\" | \"lowered\"" }
+    },
+    "icon": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The icon to be displayed in the button.",
+      "name": "icon",
+      "required": false,
+      "tags": {},
+      "type": { "name": "Element" }
+    },
+    "iconPosition": {
+      "defaultValue": { "value": "'leading'" },
+      "description": "Whether to render the icon at the inline start or inline end\nof the label",
+      "name": "iconPosition",
+      "required": false,
+      "tags": { "default": "'leading'" },
+      "type": { "name": "\"leading\" | \"trailing\"" }
+    },
+    "size": {
+      "defaultValue": { "value": "'medium'" },
+      "description": "The size of the FAB. Note that this only affects the size of the component\nif it is rendered as a regular FAB (i.e. no text provided).",
+      "name": "size",
+      "required": false,
+      "tags": { "default": "'medium'" },
+      "type": { "name": "\"small\" | \"large\" | \"medium\"" }
+    },
+    "variant": {
+      "defaultValue": { "value": "'surface'" },
+      "description": "Specifies the visual variant of the button to use.",
+      "name": "variant",
+      "required": false,
+      "tags": { "default": "'surface'" },
+      "type": { "name": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"" }
+    },
+    "onAction": {
+      "defaultValue": { "value": "undefined" },
+      "description": "Specifies the callback to call when an action is performed on the button. This\nis either a pointer interaction like a click or keyboard interaction like pressing\nEnter or Space.",
+      "name": "onAction",
+      "required": false,
+      "tags": { "param": "event The event object of the event that triggered the onAction" },
+      "type": { "name": "((event: Event) => void)" }
+    }
+  },
+  "tags": {},
+  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/FAB/FAB.tsx",
+  "name": "FAB"
+}

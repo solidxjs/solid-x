@@ -1,0 +1,26 @@
+{
+  "description": "",
+  "displayName": "Badge",
+  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/Badge/Badge.tsx",
+  "props": {
+    "children": {
+      "defaultValue": { "value": "undefined" },
+      "description": "The content that will be shown in the badge.\nNote: The content will only be shown in the 'large' variant.",
+      "name": "children",
+      "required": false,
+      "tags": {},
+      "type": { "name": "string" }
+    },
+    "variant": {
+      "defaultValue": { "value": "'large'" },
+      "description": "The variant of the badge.",
+      "name": "variant",
+      "required": false,
+      "tags": { "default": "'large'" },
+      "type": { "name": "\"small\" | \"large\"" }
+    }
+  },
+  "tags": {},
+  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/Badge/Badge.tsx",
+  "name": "Badge"
+}

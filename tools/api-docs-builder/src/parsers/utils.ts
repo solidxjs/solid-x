@@ -32,5 +32,6 @@ export const getFullJsDocComment = (symbol: ts.Symbol, checker: ts.TypeChecker) 
 export const getTypeString = (type: ts.Type, checker: ts.TypeChecker) => {
   // use the constraint if it is a generic with constraint
   const processedType = type.getConstraint() ?? type;
-  return checker.typeToString(processedType);
+  // We will be removing `| undefined` from type as we will be using required flag
+  return checker.typeToString(processedType).replace(' | undefined', '');
 };

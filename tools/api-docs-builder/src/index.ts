@@ -83,3 +83,5 @@ program
     console.error(error);
     process.exit(1);
   });
+
+export type { ComponentApi } from './component';
