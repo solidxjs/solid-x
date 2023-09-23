@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ComponentProps, createEffect, onMount, splitProps } from 'solid-js';
+import { ComponentProps, createEffect, onCleanup, onMount, splitProps } from 'solid-js';
 import {
   ActiveAnchor,
   useIntersectionObserver,
@@ -30,15 +30,17 @@ export const Heading = (
     slugs.set(heading, [local.id, (local.context.index += 1)]);
     observer?.observe(heading);
 
-    return () => {
+    onCleanup(() => {
       observer?.disconnect();
       slugs.delete(heading);
+      // false positive
+      // eslint-disable-next-line solid/reactivity
       setActiveAnchor?.((a: ActiveAnchor) => {
         const ret = { ...a };
         if (local.id) delete ret[local.id];
         return ret as ActiveAnchor;
       });
-    };
+    });
   });
 
   onMount(() => {
@@ -61,7 +63,14 @@ export const Heading = (
       {...others}>
       {local.children}
       <span class="absolute -mt-20" id={local.id} ref={obRef} />
-      <a href={`#${local.id}`} class="subheading-anchor" aria-label="Permalink for this section" />
+      {
+        // eslint-disable-next-line jsx-a11y/anchor-has-content
+        <a
+          href={`#${local.id}`}
+          class="subheading-anchor"
+          aria-label="Permalink for this section"
+        />
+      }
     </Dynamic>
   );
 };

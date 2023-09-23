@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { clsx } from 'clsx';
 import { ComponentProps, Show, createEffect, createSignal, on } from 'solid-js';
 import { A as Link, useLocation, useMatch } from 'solid-start';
@@ -30,6 +31,7 @@ export const MobileSidebar = (props: ComponentProps<typeof Sidebar>) => {
   return (
     <div>
       <span
+        role="button"
         class={clsx(classes.links, classes.inactive)}
         tabIndex={0}
         onClick={() => setIsOpen((value) => !value)}>

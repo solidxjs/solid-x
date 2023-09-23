@@ -52,7 +52,8 @@ const logo = (
                                   fill="currentColor"
                                   class="wordmark-text-0"
                                   data-fill-palette-color="primary"
-                                  id="text-0"></path>
+                                  id="text-0"
+                                />
                               </svg>
                             </g>
                           </svg>
@@ -82,32 +83,36 @@ const logo = (
                         <polygon
                           fill="currentColor"
                           points="81.5,88.6 95,75.1 95,11.4 81.5,24.9 "
-                          data-fill-palette-color="accent"></polygon>
+                          data-fill-palette-color="accent"
+                        />
                         <polygon
                           fill="currentColor"
                           points="24.9,5 11.4,18.5 75.1,18.5 88.6,5 "
-                          data-fill-palette-color="accent"></polygon>
+                          data-fill-palette-color="accent"
+                        />
                         <rect
                           x="5"
                           y="27.5"
                           fill="currentColor"
                           width="67.5"
                           height="67.5"
-                          data-fill-palette-color="accent"></rect>
+                          data-fill-palette-color="accent"
+                        />
                       </svg>
                     </g>
                   </svg>
                 </g>
               </svg>
             </g>
-            <defs></defs>
+            <defs />
           </svg>
           <rect
             width="395.52"
             height="91.91141171790461"
             fill="none"
             stroke="none"
-            visibility="hidden"></rect>
+            visibility="hidden"
+          />
         </g>
       </svg>
     </g>
