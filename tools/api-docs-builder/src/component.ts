@@ -5,7 +5,7 @@ import { ComponentDoc, parse as parseComponent } from './parsers/component';
 
 export type ComponentApi = ComponentDoc & {
   name: string;
-  filename: string;
+  filepath: string;
 };
 
 type GenerateApiJSONOptions = {
@@ -40,11 +40,14 @@ export async function generateComponentApi({
   const { filename, name } = componentInfo;
   const componentDocs = parseComponent(filename, project.program);
   if (componentDocs.length === 0) return null;
+  // Ideally, we expect to have only one component per file
   const componentApi: ComponentApi = {
-    // Ideally, we expect to have only one component per file
-    ...componentDocs[0],
-    filename,
     name,
+    displayName: componentDocs[0].displayName,
+    description: componentDocs[0].description,
+    filepath: path.relative(workspaceDir, filename),
+    props: componentDocs[0].props,
+    tags: componentDocs[0].tags,
   };
 
   await generateApiJSON({ outDir, componentApi, workspaceDir });

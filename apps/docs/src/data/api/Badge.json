@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "Badge",
   "displayName": "Badge",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/Badge/Badge.tsx",
+  "description": "",
+  "filepath": "packages/material/src/Badge/Badge.tsx",
   "props": {
     "children": {
       "defaultValue": { "value": "undefined" },
@@ -20,7 +21,5 @@
       "type": { "name": "\"small\" | \"large\"" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/Badge/Badge.tsx",
-  "name": "Badge"
+  "tags": {}
 }

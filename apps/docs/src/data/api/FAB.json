@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "FAB",
   "displayName": "FAB",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/FAB/FAB.tsx",
+  "description": "",
+  "filepath": "packages/material/src/FAB/FAB.tsx",
   "props": {
     "ariaExpanded": {
       "defaultValue": { "value": "undefined" },
@@ -86,7 +87,5 @@
       "type": { "name": "((event: Event) => void)" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/FAB/FAB.tsx",
-  "name": "FAB"
+  "tags": {}
 }

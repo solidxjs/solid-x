@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "TextField",
   "displayName": "TextField",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/TextField/TextField.tsx",
+  "description": "",
+  "filepath": "packages/material/src/TextField/TextField.tsx",
   "props": {
     "defaultValue": {
       "defaultValue": { "value": "undefined" },
@@ -144,7 +145,5 @@
       "type": { "name": "Action<ChangePayload<string>>" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/TextField/TextField.tsx",
-  "name": "TextField"
+  "tags": {}
 }

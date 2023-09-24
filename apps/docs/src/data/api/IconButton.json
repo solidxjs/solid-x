@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "IconButton",
   "displayName": "IconButton",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/IconButton/IconButton.tsx",
+  "description": "",
+  "filepath": "packages/material/src/IconButton/IconButton.tsx",
   "props": {
     "ariaExpanded": {
       "defaultValue": { "value": "undefined" },
@@ -110,7 +111,5 @@
       "type": { "name": "((isSelected: boolean) => void)" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/IconButton/IconButton.tsx",
-  "name": "IconButton"
+  "tags": {}
 }

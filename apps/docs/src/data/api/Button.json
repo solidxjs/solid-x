@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "Button",
   "displayName": "Button",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/Button/Button.tsx",
+  "description": "",
+  "filepath": "packages/material/src/Button/Button.tsx",
   "props": {
     "ariaExpanded": {
       "defaultValue": { "value": "undefined" },
@@ -102,7 +103,5 @@
       "type": { "name": "((event: Event) => void)" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/Button/Button.tsx",
-  "name": "Button"
+  "tags": {}
 }

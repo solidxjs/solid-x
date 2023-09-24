@@ -1,7 +1,8 @@
 {
-  "description": "",
+  "name": "ButtonBase",
   "displayName": "ButtonBase",
-  "filePath": "/Users/raghavan/Developer/solid-x/packages/material/src/ButtonBase/ButtonBase.tsx",
+  "description": "",
+  "filepath": "packages/material/src/ButtonBase/ButtonBase.tsx",
   "props": {
     "ariaExpanded": {
       "defaultValue": { "value": "undefined" },
@@ -94,7 +95,5 @@
       "type": { "name": "((event: Event) => void)" }
     }
   },
-  "tags": {},
-  "filename": "/Users/raghavan/Developer/solid-x/packages/material/src/ButtonBase/ButtonBase.tsx",
-  "name": "ButtonBase"
+  "tags": {}
 }

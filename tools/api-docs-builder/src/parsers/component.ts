@@ -14,7 +14,6 @@ export type PropItem = {
 };
 export type ComponentDoc = {
   displayName: string;
-  filePath: string;
   description: string;
   props: Props;
   tags?: Record<string, string>;
@@ -56,13 +55,11 @@ export function parse(filename: string, program: ts.Program) {
 
     const { description, tags } = getFullJsDocComment(module, checker);
     const displayName = tags['name'] ?? module.getName();
-    const filePath = sourceFile.fileName;
     const props = getPropsInfo(propsType, checker);
 
     componentDocs.push({
       description,
       displayName,
-      filePath,
       props,
       tags,
     });
