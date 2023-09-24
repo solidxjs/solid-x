@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import '@solid-x/material/theme.css';
+@import '@docsearch/css';
+
+@import './base/_base.scss';
+@import './base/_shiki.scss';
+@import './base/_transition.scss';
+@import './base/_variables.scss';
+@import './components/_callout.scss';
+@import './components/_header.scss';
+@import './components/_heading.scss';
+@import './components/_link.scss';
+@import './components/_pagination.scss';
+@import './components/_sidebar.scss';
+@import './components/_tabs.scss';
+@import './components/_toc.scss';
+
+body {
+  background: var(--sx-bg-color);
+  color: var(--sx-text-color);
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.mdx-h1 {
+  margin-block-start: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.mdx-p {
+  margin-block-start: 1.5rem;
+  line-height: 1.75;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+}
+
+.mdx-ul {
+  margin-block-start: 1.5rem;
+  margin-inline-start: 1.5rem;
+  line-height: 1.75;
+  list-style-type: disc;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+}
+
+.mdx-ul {
+  margin-block-start: 1.5rem;
+  margin-inline-start: 1.5rem;
+  line-height: 1.75;
+  list-style-type: decimal;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+}
+
+.mdx-li {
+  margin-block: 0.5rem;
+}
+
+.mdx-code {
+  border-radius: 0.25rem;
+  color: var(--sx-code-text-color);
+  background: var(--sx-code-bg-color);
+  font-size: 0.9em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  overflow-wrap: break-word;
+  padding-inline: 0.4em;
+  padding-block: 0.2em;
+}
+
+.mdx-pre__copy-button {
+  position: absolute;
+  transition-property: all;
+  transition-timing-function: var(--sx-transition-timing-function);
+  transition-duration: var(--sx-transition-duration);
+  top: 0.25rem;
+  right: 0.5rem;
+  z-index: 10;
+}

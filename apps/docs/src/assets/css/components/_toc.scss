@@ -1,0 +1,5 @@
+:root {
+  --sx-toc-anchor-active-text-color: hsl(var(--sx-accent-hsl));
+  --sx-toc-anchor-inactive-text-color: hsl(var(--sx-text-hsl) / 70%);
+  --sx-toc-anchor-inactive-hover-text-color: hsl(var(--sx-text-hsl) / 90%);
+}

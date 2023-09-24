@@ -1,0 +1,8 @@
+:root {
+  --sx-link-active-color: var(--sx-text-color);
+  --sx-link-active-bg-color: hsl(var(--sx-primary-hsl) / 50%);
+  --sx-link-inactive-color: hsl(var(--sx-text-hsl) / 70%);
+  --sx-link-inactive-bg-color: transparent;
+  --sx-link-inactive-hover-color: hsl(var(--sx-text-hsl) / 90%);
+  --sx-link-inactive-hover-bg-color: hsl(var(--sx-primary-hsl) / 20%);
+}

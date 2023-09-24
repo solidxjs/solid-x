@@ -1,0 +1,27 @@
+:root {
+  --sx-primary-hsl: 99deg 26% 57%;
+  --sx-secondary-hsl: 129deg, 26%, 85%;
+  --sx-accent-hsl: 69deg, 26%, 45%;
+
+  --sx-bg-color: hsl(280deg 10% 95%);
+  --sx-text-hsl: 280deg 10% 5%;
+  --sx-text-color: hsl(var(--sx-text-hsl));
+  --sx-border-color: hsl(0deg 0% 0% / 10%);
+
+  --sx-code-text-color: var(--sx-text-color);
+  --sx-code-bg-color: hsl(var(--sx-secondary-hsl));
+}
+
+[data-kb-theme='dark'] {
+  --sx-primary-hsl: 99deg 26% 43%;
+  --sx-secondary-hsl: 129deg, 26%, 15%;
+  --sx-accent-hsl: 69deg, 26%, 55%;
+
+  --sx-bg-color: hsl(280deg 10% 5%);
+  --sx-text-hsl: 280deg 10% 95%;
+  --sx-text-color: hsl(var(--sx-text-hsl));
+  --sx-border-color: hsl(0deg 100% 100% / 10%);
+
+  --sx-code-text-color: var(--sx-text-color);
+  --sx-code-bg-color: hsl(var(--sx-secondary-hsl));
+}

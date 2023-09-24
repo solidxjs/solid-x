@@ -1,0 +1,22 @@
+.link__text {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.link__screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  user-select: none;
+}
+
+.link__icon {
+  display: inline;
+}

@@ -1,0 +1,20 @@
+.collapse {
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: var(--sx-transition-timing-function);
+  transition-duration: var(--sx-transition-duration-large);
+}
+
+.collapse__content {
+  transition-property: opacity;
+  transition-timing-function: var(--sx-transition-timing-function);
+  transition-duration: var(--sx-transition-duration-large);
+}
+
+.collapse__content--open {
+  opacity: 1;
+}
+
+.collapse__content--close {
+  opacity: 0;
+}

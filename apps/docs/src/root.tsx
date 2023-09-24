@@ -19,9 +19,7 @@ import { PageStateProvider } from '~/components/context/PageStateContext';
 import { MDXProvider } from '~/libs/solid-mdx';
 import { getComponents } from '~/mdx-components';
 
-import '@solid-x/material/theme.css';
-import './root.css';
-import './shiki.css';
+import '~/assets/css/global.scss';
 
 export default function Root() {
   const event = useContext(ServerContext);
@@ -67,7 +65,7 @@ export default function Root() {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <Body class="dark:bg-dark min-h-screen w-screen">
+      <Body>
         <ErrorBoundary>
           <ColorModeScript storageType={storageManager.type} />
           <Suspense>

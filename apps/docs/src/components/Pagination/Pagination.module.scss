@@ -1,0 +1,34 @@
+.container--previous {
+  margin-inline-end: auto;
+  text-align: start;
+}
+
+.container--next {
+  margin-inline-start: auto;
+  text-align: end;
+}
+
+.heading {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sx-pagination-heading-text-color);
+  margin-block-end: 0.25rem;
+}
+
+.link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sx-pagination-link-text-color);
+
+  &:hover {
+    color: var(--sx-pagination-link-hover-text-color);
+  }
+}
+
+.link__arrow--previous {
+  margin-inline-end: 0.25rem;
+}
+
+.link__arrow--next {
+  margin-inline-start: 0.25rem;
+}

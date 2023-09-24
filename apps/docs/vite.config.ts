@@ -5,7 +5,6 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import netlifySolid from 'solid-start-netlify';
 import solid from 'solid-start/vite';
 import { defineConfig } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { mdx } from './plugins/mdx-plugin';
 
 const IGNORE_WARNINGS = ['MODULE_LEVEL_DIRECTIVE', 'EVAL'];
@@ -19,6 +18,11 @@ export default defineConfig({
       },
     },
   },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+  },
   plugins: [
     mdx({
       rehypePlugins: [rehypePrettyCode],
@@ -27,14 +31,6 @@ export default defineConfig({
     solid({
       adapter: netlifySolid({}),
       extensions: ['.mdx', '.md'],
-    }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'built/search-data.json',
-          dest: '.',
-        },
-      ],
     }),
   ],
 });

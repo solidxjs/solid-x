@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "dist",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "skipLibCheck": true,
-    "types": ["solid-js", "vite/client"],
+    "noPropertyAccessFromIndexSignature": false,
+    "outDir": "dist",
     "paths": {
-      "~/*": ["./src/*"],
       "@solid-x/material": ["../../packages/material/dist/types"],
       "@solid-x/material/*": ["../../packages/material/dist/types/*"],
-      "flexsearch": ["node_modules/@types/flexsearch"]
-    }
+      "~/*": ["./src/*"]
+    },
+    "skipLibCheck": true,
+    "types": ["solid-js", "vite/client"]
   },
   "extends": "../../tsconfig.json"
 }

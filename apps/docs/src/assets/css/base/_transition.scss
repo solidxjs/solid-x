@@ -1,0 +1,7 @@
+:root {
+  --sx-transition-property: color, background-color, border-color, text-decoration-color, fill,
+    stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  --sx-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --sx-transition-duration: 150ms;
+  --sx-transition-duration-large: 500ms;
+}

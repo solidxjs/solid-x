@@ -1,0 +1,41 @@
+.body {
+  position: relative;
+  display: flex;
+  background: var(--sx-bg-color);
+  justify-content: center;
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+.aside {
+  position: relative;
+}
+
+.aside__content {
+  position: sticky;
+  top: var(--sx-header-height);
+  height: calc(100vh - var(--sx-header-height));
+  overflow-y: auto;
+  padding-block: 1.5rem;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 0.5rem;
+}
+
+.main {
+  margin-inline: auto;
+  max-width: 56rem;
+  padding: 4rem;
+  flex: 1 1 auto;
+}
+
+.pagination {
+  display: flex;
+  margin-block-start: 3rem;
+  padding-block-start: 3rem;
+  border-block-start-width: 1px;
+  border-color: var(--sx-border-color);
+}
+
+.toc {
+  display: block;
+}

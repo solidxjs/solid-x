@@ -1,0 +1,45 @@
+.default {
+  border-color: var(--sx-callout-default-border-color);
+  background: var(--sx-callout-default-bg-color);
+  color: var(--sx-callout-default-text-color);
+}
+
+.error {
+  border-color: var(--sx-callout-error-border-color);
+  background: var(--sx-callout-error-bg-color);
+  color: var(--sx-callout-error-text-color);
+}
+
+.info {
+  border-color: var(--sx-callout-info-border-color);
+  background: var(--sx-callout-info-bg-color);
+  color: var(--sx-callout-info-text-color);
+}
+
+.warning {
+  border-color: var(--sx-callout-warning-border-color);
+  background: var(--sx-callout-warning-bg-color);
+  color: var(--sx-callout-warning-text-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.icon {
+  user-select: none;
+  font-size: 1.25rem;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 0.5rem;
+}
+
+.text {
+  width: 100%;
+  line-height: 1.75rem;
+}
