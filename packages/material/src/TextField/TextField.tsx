@@ -126,7 +126,7 @@ export const TextField = (_props: TextFieldProps) => {
         state: props.disabled ? 'disabled' : 'enabled',
         status: props.status ?? 'default',
         variant: props.variant,
-      } as const),
+      }) as const,
   );
   const [value, setValue] = createControllableSignal({
     defaultValue: () => props.defaultValue,

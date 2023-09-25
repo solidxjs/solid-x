@@ -23,7 +23,6 @@ export default meta;
 type Story = StoryObj<typeof ButtonBase>;
 
 const Template: StoryFn<typeof ButtonBase> = (args: ComponentProps<typeof ButtonBase>) => {
-  console.log(args.disabled);
   return <ButtonBase {...args} />;
 };
 

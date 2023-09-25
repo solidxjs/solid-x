@@ -132,7 +132,7 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [outlineColor]: tokens[variant].disabled.container.outlineColor,
       },
     },
-  } as const);
+  }) as const;
 
 const variants = {
   icon: {

@@ -27,4 +27,5 @@ export const deepCloneSerializableObject = <T extends object>(obj: T) =>
 export const mergeDefaults = <T extends object, const D extends Partial<T>>(
   source: T,
   defaults: D,
+  // eslint-disable-next-line solid/reactivity
 ) => mergeProps(defaults, source) as DefaultAdded<T, D>;

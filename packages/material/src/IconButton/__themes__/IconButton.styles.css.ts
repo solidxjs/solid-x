@@ -101,7 +101,7 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [outlineColor]: tokens[variant].disabled.container.outlineColor,
       },
     },
-  } as const);
+  }) as const;
 
 const variants = {
   variant: {
@@ -144,7 +144,7 @@ const getSelectedStylesForVariant = (selection: SelectionVariant, variant: Style
         [stateLayerColor]: tokens[variant].pressed.stateLayer.color[selection],
       },
     },
-  } as ComplexStyleRule);
+  }) as ComplexStyleRule;
 
 const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> = [
   /************************************

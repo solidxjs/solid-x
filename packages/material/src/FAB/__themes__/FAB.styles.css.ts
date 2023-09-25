@@ -105,7 +105,7 @@ const getStylesForVariant = (variant: StyleVariant) =>
         [stateLayerOpacity]: tokens[variant].pressed.stateLayer.opacity,
       },
     },
-  } as ComplexStyleRule);
+  }) as ComplexStyleRule;
 
 const variants = {
   elevation: {
@@ -160,7 +160,7 @@ const getStylesForLowerElevation = (variant: StyleVariant) =>
         [containerElevation]: tokens[variant].pressed.container.elevationLowered,
       },
     },
-  } as ComplexStyleRule);
+  }) as ComplexStyleRule;
 
 const compoundVariants: CompoundVariantStyles<VariantOptions<typeof variants>> = [
   /************************************
