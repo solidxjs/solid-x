@@ -13,7 +13,7 @@
       root.style.colorScheme = _value;
       root.dataset.sxTheme = _value;
 
-      return _value;
+      return value;
     }
 
     const stored = localStorage.getItem(key);

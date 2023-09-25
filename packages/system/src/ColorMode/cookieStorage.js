@@ -13,7 +13,7 @@
       root.style.colorScheme = _value;
       root.dataset.sxTheme = _value;
 
-      return _value;
+      return value;
     }
 
     const cookie = document.cookie.match(new RegExp(`(^| )${key}=([^;]+)`));
