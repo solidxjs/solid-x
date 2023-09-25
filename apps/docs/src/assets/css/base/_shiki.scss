@@ -22,11 +22,11 @@ pre {
   position: relative;
 }
 
-[data-kb-theme='light'] .shiki.github-dark {
+[data-sx-theme='light'] .shiki.github-dark {
   display: none !important;
 }
 
-[data-kb-theme='dark'] .shiki.github-light {
+[data-sx-theme='dark'] .shiki.github-light {
   display: none !important;
 }
 
@@ -47,7 +47,7 @@ pre.shiki {
     'Courier New', monospace;
 }
 
-[data-kb-theme='dark'] pre.shiki {
+[data-sx-theme='dark'] pre.shiki {
   border-color: #3f3f46;
   background-color: #27272a !important;
 }
@@ -83,7 +83,7 @@ pre.shiki div.highlight {
   background-color: rgb(224 242 254 / 0.8);
 }
 
-[data-kb-theme='dark'] pre.shiki div.highlight {
+[data-sx-theme='dark'] pre.shiki div.highlight {
   background-color: rgb(12 74 110 / 0.4);
 }
 
