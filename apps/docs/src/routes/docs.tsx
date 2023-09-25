@@ -4,13 +4,13 @@ import { Section } from '~/root.types';
 
 const sections: Section[] = [
   {
+    title: 'Getting started',
+    type: 'header',
+  },
+  {
     title: 'Introduction',
     href: '/docs/introduction',
     type: 'page',
-  },
-  {
-    title: 'Getting started',
-    type: 'header',
   },
   {
     title: 'Installation',
