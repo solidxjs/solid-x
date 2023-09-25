@@ -1,5 +1,9 @@
 // @refresh reload
-import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from '@kobalte/core';
+import {
+  ColorModeProvider,
+  ColorModeScript,
+  createCookieStorageManager,
+} from '@solid-x/system/ColorMode';
 import { Suspense, useContext } from 'solid-js';
 import { isServer } from 'solid-js/web';
 import {
@@ -23,7 +27,8 @@ import '~/assets/css/global.scss';
 
 export default function Root() {
   const event = useContext(ServerContext);
-  const storageManager = cookieStorageManagerSSR(
+  const storageManager = createCookieStorageManager(
+    undefined,
     isServer ? event?.request.headers.get('cookie') ?? '' : document.cookie,
   );
   return (
@@ -67,9 +72,9 @@ export default function Root() {
       </Head>
       <Body>
         <ErrorBoundary>
-          <ColorModeScript storageType={storageManager.type} />
+          <ColorModeScript type={storageManager.type} />
           <Suspense>
-            <ColorModeProvider storageManager={storageManager}>
+            <ColorModeProvider colorModeManager={storageManager}>
               <PageStateProvider>
                 <MDXProvider components={getComponents()}>
                   <Routes>

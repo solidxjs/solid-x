@@ -29,13 +29,11 @@ export const PageStateProvider = (props: ParentProps) => {
       return store.sections;
     },
     addSection(text, slug, depth) {
-      console.log({ depth, slug, text });
       setStore('sections', (sections) => [...new Set([...sections, { depth, slug, text }])]);
     },
   };
 
   createEffect(() => {
-    console.log('resetting');
     const { pathname } = useLocation();
     setStore('sections', []);
     setStore('path', pathname);

@@ -1,4 +1,5 @@
-import { ConfigColorMode, Select, useColorMode } from '@kobalte/core';
+import { Select } from '@kobalte/core';
+import { ColorMode, useColorMode } from '@solid-x/system/ColorMode';
 import { JSX } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import sharedStyles from '~/shared/shared.module.scss';
@@ -6,7 +7,7 @@ import { MoonIcon, SunIcon, SystemIcon } from '../Icons';
 import styles from './ThemeSelector.module.scss';
 
 interface ThemeOption {
-  value: ConfigColorMode;
+  value: ColorMode;
   label: string;
   icon: () => JSX.Element;
 }
@@ -37,7 +38,7 @@ export const ThemeSelector = () => {
       options={THEME_OPTIONS}
       optionValue="value"
       optionTextValue="label"
-      defaultValue={THEME_OPTIONS.find((option) => option.value === colorMode())}
+      defaultValue={THEME_OPTIONS.find((option) => option.value === 'system')}
       onChange={(option) => setColorMode(option.value)}
       gutter={8}
       sameWidth={false}

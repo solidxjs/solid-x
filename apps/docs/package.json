@@ -51,6 +51,7 @@
     "@docsearch/js": "^3.5.2",
     "@kobalte/core": "^0.11.0",
     "@solid-x/material": "workspace:^",
+    "@solid-x/system": "workspace:^",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "clsx": "^2.0.0",
