@@ -1,4 +1,4 @@
-# @solidx/material
+# @solid-x/material
 
 This package hosts the SolidJS components with Material 3 theme
 
@@ -8,10 +8,10 @@ Install the package in your project directory with:
 
 ```sh
 // with npm
-npm install @solidx/material
+npm install @solid-x/material
 
 // with yarn
-yarn add @solidx/material
+yarn add @solid-x/material
 ```
 
 ## Documentation
