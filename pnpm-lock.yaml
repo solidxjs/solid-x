@@ -59,6 +59,9 @@ importers:
       '@solid-x/material':
         specifier: workspace:^
         version: link:../../packages/material
+      '@solid-x/system':
+        specifier: workspace:^
+        version: link:../../packages/system
       '@solidjs/meta':
         specifier: ^0.28.6
         version: 0.28.6(solid-js@1.7.11)
@@ -251,7 +254,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.6.5)
+        version: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
       vite-plugin-dts:
         specifier: ^3.5.4
         version: 3.5.4(rollup@3.29.3)(typescript@5.2.2)(vite@4.4.9)
@@ -264,9 +267,42 @@ importers:
 
   packages/system:
     devDependencies:
+      '@testing-library/jest-dom':
+        specifier: ^6.1.3
+        version: 6.1.3(vitest@0.34.5)
+      '@types/glob':
+        specifier: ^8.1.0
+        version: 8.1.0
+      '@types/node':
+        specifier: ^20.6.2
+        version: 20.6.5
+      glob:
+        specifier: ^10.3.7
+        version: 10.3.7
+      rimraf:
+        specifier: ^5.0.1
+        version: 5.0.1
+      solid-js:
+        specifier: ^1.7.12
+        version: 1.7.12
+      terser:
+        specifier: ^5.20.0
+        version: 5.20.0
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+      vite:
+        specifier: ^4.4.9
+        version: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
+      vite-plugin-dts:
+        specifier: ^3.5.4
+        version: 3.5.4(@types/node@20.6.5)(typescript@5.2.2)(vite@4.4.9)
+      vite-plugin-solid:
+        specifier: ^2.7.0
+        version: 2.7.0(solid-js@1.7.12)(vite@4.4.9)
+      vitest:
+        specifier: ^0.34.5
+        version: 0.34.5(terser@5.20.0)
 
   packages/tokens:
     devDependencies:
@@ -2659,24 +2695,24 @@ packages:
       - supports-color
     dev: true
 
-  /@microsoft/api-extractor-model@7.28.0:
+  /@microsoft/api-extractor-model@7.28.0(@types/node@20.6.5):
     resolution: {integrity: sha512-QIMtUVm1tqiKG+M6ciFgRShcDoovyltaeg+CbyOnyr7SMrp6gg0ojK5/nToMqR9kAvsTS4QVgW4Twl50EoAjcw==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.60.0
+      '@rushstack/node-core-library': 3.60.0(@types/node@20.6.5)
     transitivePeerDependencies:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.37.0:
+  /@microsoft/api-extractor@7.37.0(@types/node@20.6.5):
     resolution: {integrity: sha512-df/wffWpDhYRw7kzdxeHGsCpim+dC8aFiZlsJb4uFvVPWhBZpDzOhQxSUTFx3Df1ORY+/JjuPR3fDE9Hq+PHzQ==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.0
+      '@microsoft/api-extractor-model': 7.28.0(@types/node@20.6.5)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.60.0
+      '@rushstack/node-core-library': 3.60.0(@types/node@20.6.5)
       '@rushstack/rig-package': 0.5.0
       '@rushstack/ts-command-line': 4.16.0
       colors: 1.2.5
@@ -3351,7 +3387,7 @@ packages:
       picomatch: 2.3.1
       rollup: 3.29.3
 
-  /@rushstack/node-core-library@3.60.0:
+  /@rushstack/node-core-library@3.60.0(@types/node@20.6.5):
     resolution: {integrity: sha512-PcyrqhILvzU+65wMFybQ2VeGNnU5JzhDq2OvUi3j6jPUxyllM7b2hrRUwCuVaYboewYzIbpzXFzgxe2K7ii1nw==}
     peerDependencies:
       '@types/node': '*'
@@ -3359,6 +3395,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
+      '@types/node': 20.6.5
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -4127,7 +4164,7 @@ packages:
       remark-slug: 6.1.0
       rollup: 3.29.3
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4689,7 +4726,7 @@ packages:
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 0.34.5(@vitest/ui@0.34.5)(jsdom@22.1.0)
+      vitest: 0.34.5(terser@5.20.0)
     dev: true
 
   /@testing-library/user-event@14.4.3(@testing-library/dom@9.3.3):
@@ -4844,7 +4881,14 @@ packages:
     resolution: {integrity: sha512-c0hrgAOVYr21EX8J0jBMXGLMgJqVf/v6yxi0dLaJboW9aQPh16Id+z6w2Tx1hm+piJOLv8xPfVKZCLfjPw/IMQ==}
     dependencies:
       '@types/jsonfile': 6.1.2
-      '@types/node': 20.6.2
+      '@types/node': 20.6.5
+    dev: true
+
+  /@types/glob@8.1.0:
+    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
+    dependencies:
+      '@types/minimatch': 5.1.2
+      '@types/node': 20.6.5
     dev: true
 
   /@types/graceful-fs@4.1.7:
@@ -4941,13 +4985,17 @@ packages:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
     dev: true
 
+  /@types/minimatch@5.1.2:
+    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
+    dev: true
+
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
   /@types/node-fetch@2.6.6:
     resolution: {integrity: sha512-95X8guJYhfqiuVVhRFxVQcf4hW/2bCuoPwDasMf/531STFoNoWTT7YDnWdXHEZKqAGUigmpG31r2FE70LwnzJw==}
     dependencies:
-      '@types/node': 16.18.54
+      '@types/node': 20.6.5
       form-data: 4.0.0
     dev: true
 
@@ -5282,7 +5330,7 @@ packages:
       lodash: 4.17.21
       mlly: 1.4.2
       outdent: 0.8.0
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
       vite-node: 0.28.5
     transitivePeerDependencies:
       - '@types/node'
@@ -5334,7 +5382,7 @@ packages:
       outdent: 0.8.0
       postcss: 8.4.30
       postcss-load-config: 3.1.4(postcss@8.4.30)
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11740,7 +11788,7 @@ packages:
       '@solid-devtools/debugger': 0.22.4(solid-js@1.7.12)
       '@solid-devtools/shared': 0.12.3(solid-js@1.7.12)
       solid-js: 1.7.12
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -12262,6 +12310,16 @@ packages:
 
   /terser@5.19.4:
     resolution: {integrity: sha512-6p1DjHeuluwxDXcuT9VR8p64klWJKo1ILiy19s6C9+0Bh2+NWTX6nD9EPppiER4ICkHDVB1RkVpin/YW2nQn/g==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.5
+      acorn: 8.10.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+
+  /terser@5.20.0:
+    resolution: {integrity: sha512-e56ETryaQDyebBwJIWYB2TT6f2EZ0fL0sW/JRXNMN26zZdKi2u/E/5my5lG6jNxym6qsrVXfFRmOdV42zlAgLQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -12990,7 +13048,7 @@ packages:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13002,7 +13060,7 @@ packages:
       - terser
     dev: true
 
-  /vite-node@0.34.5(@types/node@20.6.5):
+  /vite-node@0.34.5(@types/node@20.6.5)(terser@5.20.0):
     resolution: {integrity: sha512-RNZ+DwbCvDoI5CbCSQSyRyzDTfFvFauvMs6Yq4ObJROKlIKuat1KgSX/Ako5rlDMfVCyMcpMRMTkJBxd6z8YRA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -13012,7 +13070,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13022,6 +13080,30 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-dts@3.5.4(@types/node@20.6.5)(typescript@5.2.2)(vite@4.4.9):
+    resolution: {integrity: sha512-BJLBj1Vg9kV7ZMXAULT9UGogrElwz5s+k8TzC7LsFkHv5Jy90OWnHKUp8qm7sypu2pkF5pTJ5McUuHudnT0Imw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      typescript: '*'
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      '@microsoft/api-extractor': 7.37.0(@types/node@20.6.5)
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.3)
+      '@vue/language-core': 1.8.13(typescript@5.2.2)
+      debug: 4.3.4
+      kolorist: 1.8.0
+      typescript: 5.2.2
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
+      vue-tsc: 1.8.13(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@types/node'
+      - rollup
+      - supports-color
     dev: true
 
   /vite-plugin-dts@3.5.4(rollup@3.29.3)(typescript@5.2.2)(vite@4.4.9):
@@ -13034,13 +13116,13 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@microsoft/api-extractor': 7.37.0
+      '@microsoft/api-extractor': 7.37.0(@types/node@20.6.5)
       '@rollup/pluginutils': 5.0.4(rollup@3.29.3)
       '@vue/language-core': 1.8.13(typescript@5.2.2)
       debug: 4.3.4
       kolorist: 1.8.0
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
       vue-tsc: 1.8.13(typescript@5.2.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -13102,13 +13184,13 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.12
       solid-refresh: 0.5.3(solid-js@1.7.12)
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
       vitefu: 0.2.4(vite@4.4.9)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.4.9(@types/node@20.6.5):
+  /vite@4.4.9(@types/node@20.6.5)(terser@5.20.0):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -13140,6 +13222,7 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.29
       rollup: 3.29.3
+      terser: 5.20.0
     optionalDependencies:
       fsevents: 2.3.3
 
@@ -13186,7 +13269,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
 
   /vitest@0.34.5(@vitest/ui@0.34.5)(jsdom@22.1.0):
     resolution: {integrity: sha512-CPI68mmnr2DThSB3frSuE5RLm9wo5wU4fbDrDwWQQB1CWgq9jQVoQwnQSzYAjdoBOPoH2UtXpOgHVge/uScfZg==}
@@ -13242,8 +13325,73 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.4.9(@types/node@20.6.5)
-      vite-node: 0.34.5(@types/node@20.6.5)
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
+      vite-node: 0.34.5(@types/node@20.6.5)(terser@5.20.0)
+      why-is-node-running: 2.2.2
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vitest@0.34.5(terser@5.20.0):
+    resolution: {integrity: sha512-CPI68mmnr2DThSB3frSuE5RLm9wo5wU4fbDrDwWQQB1CWgq9jQVoQwnQSzYAjdoBOPoH2UtXpOgHVge/uScfZg==}
+    engines: {node: '>=v14.18.0'}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@vitest/browser': '*'
+      '@vitest/ui': '*'
+      happy-dom: '*'
+      jsdom: '*'
+      playwright: '*'
+      safaridriver: '*'
+      webdriverio: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+      playwright:
+        optional: true
+      safaridriver:
+        optional: true
+      webdriverio:
+        optional: true
+    dependencies:
+      '@types/chai': 4.3.6
+      '@types/chai-subset': 1.3.3
+      '@types/node': 20.6.5
+      '@vitest/expect': 0.34.5
+      '@vitest/runner': 0.34.5
+      '@vitest/snapshot': 0.34.5
+      '@vitest/spy': 0.34.5
+      '@vitest/utils': 0.34.5
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      cac: 6.7.14
+      chai: 4.3.8
+      debug: 4.3.4
+      local-pkg: 0.4.3
+      magic-string: 0.30.3
+      pathe: 1.1.1
+      picocolors: 1.0.0
+      std-env: 3.4.3
+      strip-literal: 1.3.0
+      tinybench: 2.5.1
+      tinypool: 0.7.0
+      vite: 4.4.9(@types/node@20.6.5)(terser@5.20.0)
+      vite-node: 0.34.5(@types/node@20.6.5)(terser@5.20.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
