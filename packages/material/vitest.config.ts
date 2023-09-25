@@ -10,7 +10,6 @@ export default defineConfig({
     reporters: ['default', 'html'],
     outputFile: './reports/index.html',
     setupFiles: ['./setupVitest.js'],
-    transformMode: { web: [/\.[jt]sx?$/] },
   },
   resolve: {
     conditions: ['development', 'browser'],

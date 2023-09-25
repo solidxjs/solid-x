@@ -1,6 +1,5 @@
-
 /**
- * @param {import('plop').NodePlopAPI} plop 
+ * @param {import('plop').NodePlopAPI} plop
  */
 export default function (plop) {
   plop.setGenerator('component', {
@@ -29,8 +28,8 @@ export default function (plop) {
         data: { componentName },
         abortOnFail: true,
       });
-      
+
       return actions;
-    }
+    },
   });
-};
+}

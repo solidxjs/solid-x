@@ -106,7 +106,7 @@ export default defineConfig(({ mode }) => ({
     }),
     dts({
       tsconfigPath: path.resolve(__dirname, 'tsconfig.build.json'),
-      outDir: 'dist/types'
+      outDir: 'dist/types',
     }),
     solidPlugin({ ssr: false }),
     // Copy over CSS assets for storybook
@@ -137,15 +137,18 @@ export default defineConfig(({ mode }) => ({
     minify: false,
     rollupOptions: {
       external: ['solid-js', 'solid-js/web'],
-      output: [{
-        ...commonRollupOutputOptions,
-        format: 'cjs',
-        dir: 'dist/cjs',
-      }, {
-        ...commonRollupOutputOptions,
-        format: 'esm',
-        dir: 'dist/esm',
-      }],
+      output: [
+        {
+          ...commonRollupOutputOptions,
+          format: 'cjs',
+          dir: 'dist/cjs',
+        },
+        {
+          ...commonRollupOutputOptions,
+          format: 'esm',
+          dir: 'dist/esm',
+        },
+      ],
     },
   },
 }));

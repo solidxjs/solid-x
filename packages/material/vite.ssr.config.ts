@@ -55,11 +55,13 @@ export default defineConfig(({ mode }) => ({
     minify: false,
     rollupOptions: {
       external: ['solid-js', 'solid-js/web'],
-      output: [{
-        ...commonRollupOutputOptions,
-        format: 'esm',
-        dir: 'dist/server',
-      }],
+      output: [
+        {
+          ...commonRollupOutputOptions,
+          format: 'esm',
+          dir: 'dist/server',
+        },
+      ],
     },
   },
 }));
